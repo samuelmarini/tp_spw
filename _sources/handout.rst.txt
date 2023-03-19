@@ -531,8 +531,10 @@ What is the amplitude of this electric field? In which units?
 2.3- Laser pulse interacting with a optimized target
 ^^^^^^^^^^^^^^^^^^^^^^
 ^^^^^^^^^^^^^^^^^^^^^^
+
+
 We finally reached the last stage of this TP and now we are going to simulate the interaction of the laser pulse with 
-the plasma target whose interface is optimized. Find bellow the full InputNamelist.py ::
+the plasma target whose interface is optimized. Find bellow the full InputNamelist.py::
 
   import numpy as np
 

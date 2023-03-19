@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 <html lang="English">
@@ -7,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Introduction &#8212; TP-M2-GI_doc 1. documentation</title>
+    <title>Handout &#8212; TP-M2-GI_doc 1. documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/smilei_theme.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -19,8 +18,7 @@
     <script async="async" src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Useful Tools" href="useful_tools.html" />
-    <link rel="prev" title="Welcome to TP-M2-GI_doc&#39;s documentation!" href="index.html" />
+    <link rel="prev" title="Useful Tools" href="useful_tools.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -39,7 +37,7 @@
     <div class="toctree-smilei">
         <ul>
                 <li class="outer">
-                    <a href="#observations-of-surface-plasma-waves-spw-using-the-particle-in-cell-pic-code-smilei">Observations of surface plasma waves (SPW) using the particle-in-cell (PIC) code SMILEI</a>
+                    <a href="introduction.html#observations-of-surface-plasma-waves-spw-using-the-particle-in-cell-pic-code-smilei">Observations of surface plasma waves (SPW) using the particle-in-cell (PIC) code SMILEI</a>
                 </li>
         </ul>
         <hr />
@@ -48,7 +46,7 @@
                     <a href="useful_tools.html#setting-your-workspace">Setting your workspace</a>
                 </li>
                 <li class="outer">
-                    <a href="useful_tools.html#a-1-download-and-intall-the-pic-code-smilei">A.1- Download and intall the PIC code Smilei</a>
+                    <a href="useful_tools.html#a-1-download-and-install-the-pic-code-smilei">A.1- Download and install the PIC code Smilei</a>
                 </li>
                 <li class="outer">
                     <a href="useful_tools.html#a-2-prepare-your-simulation">A.2- Prepare your simulation</a>
@@ -66,7 +64,7 @@
                     <a href="useful_tools.html#postprocessing">Postprocessing</a>
                 </li>
                 <li class="outer">
-                    <a href="useful_tools.html#b-1-compilation-of-happi">B.1- Compilation of happi</a>
+                    <a href="useful_tools.html#b-1-compilation-of-happi-library">B.1- Compilation of happi library</a>
                 </li>
                 <li class="outer">
                     <a href="useful_tools.html#b-2-open-a-simulation">B.2- Open a simulation</a>
@@ -90,31 +88,43 @@
         <hr />
         <ul>
                 <li class="outer">
-                    <a href="handout.html#prelude">Prelude</a>
+                    <a href="#prelude">Prelude</a>
                 </li>
                 <li class="outer">
-                    <a href="handout.html#introduction-to-surface-plasma-waves">0.1- Introduction to Surface Plasma Waves</a>
+                    <a href="#introduction-to-surface-plasma-waves">0.1- Introduction to Surface Plasma Waves</a>
                 </li>
                 <li class="outer">
-                    <a href="handout.html#surface-plasma-waves-dispersion-relation">0.2- Surface Plasma Waves dispersion relation</a>
+                    <a href="#surface-plasma-waves-dispersion-relation">0.2- Surface Plasma Waves dispersion relation</a>
                 </li>
                 <li class="outer">
-                    <a href="handout.html#physical-units-normalization">0.3- Physical units normalization</a>
+                    <a href="#physical-units-normalization">0.3- Physical units normalization</a>
                 </li>
                 <li class="outer">
-                    <a href="handout.html#simulation-virtual-workspace">0.4- Simulation virtual workspace</a>
+                    <a href="#simulation-virtual-workspace">0.4- Simulation virtual workspace</a>
                 </li>
                 <li class="outer">
                     <a href=""></a>
                 </li>
                 <li class="outer">
-                    <a href="handout.html#simulation-general-setup">0.5-Simulation general setup</a>
+                    <a href="#simulation-general-setup">0.5-Simulation general setup</a>
                 </li>
                 <li class="outer">
-                    <a href="handout.html#simulation-input-namelist">0.6- Simulation input namelist</a>
+                    <a href="#simulation-input-namelist">0.6- Simulation input namelist</a>
                 </li>
                 <li class="outer">
-                    <a href="handout.html#references">References</a>
+                    <a href="#laser-pulse-propagating-in-vacuum">1.1- Laser pulse propagating in vacuum</a>
+                </li>
+                <li class="outer">
+                    <a href="#laser-pulse-interacting-with-a-flat-target">2.1- Laser pulse interacting with a flat target</a>
+                </li>
+                <li class="outer">
+                    <a href="#laser-pulse-interacting-with-a-sinusoidal-target">2.2- Laser pulse interacting with a sinusoidal target</a>
+                </li>
+                <li class="outer">
+                    <a href="#laser-pulse-interacting-with-a-optimized-target">2.3- Laser pulse interacting with a optimized target</a>
+                </li>
+                <li class="outer">
+                    <a href="#references">References</a>
                 </li>
         </ul>
         <hr />
@@ -128,10 +138,24 @@
                 Sections
             </div>
             <div id="nav_list" class="toctree-smilei">
-                <div id="nav_title"><a href="#">Introduction</a></div>
+                <div id="nav_title"><a href="#">Handout</a></div>
                 <ul>
-<li><a class="reference internal" href="#">Introduction</a><ul>
-<li><a class="reference internal" href="#observations-of-surface-plasma-waves-spw-using-the-particle-in-cell-pic-code-smilei">Observations of surface plasma waves (SPW) using the particle-in-cell (PIC) code SMILEI</a></li>
+<li><a class="reference internal" href="#">Handout</a><ul>
+<li><a class="reference internal" href="#prelude">Prelude</a></li>
+<li><a class="reference internal" href="#introduction-to-surface-plasma-waves">0.1- Introduction to Surface Plasma Waves</a></li>
+<li><a class="reference internal" href="#surface-plasma-waves-dispersion-relation">0.2- Surface Plasma Waves dispersion relation</a></li>
+<li><a class="reference internal" href="#physical-units-normalization">0.3- Physical units normalization</a></li>
+<li><a class="reference internal" href="#simulation-virtual-workspace">0.4- Simulation virtual workspace;</a></li>
+<li><a class="reference internal" href="#simulation-general-setup">0.5-Simulation general setup</a></li>
+<li><a class="reference internal" href="#simulation-input-namelist">0.6- Simulation input namelist</a></li>
+<li><a class="reference internal" href="#laser-pulse-propagating-in-vacuum">1.1- Laser pulse propagating in vacuum</a></li>
+<li><a class="reference internal" href="#laser-pulse-interacting-with-a-flat-target">2.1- Laser pulse interacting with a flat target</a></li>
+<li><a class="reference internal" href="#laser-pulse-interacting-with-a-sinusoidal-target">2.2- Laser pulse interacting with a sinusoidal target</a></li>
+<li><a class="reference internal" href="#laser-pulse-interacting-with-a-optimized-target">2.3- Laser pulse interacting with a optimized target</a><ul>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
 </ul>
@@ -157,7 +181,7 @@
                  onmouseenter="prepareMenu('menu_Introduction')"
                  onmousedown="event.preventDefault()"
             >
-                <a href="#">
+                <a href="introduction.html">
                     <span>Introduction</span>
                 </a>
             </div>
@@ -165,7 +189,7 @@
                 <div class="toctree-smilei">
                     <ul>
                         <li class="outer">
-                            <a href="#observations-of-surface-plasma-waves-spw-using-the-particle-in-cell-pic-code-smilei">Observations of surface plasma waves (SPW) using the particle-in-cell (PIC) code SMILEI</a>
+                            <a href="introduction.html#observations-of-surface-plasma-waves-spw-using-the-particle-in-cell-pic-code-smilei">Observations of surface plasma waves (SPW) using the particle-in-cell (PIC) code SMILEI</a>
                         </li>
         
                     </ul>
@@ -191,7 +215,7 @@
                             <a href="useful_tools.html#setting-your-workspace">Setting your workspace</a>
                         </li>
                         <li class="outer">
-                            <a href="useful_tools.html#a-1-download-and-intall-the-pic-code-smilei">A.1- Download and intall the PIC code Smilei</a>
+                            <a href="useful_tools.html#a-1-download-and-install-the-pic-code-smilei">A.1- Download and install the PIC code Smilei</a>
                         </li>
                         <li class="outer">
                             <a href="useful_tools.html#a-2-prepare-your-simulation">A.2- Prepare your simulation</a>
@@ -209,7 +233,7 @@
                             <a href="useful_tools.html#postprocessing">Postprocessing</a>
                         </li>
                         <li class="outer">
-                            <a href="useful_tools.html#b-1-compilation-of-happi">B.1- Compilation of happi</a>
+                            <a href="useful_tools.html#b-1-compilation-of-happi-library">B.1- Compilation of happi library</a>
                         </li>
                         <li class="outer">
                             <a href="useful_tools.html#b-2-open-a-simulation">B.2- Open a simulation</a>
@@ -242,7 +266,7 @@
                  onmouseenter="prepareMenu('menu_Handout')"
                  onmousedown="event.preventDefault()"
             >
-                <a href="handout.html">
+                <a href="#">
                     <span>Handout</span>
                 </a>
             </div>
@@ -250,31 +274,43 @@
                 <div class="toctree-smilei">
                     <ul>
                         <li class="outer">
-                            <a href="handout.html#prelude">Prelude</a>
+                            <a href="#prelude">Prelude</a>
                         </li>
                         <li class="outer">
-                            <a href="handout.html#introduction-to-surface-plasma-waves">0.1- Introduction to Surface Plasma Waves</a>
+                            <a href="#introduction-to-surface-plasma-waves">0.1- Introduction to Surface Plasma Waves</a>
                         </li>
                         <li class="outer">
-                            <a href="handout.html#surface-plasma-waves-dispersion-relation">0.2- Surface Plasma Waves dispersion relation</a>
+                            <a href="#surface-plasma-waves-dispersion-relation">0.2- Surface Plasma Waves dispersion relation</a>
                         </li>
                         <li class="outer">
-                            <a href="handout.html#physical-units-normalization">0.3- Physical units normalization</a>
+                            <a href="#physical-units-normalization">0.3- Physical units normalization</a>
                         </li>
                         <li class="outer">
-                            <a href="handout.html#simulation-virtual-workspace">0.4- Simulation virtual workspace</a>
+                            <a href="#simulation-virtual-workspace">0.4- Simulation virtual workspace</a>
                         </li>
                         <li class="outer">
                             <a href=""></a>
                         </li>
                         <li class="outer">
-                            <a href="handout.html#simulation-general-setup">0.5-Simulation general setup</a>
+                            <a href="#simulation-general-setup">0.5-Simulation general setup</a>
                         </li>
                         <li class="outer">
-                            <a href="handout.html#simulation-input-namelist">0.6- Simulation input namelist</a>
+                            <a href="#simulation-input-namelist">0.6- Simulation input namelist</a>
                         </li>
                         <li class="outer">
-                            <a href="handout.html#references">References</a>
+                            <a href="#laser-pulse-propagating-in-vacuum">1.1- Laser pulse propagating in vacuum</a>
+                        </li>
+                        <li class="outer">
+                            <a href="#laser-pulse-interacting-with-a-flat-target">2.1- Laser pulse interacting with a flat target</a>
+                        </li>
+                        <li class="outer">
+                            <a href="#laser-pulse-interacting-with-a-sinusoidal-target">2.2- Laser pulse interacting with a sinusoidal target</a>
+                        </li>
+                        <li class="outer">
+                            <a href="#laser-pulse-interacting-with-a-optimized-target">2.3- Laser pulse interacting with a optimized target</a>
+                        </li>
+                        <li class="outer">
+                            <a href="#references">References</a>
                         </li>
         
                     </ul>
@@ -368,55 +404,577 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">Date<span class="colon">:</span></dt>
-<dd class="field-odd"><p>February 2023</p>
-</dd>
-</dl>
-<section id="observations-of-surface-plasma-waves-spw-using-the-particle-in-cell-pic-code-smilei">
-<h2>Observations of surface plasma waves (SPW) using the particle-in-cell (PIC) code SMILEI<a class="headerlink" href="#observations-of-surface-plasma-waves-spw-using-the-particle-in-cell-pic-code-smilei" title="Permalink to this heading">¶</a></h2>
-<p>The particle-in-cell (PIC) method is a powerful computational tool for
-studying plasma physics, allowing scientists to validate theoretical
-predictions and understand experimental results. Its importance has
-increased significantly in recent years, due to advancements in
-computational systems and algorithm optimization. Therefore,
-with the aim of understanding PIC computational algorithms, in this  practical work we will investigate the
-excitation of a surface plasma wave (SPW) using the PIC code SMILEI.</p>
-<p>Surface plasma waves are electromagnetic waves confined at the interface
-of two media with opposite permittivity, <cite>e.g.`</cite> the vacuum-plasma
-interface. These waves are excited when an electromagnetic wave like a
-laser pulse is irradiated onto an overdense plasma target containing a corrugated
-surface, known as gratings. When the laser pulse is directed onto the
-plasma target at the resonant angle, the resulting diffracted wave can
-excite the surface plasma wave.
-The surface plasma waves have been studied particularly in the context of
-particle (electron) acceleration, as they exhibit intense longitudinal electric
-field and subluminal phase velocity, which enables the electrons
-acceleration to energies of tens of MeV, when assuming a laser pulse with
-intensity of approximately <span class="math notranslate nohighlight">\(\sim 10^{19} W/m^2\)</span>.</p>
-<p>In this way, to observe the generation of energetic electrons
-through surface plasma waves, we will collaborate to
-build a Python script to be interpreted by the Smilei PIC code. In the
-script, we need to define the characteristics of our simulation box and
-describe how the laser-plasma setup should be arranged in order to
-excite the surface plasma wave. It all based on the physical theory.</p>
-<p>To build the script to be interpreted by the Smilei PIC code,
-we will go through several steps that will help
-you even in the future construction and modeling of different physical
-phenomena using PIC simulations. These steps include understanding and describing the laser
-pulse, adding and understanding the plasma target, and generating
-diagnostics that allow for the identification of the physical phenomena
-we are interested in.</p>
-<p>On the outils tab, you will find everything you need to know to prepare
-your computer to run the computational simulations with the Smilei PIC
-code. There you will also find some useful commands and scripts for
-Diagnostics generation on SPW. On the exercise tab, you will find the
-exercises developed for this TP so you can understand plasma waves as
-well as you can understand PIC algorithms to use in your future
-projects.</p>
-<p>Now, let us get to the practical work!</p>
+  <section id="handout">
+<h1>Handout<a class="headerlink" href="#handout" title="Permalink to this heading">¶</a></h1>
+<p>Before starting the practical work, we will present the general theory behind surface plasma waves.
+Then, we will discuss the normalized system of units commonly used in PIC codes.
+After this brief introduction, we will begin building the PIC code namelist and so, the practical work.</p>
+<p>Specifically, we will start the practical work by creating a namelist that defines the simulation
+box and simulates a laser pulse propagating in the vacuum. Once we confirm the simulation is running well,
+we will add a plasma target to the system consisting of ions and free electrons, which emulate a metallic target.
+We will initially assume the plasma target has a flat target surface.
+Next, we will assuming periodic structure across the target surface and
+finally, optimize the target surface to improve the laser-plasma interaction.
+After each of these steps, we will study and analyze relevant diagnostic tools
+to understand the relevant physical phenomena of surface plasma waves.</p>
+<p>To complete the practical work, read the instructions in the following sections,
+complete the related simulation exercises and ask the instructor if you have any doubts.</p>
+<section id="prelude">
+<h2>Prelude<a class="headerlink" href="#prelude" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="introduction-to-surface-plasma-waves">
+<h2>0.1- Introduction to Surface Plasma Waves<a class="headerlink" href="#introduction-to-surface-plasma-waves" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>The interaction of an intense laser with an overdense plasma with a
+sharp density gradient provides ways to accelerate charged particles up
+to the relativistic limit. A specific optimal set up that might improve
+the effectiveness of the laser-plasma interaction is provided by the use
+of periodic grooves (called gratings) at the metal surface. Whenever
+appropriately chosen, it can induce the laser to excite the called
+Surface Plasma Wave (SPW). Specifically, the periodic groves are
+engraved in a solid metal, which, as soon as it starts interacting with
+the intense and short laser pulse (<span class="math notranslate nohighlight">\(&gt;10^{18}\)</span> W/cm<span class="math notranslate nohighlight">\(^2\)</span> and
+<span class="math notranslate nohighlight">\(&lt;100 f\)</span>s) at high contrast becomes a sharp-edged over-dense
+plasma. If the frequency and wavelength of the interacting laser wave
+match the ones described by the dispersion relation of the surface
+plasma waves, up to <span class="math notranslate nohighlight">\(70\%\)</span> of the energy from the laser can be
+transferred to the plasma. Moreover, a significant percentage of the
+electrons can be accelerated along the surface at relativistic speed.</p>
+<p>Exploiting these properties at ultra-high intensity could drive surface
+plasma waves with large amplitude, leading to generation of
+unprecedented current of energetic electrons as well as bright coherent
+radiation. Resonant excitation of SPW implies the knowledge of
+the dispersion relation.</p>
+</section>
+<section id="surface-plasma-waves-dispersion-relation">
+<h2>0.2- Surface Plasma Waves dispersion relation<a class="headerlink" href="#surface-plasma-waves-dispersion-relation" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>As anticipated, Surface Plasma Wave (SPW), also known as surface plasmon
+polariton, is a propagating electromagnetic wave (let us denote by
+<span class="math notranslate nohighlight">\(\omega\)</span> its angular frequency) confined at the interface between
+a dielectric/transparent medium (with dielectric function
+<span class="math notranslate nohighlight">\(\epsilon_d(\omega)&gt;0\)</span>) and a conducting/opaque medium (with
+dielectric function <span class="math notranslate nohighlight">\(\epsilon_c(\omega)&lt;0\)</span>). Of particular
+importance for this study are SPW at the interface between a vacuum
+(<span class="math notranslate nohighlight">\(\epsilon_d(\omega)=1\)</span> located in the region <span class="math notranslate nohighlight">\(x&lt;0\)</span>) and a
+collisionless plasma, with density <span class="math notranslate nohighlight">\(n_0\)</span> located in the region
+<span class="math notranslate nohighlight">\(x&gt;0\)</span>. In the nonrelativistic and cold plasma limit, we can
+describe it using the Drude model, that is taking
+<span class="math notranslate nohighlight">\(\epsilon_c(\omega) = 1-\omega_p^2/\omega^2\)</span>, with
+<span class="math notranslate nohighlight">\(\omega_p = \sqrt{e^2 n_0/(\epsilon_0 m_e)}\)</span> the electron plasma
+frequency, <span class="math notranslate nohighlight">\(e\)</span> the elementary charge, <span class="math notranslate nohighlight">\(m_e\)</span> the electron
+mass and <span class="math notranslate nohighlight">\(\epsilon_0\)</span> the vacuum permittivity. To the laser be
+able to excite the SPW, the plasma needs to be opaque to electromagnetic
+waves with angular frequency <span class="math notranslate nohighlight">\(\omega\)</span>, what implies in
+<span class="math notranslate nohighlight">\(n_0&gt;n_c\)</span> where <span class="math notranslate nohighlight">\(n_c= \epsilon_0 m_e \omega^2/e^2\)</span> is the
+so-called critical density (correspondingly, <span class="math notranslate nohighlight">\(\omega_p &gt; \omega\)</span>).</p>
+<p>The SPW has the following interesting properties: (i) it propagates
+along the interface (we denote here by <span class="math notranslate nohighlight">\(y\)</span> its propagation
+direction) with a phase-velocity smaller than <span class="math notranslate nohighlight">\(c\)</span>, the speed of
+light in vacuum; (ii) it is a transverse-magnetic mode (TM-mode) with
+the magnetic field along the direction <span class="math notranslate nohighlight">\(z\)</span> perpendicular to its
+direction of propagation, (iii) it supports both transverse
+(<span class="math notranslate nohighlight">\(E_x\)</span>) and longitudinal (<span class="math notranslate nohighlight">\(E_y\)</span>) electric fields, and
+(iv) all fields decay exponentially with the distance
+<span class="math notranslate nohighlight">\(\vert x\vert\)</span> perpendicular to the plasma-dielectric interface.</p>
+<p>The dispersion relation for such a wave reads:</p>
+<div class="math notranslate nohighlight">
+\[\frac{c^2k^2}{\omega^2} = \frac{\epsilon_d(\omega)\,\epsilon_c(\omega)}{\epsilon_d(\omega)+\epsilon_c(\omega)} = \frac{\omega_p^2/\omega^2-1}{\omega_p^2/\omega^2-2},\]</div>
+<p>and the wave only exists for
+<span class="math notranslate nohighlight">\(\vert \epsilon_c(\omega)\vert &gt; \epsilon_d(\omega)\)</span>, which in the
+case of a simple Drude model requires <span class="math notranslate nohighlight">\(\omega_p^2/\omega^2&gt;2\)</span>
+(correspondingly <span class="math notranslate nohighlight">\(n_0 &gt; 2 n_c\)</span>). Even though SPW can exists in the
+presence of a flat surface, the easiest way to excite them in
+laser-plasma experiments is by analogy with solid state case by
+impinging a laser pulse onto, for example, a plasma grating, <em>i.e.</em> a
+plasma which surface is modulated so that the vacuum-plasma interface is
+located at <span class="math notranslate nohighlight">\(x_g(y) = (h/2)\,\sin(2\pi y/d)\)</span>, with <span class="math notranslate nohighlight">\(h\)</span> the
+grating depth and <span class="math notranslate nohighlight">\(d\)</span> its period. This <em>grating-coupling</em> approach
+allows to excite a surface plasma wave at the same frequency
+(<span class="math notranslate nohighlight">\(\omega\equiv\omega_0\)</span>) than the driving laser pulse when the
+laser angle of incidence <span class="math notranslate nohighlight">\(\theta_{\rm inc}\)</span> satisfies the
+phase-matching condition
+<span class="math notranslate nohighlight">\(\sin(\theta_{\rm inc}) = \sqrt{(\omega_p^2/\omega_0^2-1)/(\omega_p^2/\omega_0^2-2)} - l \lambda_0/d\)</span>
+with <span class="math notranslate nohighlight">\(\lambda_0=2\pi c/\omega_0\)</span> the laser wavelength and
+<span class="math notranslate nohighlight">\(l \in \mathbb{Z}\)</span>. Throughout this practical work, we will focus
+our attention onto the resonance condition for <span class="math notranslate nohighlight">\(l=1\)</span>.</p>
+<p>When dealing with high-intensity lasers interaction, and in particular
+when the laser electric field <span class="math notranslate nohighlight">\(E_0\)</span> becomes of the order of
+<span class="math notranslate nohighlight">\(m_e c \omega_0/e\)</span> (<em>i.e.</em> for a normalized vector potential
+<span class="math notranslate nohighlight">\(a_0 \equiv e E_0/(m_e c\,\omega_0) \gtrsim 1\)</span>), the electron
+dynamics becomes relativistic. It tells us that,
+if we want to generate super energetic electrons (MeV), we have to consider
+<span class="math notranslate nohighlight">\(a_0 \gt 1\)</span>.</p>
+<p>The phase-matching condition introduced above leads to define the
+optimal angle of incidence for the laser to excite the surface plasma
+wave:</p>
+<div class="math notranslate nohighlight">
+\[\theta_{\rm opt} = \arcsin\left( \sqrt{\frac{n_0/n_c-1}{n_0/n_c-2}} - \frac{\lambda_0}{d}\right)\,.\]</div>
+<p>Thus, we have to irradiate the laser pulse on the plasma target surface
+so that it has an angle <span class="math notranslate nohighlight">\(\theta_{\rm opt}\)</span> in relation to the normal surface.
+In what follows, we will put this simple model to the test by studying
+the excitation of SPW in the relativistic regime using PIC simulations.</p>
+<p><strong>Exercise 1:</strong> Use the definition for the critical
+plasma density <span class="math notranslate nohighlight">\(n_c=\varepsilon_0 m_e \omega_r^2/e^2\)</span>, the electron plasma
+frequency <span class="math notranslate nohighlight">\(\omega_p = \sqrt{e^2 n_0/(\epsilon_0 m_e)}\)</span> and assume that <span class="math notranslate nohighlight">\(\omega=\omega_0\)</span> to show the relation <span class="math notranslate nohighlight">\(\omega_p^2/\omega_0^2=n_0/n_c\)</span> used in
+the equation above.</p>
+<p><strong>Exercise 2:</strong> Assuming that the diffraction grating has a period equal
+to twice the wavelength of the laser, <span class="math notranslate nohighlight">\(d=2\lambda_0\)</span> what is the resonance angle (in degrees)?</p>
+</section>
+<section id="physical-units-normalization">
+<h2>0.3- Physical units normalization<a class="headerlink" href="#physical-units-normalization" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>In this practical work, all input and output quantities are in normalized units (also called code units) since such a
+system of units facilitates computational calculations. It is crucial to learn how to work
+with this kind of unit since it is widely used in computer simulations.
+You can perform conversions from normalized units to SI quantities, following <a class="reference internal" href="#table1"><span class="std std-ref">Table. 1</span></a>:</p>
+<span id="table1"></span><table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Normalizations</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Physical quantity</p></th>
+<th class="head"><p>Reference for normalization</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Time</p></td>
+<td><p><span class="math notranslate nohighlight">\(\omega_r^{-1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Velocity</p></td>
+<td><p><span class="math notranslate nohighlight">\(c\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Charge</p></td>
+<td><p><span class="math notranslate nohighlight">\(e\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Mass</p></td>
+<td><p><span class="math notranslate nohighlight">\(m_e\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Momentum</p></td>
+<td><p><span class="math notranslate nohighlight">\(m_e c\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Energy, Temperature</p></td>
+<td><p><span class="math notranslate nohighlight">\(m_e c^2\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Length</p></td>
+<td><p><span class="math notranslate nohighlight">\(c/\omega_r\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Number density</p></td>
+<td><p><span class="math notranslate nohighlight">\(n_r=\varepsilon_0 m_e \omega_r^2/e^2\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Electric field</p></td>
+<td><p><span class="math notranslate nohighlight">\(m_e \omega_r c /e\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Magnetic field</p></td>
+<td><p><span class="math notranslate nohighlight">\(m_e \omega_r /e\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>As shown in <a class="reference internal" href="#table1"><span class="std std-ref">Table. 1</span></a>, charge and mass are normalized to the elementary
+charge <span class="math notranslate nohighlight">\(e\)</span> and electron mass <span class="math notranslate nohighlight">\(m_e\)</span>, respectively. Additionally, all velocities
+are normalized to the speed of light in vacuum <span class="math notranslate nohighlight">\(c\)</span>, which naturally arises
+from Maxwell’s equations. In this set of units, the normalized
+speed of light in vacuum is <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>Now, the unit of time - here defined as <span class="math notranslate nohighlight">\(\omega_r^{-1}\)</span>,
+with <span class="math notranslate nohighlight">\(\omega_r\)</span> being the reference angular frequency- it is not defined a priori and is instead
+chosen by the user. Once the unit of time (or equivalently the unit of length)
+is chosen, all other units are uniquely defined as detailed in <a class="reference internal" href="#table1"><span class="std std-ref">Table. 1</span></a>.</p>
+<p>It is worth noting that the density associated with each plasma species is not
+in units of <span class="math notranslate nohighlight">\((c/\omega_r)^{-3}\)</span> but instead in units of <span class="math notranslate nohighlight">\(n_r=\varepsilon_0 m_e \omega_r^2/e^2\)</span>. In the following
+exercises, where you will be required to make conversions from code units,
+assume that the laser wavelength is <span class="math notranslate nohighlight">\(\lambda_0=0.8\mu m\)</span> (that of a Ti:Sa laser system).
+This choice implies that a unit of length is <span class="math notranslate nohighlight">\(c/\omega_r=\lambda_0/2\pi\)</span> and a unit of time is
+<span class="math notranslate nohighlight">\(\omega_r^{-1}=\lambda_0/2\pi c\)</span>, what is in accordance with <a class="reference internal" href="#table1"><span class="std std-ref">Table. 1</span></a>.</p>
+<p>It is  also possible to perform these conversions automatically using the postprocessing library <code class="docutils literal notranslate"><span class="pre">happi</span></code>,
+but this is not covered in this practical work. Instead, <a class="reference external" href="https://smileipic.github.io/tutorials/basics_units.html">see tutorials, basic units</a> for more information.</p>
+<p><strong>- Exercise 3:</strong>
+Assuming <span class="math notranslate nohighlight">\(\lambda_0=0.8\mu m\)</span> (a typical Ti:Sa laser system),
+<em>i)</em> what is the value of the critical density? <em>ii)</em> What is the value of the normalizing
+electric field <span class="math notranslate nohighlight">\(E_0=m_e \omega_r c /e\)</span>?
+This choice of <span class="math notranslate nohighlight">\(\lambda_0\)</span> shall be utilized throughout <em>all</em> subsequent exercises.</p>
+</section>
+<section id="simulation-virtual-workspace">
+<h2>0.4- Simulation virtual workspace;<a class="headerlink" href="#simulation-virtual-workspace" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>Before run the simulations, it is necessary to prepare the interface and the computing environment.
+To do so, follow the guidelines provided in the <a class="reference internal" href="useful_tools.html#usefultools"><span class="std std-ref">UsefulTools</span></a>. This includes install Smilei PIC code,
+compiling the code, creating simulation folders.
+It is advisable to create a folder for each simulation to avoid data loss.
+Within each folder, copy the <code class="docutils literal notranslate"><span class="pre">InputNamelist.py</span></code> file you with write and create the symbolic links to Smilei executable files (<code class="docutils literal notranslate"><span class="pre">smilei</span></code> and <code class="docutils literal notranslate"><span class="pre">smilei_test</span></code>).
+You can check for errors in your input file by using the command <code class="docutils literal notranslate"><span class="pre">./smilei_test</span> <span class="pre">InputNamelist.py</span></code>.
+If everything goes well, the word &quot;END&quot; should appear on your screen (it might be interesting to test after changes in the namelist).
+Then, launch your simulation using the <code class="docutils literal notranslate"><span class="pre">submission_script.sh</span></code>. It would take some minutes in your computer. After run your first simulation,
+compile the <code class="docutils literal notranslate"><span class="pre">happi</span></code> library for post-processing and data analysis.</p>
+</section>
+<section id="simulation-general-setup">
+<h2>0.5-Simulation general setup<a class="headerlink" href="#simulation-general-setup" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>To put the simple model presented in previous sections to the test, we
+will performed a series of 2D3V PIC simulations with the open-source
+code SMILEI, considering the simplest interaction configuration, where a
+laser pulse impinges at an incidence angle <span class="math notranslate nohighlight">\(\theta_{\rm inc}\)</span> onto
+a plasma grating. In this way, periodic conditions are used in the
+transverse <span class="math notranslate nohighlight">\(y\)</span>-direction (for both fields and particles) while
+absorbing/injecting (so-called Silver-Muller) boundary conditions are
+used in the <span class="math notranslate nohighlight">\(x\)</span> direction for the fields. Particles are either
+reflected at the <span class="math notranslate nohighlight">\(x_{\rm min}\)</span> border of the simulation domain
+(even though we have ensured that no particle reaches this border) or
+thermalized at the <span class="math notranslate nohighlight">\(x_{\rm max}\)</span> border.</p>
+<div class="float docutils container" id="simulation-box">
+<div class="center docutils container">
+<p><a href="#id2"><span class="problematic" id="id3">|image1|</span></a></p>
+</div>
+</div>
+<p>The driven laser pulse will be represented by a P-polarized Gaussian pulse
+with angular frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>, correspondingly wavelength
+<span class="math notranslate nohighlight">\(\lambda_0 = 2\pi c/\omega_0=0.8\mu\)</span>m, waist equal to
+<span class="math notranslate nohighlight">\(5\lambda_0\)</span> (<span class="math notranslate nohighlight">\(=4\mu\)</span>m) and pulse duration equal to
+<span class="math notranslate nohighlight">\(\tau_L=10\lambda_0/c\)</span> (<span class="math notranslate nohighlight">\(\simeq27f\)</span>s) FHWM. In the Fig.1,
+the laser pulse impinges over the plasma interface, through an angle
+<span class="math notranslate nohighlight">\(\theta_ {inc}\)</span> in relation to the normal surface. As discussed,
+depending on the laser and plasma characteristics, as well as the
+grooves etched on the target interface, both the SPW may be excited, and
+electrons may be accelerated.</p>
+<p>This laser impinges onto a plasma target of constant density
+<span class="math notranslate nohighlight">\(n_0\)</span> with with three different interfaces plasma-vacuum interfaces (the three cases that we are going to analyze in this TP)
+(i) The first simply consists of a continuous interface located at <span class="math notranslate nohighlight">\(x=0\)</span>.
+This will be our reference case, to compare with the results observed when grattings are present. (ii)
+The second interface to be analyzed consists of a sinusoidal modulation present on the entire surface.
+The interface is located at <span class="math notranslate nohighlight">\(x_g(y) = (h/2)\,\sin(2\pi y/d)\)</span> where <span class="math notranslate nohighlight">\(d=2\lambda_0\)</span> (<span class="math notranslate nohighlight">\(=1.6\mu\)</span>m)
+is the grating period, and <span class="math notranslate nohighlight">\(h=0.3 \lambda_0\)</span> (<span class="math notranslate nohighlight">\(=0.08\mu\)</span>m) is the
+grating depth. This later value is small enough to keep valid the plane
+interface condition and large enough to diffract the impinging laser wave, enabling so the surface
+plasma wave excitation. (iii) As a third case to be analyzed, we will remove the modulation where there is no laser-plasma interaction.
+This will reduce any radiation losses and consequently increase the efficiency of the particle-SPW coupling.
+For this study, the plasma grating consists of electrons with a very small initial temperature (cold) of
+<span class="math notranslate nohighlight">\(T_e -&gt; 0\)</span> as well as a neutralizing background of
+immobile ions.</p>
+<p>In all simulations, we will assume the box extends over <span class="math notranslate nohighlight">\(15\lambda_0\)</span>
+(<span class="math notranslate nohighlight">\(=12\mu\)</span>m) in the <span class="math notranslate nohighlight">\(x\)</span>-direction (roughly
+<span class="math notranslate nohighlight">\(9.6\lambda_0\)</span> (<span class="math notranslate nohighlight">\(=12.8\mu\)</span>m) of vacuum and
+<span class="math notranslate nohighlight">\(3\lambda_0\)</span> (<span class="math notranslate nohighlight">\(=2.4\mu\)</span>m) of plasma), and
+<span class="math notranslate nohighlight">\(64\lambda_0\)</span> (<span class="math notranslate nohighlight">\(=51.2\mu\)</span>m) in the <span class="math notranslate nohighlight">\(y\)</span>-direction.
+The spatial resolution was set to
+<span class="math notranslate nohighlight">\(\Delta x = \Delta y = \lambda_0/64\)</span> (<span class="math notranslate nohighlight">\(=0.00625\mu\)</span>m).
+Analogously to previous case, the simulation timestep is chosen to be
+<span class="math notranslate nohighlight">\(\Delta t = 0.95~\Delta x/\sqrt{2}\)</span> that corresponds to the Courant-Friedrich-Lewy (CFL) condition. Every cells contains
+initially <span class="math notranslate nohighlight">\(16\)</span> randomly distributed particles of each species.</p>
+</section>
+<section id="simulation-input-namelist">
+<h2>0.6- Simulation input namelist<a class="headerlink" href="#simulation-input-namelist" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>To reproduce the physical experiment just described, we need
+write a script (here called input namelist file) to be interpreted by the PIC code Smilei.
+The complet script with all the instructions can be found at <code class="docutils literal notranslate"><span class="pre">InputNamelist.py</span></code>,
+however, we are going to build it here, step by step.</p>
+<p>You can check the full <code class="docutils literal notranslate"><span class="pre">InputNamelist.py</span></code> file with a text editor, <em>e.g.,</em> <code class="docutils literal notranslate"><span class="pre">nano</span></code>, <code class="docutils literal notranslate"><span class="pre">gedit</span></code> or <code class="docutils literal notranslate"><span class="pre">vim</span></code> or with another editor
+of your choice (our recomendation is use <code class="docutils literal notranslate"><span class="pre">nano</span></code>).</p>
+<p id="exercise4"><strong>- Exercise 4:</strong> The script we want to build considering all proposals above, <em>i)</em> What are the trasnversal size <code class="docutils literal notranslate"><span class="pre">Lx</span></code> and the longitudinal size <code class="docutils literal notranslate"><span class="pre">Ly</span></code> (Longitudinal with reference to the SPW wave we want to excite)
+of the simulation box? <em>ii)</em> How many cells are in the simulation box?</p>
+</section>
+<section id="laser-pulse-propagating-in-vacuum">
+<h2>1.1- Laser pulse propagating in vacuum<a class="headerlink" href="#laser-pulse-propagating-in-vacuum" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>As antecipated, as a starting point in this practical work we will simulating a laser propagating through vacuum.
+To accomplish this, we will begin by defining a simulation box and including the necessary requirements for a Smilei code.
+We will be using the program provided below as a starting point for our simulation.
+It is important to carefully review the code and its implementation of box conditions, as it will serve as the foundation for next simulation.</p>
+<p>This is the InputNamelist.py:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">### NORMALIZATIONS</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>      <span class="c1"># optical cycle [in code units]</span>
+<span class="n">l0</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>      <span class="c1"># laser wavelength [in code units]</span>
+
+<span class="c1">### SIMULATION BOX</span>
+<span class="n">Lx</span>   <span class="o">=</span> <span class="mf">18.</span><span class="o">*</span><span class="n">l0</span>       <span class="c1">#simulation box size Lx</span>
+<span class="n">Ly</span>   <span class="o">=</span> <span class="mf">64.</span><span class="o">*</span><span class="n">l0</span>       <span class="c1">#simulation box size Ly</span>
+
+<span class="n">Tsim</span> <span class="o">=</span> <span class="mf">32.</span><span class="o">*</span><span class="n">t0</span>       <span class="c1">#number the cycles the simulation will run</span>
+
+<span class="c1">#### RESOLUTION</span>
+<span class="n">res</span>  <span class="o">=</span> <span class="mi">64</span>           <span class="c1">#number of divisions each wavelenght</span>
+
+<span class="n">dx</span>   <span class="o">=</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">l0</span><span class="o">/</span><span class="n">res</span>  <span class="c1">#dx,dy cell size</span>
+<span class="n">dt</span>   <span class="o">=</span> <span class="mf">0.95</span> <span class="o">*</span> <span class="n">dx</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span> <span class="c1">#time increment</span>
+
+
+<span class="c1">###############################################################################</span>
+<span class="c1">####################### MAIN CODE #############################################</span>
+
+<span class="n">Main</span><span class="p">(</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="s2">&quot;2Dcartesian&quot;</span><span class="p">,</span>
+    <span class="n">interpolation_order</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">,</span>
+
+    <span class="n">cell_length</span> <span class="o">=</span> <span class="p">[</span><span class="n">dx</span><span class="p">,</span><span class="n">dy</span><span class="p">],</span>
+    <span class="n">grid_length</span> <span class="o">=</span> <span class="p">[</span><span class="n">Lx</span><span class="p">,</span><span class="n">Ly</span><span class="p">],</span>
+    <span class="n">number_of_patches</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span>  <span class="c1">#patches in x,y-directions. The product x*y must be larger than the number of processor you are using</span>
+
+    <span class="n">timestep</span> <span class="o">=</span> <span class="n">dt</span><span class="p">,</span>
+    <span class="n">simulation_time</span> <span class="o">=</span> <span class="n">Tsim</span><span class="p">,</span>
+
+    <span class="n">EM_boundary_conditions</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;silver-muller&#39;</span><span class="p">],[</span><span class="s1">&#39;periodic&#39;</span><span class="p">]],</span>
+
+    <span class="n">random_seed</span> <span class="o">=</span> <span class="n">smilei_mpi_rank</span><span class="p">,</span>
+    <span class="n">print_every</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">Tsim</span><span class="o">/</span><span class="n">dt</span><span class="o">/</span><span class="mf">10.</span><span class="p">)</span>
+<span class="p">)</span>
+
+
+<span class="c1">################## LASER PULSE ######################################</span>
+
+<span class="c1">### LASER PROPERTIES</span>
+<span class="n">aL</span><span class="o">=</span><span class="mf">0.1</span>                          <span class="c1">#normalized laser amplitude a0=0.86 sqrt(I/10^18)</span>
+<span class="n">theta_deg</span> <span class="o">=</span> <span class="mf">30.</span>                 <span class="c1">#angle of incidence in degrees ArcSin[Sqrt[(n/gammal - 1)/(n/gammal - 2)] - 1 l/d]*180/Pi- -25.87?</span>
+<span class="n">theta</span>  <span class="o">=</span> <span class="n">theta_deg</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span>   <span class="c1">#angle of incidence in rads</span>
+
+<span class="n">waist</span>  <span class="o">=</span>  <span class="mf">6.</span><span class="o">*</span><span class="n">l0</span>     <span class="c1"># laser waist</span>
+<span class="n">Tfwhm</span>  <span class="o">=</span> <span class="mf">10.</span><span class="o">*</span><span class="n">t0</span>     <span class="c1"># laser fwhm</span>
+
+<span class="n">xfoc</span> <span class="o">=</span> <span class="n">Lx</span><span class="o">/</span><span class="mi">2</span>      <span class="c1"># the laser is focalized over the surface</span>
+<span class="n">yfoc</span> <span class="o">=</span> <span class="n">Ly</span><span class="o">/</span><span class="mf">2.</span>     <span class="c1"># the laser is focalized at the target&#39;s center</span>
+
+<span class="c1">### LASER PULSE</span>
+<span class="n">LaserGaussian2D</span><span class="p">(</span>
+    <span class="n">a0</span>              <span class="o">=</span> <span class="n">aL</span><span class="p">,</span>
+    <span class="n">omega</span>           <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span>
+    <span class="n">focus</span>           <span class="o">=</span> <span class="p">[</span><span class="n">xfoc</span><span class="p">,</span><span class="n">yfoc</span><span class="p">],</span>
+    <span class="n">waist</span>           <span class="o">=</span> <span class="n">waist</span><span class="p">,</span>
+    <span class="n">incidence_angle</span> <span class="o">=</span> <span class="n">theta</span><span class="p">,</span>
+    <span class="n">time_envelope</span>   <span class="o">=</span> <span class="n">tgaussian</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">4.</span><span class="o">*</span><span class="n">Tfwhm</span><span class="p">,</span> <span class="n">fwhm</span><span class="o">=</span><span class="n">Tfwhm</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mf">2.</span><span class="o">*</span><span class="n">Tfwhm</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1">#################### DIAGNOSTICS ####################################</span>
+<span class="n">sub_grid</span><span class="o">=</span><span class="mi">2</span> <span class="c1">#to reduce the number of points in the output file</span>
+<span class="n">Period</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t0</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="n">DiagFields</span><span class="p">(</span>
+    <span class="n">every</span> <span class="o">=</span> <span class="n">Period</span><span class="p">,</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bz&#39;</span><span class="p">,</span><span class="s1">&#39;Ey&#39;</span><span class="p">,</span><span class="s1">&#39;Ex&#39;</span> <span class="p">],</span>
+    <span class="n">subgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">s_</span><span class="p">[::</span><span class="n">sub_grid</span><span class="p">,</span> <span class="p">::</span><span class="n">sub_grid</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Now let us plot and analyse the result from our simulation.
+For this we can use the commands below.
+Specifically, you can either create a python script and include all the commands simultaneously,
+either you can open the python interface and type each of the lines (recommended for simple figures).
+The script bellow is to observe the <cite>Bz</cite> field</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">happi</span>
+<span class="n">S</span><span class="o">=</span><span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;/Users/samuelmarini/Samuel/Smilei/Results/spw_laser_01&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Bz&quot;</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">[</span><span class="n">tcycle</span><span class="p">])</span><span class="o">.</span><span class="n">slide</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using comand <cite>.plot()</cite> you can plot the field in a given instan of time, for example, to check the instant
+of time <span class="math notranslate nohighlight">\(t=10\tau_0\)</span>, we can use the following script</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">happi</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">S</span><span class="o">=</span><span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;/Users/samuelmarini/Samuel/Smilei/Results/spw_laser_01&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">timesteps</span><span class="o">=</span><span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Ey&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getTimesteps</span><span class="p">()</span>
+<span class="n">tcycle</span><span class="o">=</span><span class="mi">10</span> <span class="c1">#this corresponds to the time the laser oscilated 10 times.</span>
+<span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Bz&quot;</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">[</span><span class="n">tcycle</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p id="exercise5"><strong>- Exercise 5:</strong> Modify the script above to plot the electric field <cite>Ey</cite> at the instant <cite>Tsim</cite>, used in the Smile script.
+What is the amplitude of this electric field? In which units?</p>
+</section>
+<section id="laser-pulse-interacting-with-a-flat-target">
+<h2>2.1- Laser pulse interacting with a flat target<a class="headerlink" href="#laser-pulse-interacting-with-a-flat-target" title="Permalink to this heading">¶</a></h2>
+</section>
+<hr class="docutils" />
+<section id="laser-pulse-interacting-with-a-sinusoidal-target">
+<h2>2.2- Laser pulse interacting with a sinusoidal target<a class="headerlink" href="#laser-pulse-interacting-with-a-sinusoidal-target" title="Permalink to this heading">¶</a></h2>
+</section>
+<hr class="docutils" />
+<section id="laser-pulse-interacting-with-a-optimized-target">
+<h2>2.3- Laser pulse interacting with a optimized target<a class="headerlink" href="#laser-pulse-interacting-with-a-optimized-target" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>We finally reached the last stage of this TP and now we are going to simulate the interaction of the laser pulse with
+the plasma target whose interface is optimized. Find bellow the full InputNamelist.py:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">### NORMALIZATIONS</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>      <span class="c1"># optical cycle [in code units]</span>
+<span class="n">l0</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>      <span class="c1"># laser wavelength [in code units]</span>
+<span class="n">one_eV</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">511.e3</span>   <span class="c1"># eV definition</span>
+
+<span class="c1">### SIMULATION BOX</span>
+<span class="n">Lx</span>   <span class="o">=</span> <span class="mf">18.</span><span class="o">*</span><span class="n">l0</span>       <span class="c1">#simulation box size Lx</span>
+<span class="n">Ly</span>   <span class="o">=</span> <span class="mf">72.</span><span class="o">*</span><span class="n">l0</span>       <span class="c1">#simulation box size</span>
+<span class="n">Tsim</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">*</span><span class="n">t0</span>        <span class="c1">#number the cycles the simulation will run</span>
+
+<span class="c1">#### RESOLUTION</span>
+<span class="n">res</span>  <span class="o">=</span> <span class="mi">16</span>           <span class="c1">#number of divisions each wavelenght</span>
+
+<span class="n">dx</span>   <span class="o">=</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">l0</span><span class="o">/</span><span class="n">res</span>
+<span class="n">dt</span>   <span class="o">=</span> <span class="mf">0.95</span> <span class="o">*</span> <span class="n">dx</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span>
+
+
+<span class="c1">### LASER PROPERTIES</span>
+<span class="n">aL</span><span class="o">=</span><span class="mf">0.1</span>                          <span class="c1">#normalized laser amplitude a0=0.86 sqrt(I/10^18)</span>
+<span class="n">theta_deg</span> <span class="o">=</span> <span class="o">-</span><span class="mf">25.8</span>                <span class="c1">#angle of incidence in degrees ArcSin[Sqrt[(n/gamma - 1)/(n/gamma - 2)] - 1 l/d]*180/Pi- -25.87?</span>
+<span class="n">theta</span>  <span class="o">=</span> <span class="n">theta_deg</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span>   <span class="c1">#angle of incidence in rads</span>
+
+
+<span class="n">waist</span>  <span class="o">=</span> <span class="mf">6.</span><span class="o">*</span><span class="n">l0</span>     <span class="c1"># laser waist</span>
+<span class="n">Tfwhm</span>  <span class="o">=</span> <span class="mf">8.</span><span class="o">*</span><span class="n">t0</span>     <span class="c1"># laser fwhm</span>
+
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mf">3.</span><span class="o">*</span><span class="n">l0</span>             <span class="c1"># plasma thickness</span>
+<span class="n">Xsurface</span> <span class="o">=</span> <span class="n">Lx</span><span class="o">-</span><span class="n">x0</span>       <span class="c1"># plasma surface</span>
+
+<span class="n">xfoc</span> <span class="o">=</span> <span class="n">Xsurface</span>        <span class="c1"># the laser is focalized over the surface</span>
+<span class="n">yfoc</span> <span class="o">=</span> <span class="n">Ly</span><span class="o">/</span><span class="mf">2.</span>           <span class="c1"># the laser is focalized at the target&#39;s center</span>
+
+<span class="c1">### PLASMA</span>
+<span class="n">n0</span>   <span class="o">=</span> <span class="mi">20</span>           <span class="c1"># plasma density</span>
+<span class="n">T0</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">one_eV</span>     <span class="c1"># plasma temperature- cold</span>
+<span class="n">nppc</span><span class="o">=</span><span class="mi">2</span>              <span class="c1"># number of particles per cell</span>
+
+
+
+<span class="c1">############### Grating properties ##########################################################</span>
+<span class="c1">############### Use this for the mixed (flat and sinusoidal) grating profile ################</span>
+
+<span class="n">d</span><span class="o">=</span><span class="mf">0.69375</span>
+<span class="n">depth</span><span class="o">=</span><span class="mf">0.12</span>   <span class="c1">#~112nm</span>
+
+<span class="n">lg</span><span class="o">=</span><span class="n">d</span><span class="o">*</span><span class="n">l0</span>      <span class="c1"># grating&#39;s period</span>
+<span class="n">dg</span><span class="o">=</span><span class="n">depth</span><span class="o">*</span><span class="n">l0</span>  <span class="c1"># grating&#39;s depth</span>
+<span class="n">kg</span><span class="o">=</span> <span class="n">l0</span><span class="o">/</span><span class="n">lg</span>    <span class="c1"># normalized wavevector</span>
+
+<span class="n">lysize</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">Ly</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">lg</span><span class="p">))</span>
+<span class="n">nri</span>    <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">waist</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">l0</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="c1">#three times more ripples than the area illuminated by the laser waist</span>
+<span class="n">phase</span><span class="o">=</span><span class="mi">0</span><span class="c1">#to change the ripples phase-- check in the begining of the simulation if it is correct.</span>
+
+<span class="k">def</span> <span class="nf">density_profile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">Ly</span><span class="o">/</span><span class="n">lg</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span> <span class="n">nl</span><span class="o">&gt;=</span><span class="n">lysize</span><span class="o">-</span><span class="n">nri</span> <span class="ow">and</span> <span class="n">nl</span><span class="o">&lt;=</span><span class="n">lysize</span><span class="o">+</span><span class="n">nri</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&gt;=</span><span class="n">lysize</span><span class="o">*</span><span class="n">lg</span><span class="o">-</span><span class="n">nri</span><span class="o">*</span><span class="n">l0</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&lt;=</span><span class="n">lysize</span><span class="o">*</span><span class="n">lg</span><span class="o">+</span><span class="n">nri</span><span class="o">*</span><span class="n">l0</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">Xsurface</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">dg</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">kg</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="n">phase</span><span class="p">)</span> <span class="p">):</span>
+            <span class="k">return</span> <span class="n">n0</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">nl</span><span class="o">&gt;</span><span class="n">lysize</span><span class="o">+</span><span class="n">nri</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&gt;</span><span class="n">lysize</span><span class="o">*</span><span class="n">lg</span><span class="o">+</span><span class="n">nri</span><span class="o">*</span><span class="n">l0</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">Xsurface</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">n0</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">nl</span><span class="o">&lt;</span><span class="n">lysize</span><span class="o">-</span><span class="n">nri</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&lt;</span><span class="n">lysize</span><span class="o">*</span><span class="n">lg</span><span class="o">-</span><span class="n">nri</span><span class="o">*</span><span class="n">l0</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">Xsurface</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">n0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.</span>
+
+<span class="c1">###############################################################################</span>
+<span class="c1">####################### MAIN CODE #############################################</span>
+<span class="n">Main</span><span class="p">(</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="s2">&quot;2Dcartesian&quot;</span><span class="p">,</span>
+    <span class="n">interpolation_order</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">,</span>
+
+    <span class="n">cell_length</span> <span class="o">=</span> <span class="p">[</span><span class="n">dx</span><span class="p">,</span><span class="n">dy</span><span class="p">],</span>
+    <span class="n">grid_length</span> <span class="o">=</span> <span class="p">[</span><span class="n">Lx</span><span class="p">,</span><span class="n">Ly</span><span class="p">],</span>
+    <span class="n">number_of_patches</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span>  <span class="c1">#patches in x,y-directions. The product x*y must be larger than the number of processor you are using</span>
+
+    <span class="n">timestep</span> <span class="o">=</span> <span class="n">dt</span><span class="p">,</span>
+    <span class="n">simulation_time</span> <span class="o">=</span> <span class="n">Tsim</span><span class="p">,</span>
+
+    <span class="n">EM_boundary_conditions</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;silver-muller&#39;</span><span class="p">],[</span><span class="s1">&#39;periodic&#39;</span><span class="p">]],</span>
+
+    <span class="n">random_seed</span> <span class="o">=</span> <span class="n">smilei_mpi_rank</span><span class="p">,</span>
+    <span class="n">print_every</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">Tsim</span><span class="o">/</span><span class="n">dt</span><span class="o">/</span><span class="mf">10.</span><span class="p">)</span>
+<span class="p">)</span>
+
+
+<span class="c1">################## LASER PULSE ######################################</span>
+<span class="n">LaserGaussian2D</span><span class="p">(</span>
+    <span class="n">a0</span>              <span class="o">=</span> <span class="n">aL</span><span class="p">,</span>
+    <span class="n">omega</span>           <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span>
+    <span class="n">focus</span>           <span class="o">=</span> <span class="p">[</span><span class="n">xfoc</span><span class="p">,</span><span class="n">yfoc</span><span class="p">],</span>
+    <span class="n">waist</span>           <span class="o">=</span> <span class="n">waist</span><span class="p">,</span>
+    <span class="n">incidence_angle</span> <span class="o">=</span> <span class="n">theta</span><span class="p">,</span>
+    <span class="n">time_envelope</span>   <span class="o">=</span> <span class="n">tgaussian</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">4.</span><span class="o">*</span><span class="n">Tfwhm</span><span class="p">,</span> <span class="n">fwhm</span><span class="o">=</span><span class="n">Tfwhm</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mf">2.</span><span class="o">*</span><span class="n">Tfwhm</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">)</span>
+
+
+<span class="c1">################## PARTICLES  ######################################</span>
+<span class="n">Species</span><span class="p">(</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ion&quot;</span><span class="p">,</span>
+        <span class="n">position_initialization</span> <span class="o">=</span> <span class="s2">&quot;random&quot;</span><span class="p">,</span>
+        <span class="n">momentum_initialization</span> <span class="o">=</span> <span class="s2">&quot;cold&quot;</span><span class="p">,</span>
+        <span class="n">particles_per_cell</span> <span class="o">=</span> <span class="n">nppc</span><span class="p">,</span>
+        <span class="n">mass</span> <span class="o">=</span> <span class="mf">1836.</span><span class="p">,</span>
+        <span class="n">charge</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="n">number_density</span> <span class="o">=</span> <span class="n">density_profile</span><span class="p">,</span>
+        <span class="n">boundary_conditions</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;thermalize&quot;</span><span class="p">],[</span><span class="s2">&quot;periodic&quot;</span><span class="p">]],</span>
+        <span class="n">thermal_boundary_temperature</span> <span class="o">=</span> <span class="p">[</span><span class="n">T0</span><span class="p">],</span>
+        <span class="n">time_frozen</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="p">)</span>
+
+
+<span class="n">Species</span><span class="p">(</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;eon&quot;</span><span class="p">,</span>
+        <span class="n">position_initialization</span> <span class="o">=</span> <span class="s2">&quot;ion&quot;</span><span class="p">,</span>
+        <span class="n">momentum_initialization</span> <span class="o">=</span> <span class="s2">&quot;mj&quot;</span><span class="p">,</span>
+        <span class="n">particles_per_cell</span> <span class="o">=</span> <span class="n">nppc</span><span class="p">,</span>
+        <span class="n">mass</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="n">charge</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span>
+        <span class="n">number_density</span> <span class="o">=</span> <span class="n">density_profile</span><span class="p">,</span>
+        <span class="n">temperature</span> <span class="o">=</span> <span class="p">[</span><span class="n">T0</span><span class="p">],</span>
+        <span class="n">boundary_conditions</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;thermalize&quot;</span><span class="p">],[</span><span class="s2">&quot;periodic&quot;</span><span class="p">]],</span>
+        <span class="n">thermal_boundary_temperature</span> <span class="o">=</span> <span class="p">[</span><span class="n">T0</span><span class="p">],</span>
+        <span class="n">time_frozen</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="p">)</span>
+
+
+<span class="c1">#################### DIAGNOSTICS ####################################</span>
+<span class="n">sub_grid</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">Period</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t0</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span>
+<span class="c1">#DiagScalar(every=globalEvery)</span>
+
+<span class="n">DiagFields</span><span class="p">(</span>
+    <span class="n">every</span> <span class="o">=</span> <span class="n">Period</span><span class="p">,</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bz&#39;</span><span class="p">,</span><span class="s1">&#39;Ey&#39;</span><span class="p">,</span><span class="s1">&#39;Ex&#39;</span><span class="p">,</span> <span class="s1">&#39;Rho_eon&#39;</span> <span class="p">],</span>
+    <span class="n">subgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">s_</span><span class="p">[::</span><span class="n">sub_grid</span><span class="p">,</span> <span class="p">::</span><span class="n">sub_grid</span><span class="p">]</span> <span class="c1">#to reduce the number of points in the output file</span>
+<span class="p">)</span>
+
+<span class="n">DiagParticleBinning</span><span class="p">(</span>
+    <span class="n">deposited_quantity</span> <span class="o">=</span> <span class="s2">&quot;weight&quot;</span><span class="p">,</span>
+    <span class="n">every</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">Period</span><span class="p">],</span>
+    <span class="n">time_average</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">species</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;eon&quot;</span><span class="p">],</span>
+    <span class="n">axes</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Ly</span><span class="p">,</span> <span class="mi">400</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;py&quot;</span><span class="p">,</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">120</span><span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="n">particles</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span> <span class="n">particles</span><span class="o">.</span><span class="n">py</span><span class="p">,</span> <span class="n">particles</span><span class="o">.</span><span class="n">px</span> <span class="p">)</span>
+
+<span class="n">DiagParticleBinning</span><span class="p">(</span>
+    <span class="n">deposited_quantity</span> <span class="o">=</span> <span class="s2">&quot;weight&quot;</span><span class="p">,</span>
+    <span class="n">every</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">Period</span><span class="p">],</span>
+    <span class="n">time_average</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">species</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;eon&quot;</span><span class="p">],</span>
+    <span class="n">axes</span> <span class="o">=</span> <span class="p">[</span>
+          <span class="p">[</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
+          <span class="p">[</span><span class="n">angle</span><span class="p">,</span>  <span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
+      <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">¶</a></h3>
+<p>In this pratical work, we have explored the laser-plasma coupling in the relativistic regime of interaction.
+In particular, we have investigated conditions to improve laser-plasma energy transfer as well
+as to generate relativistic electrons through computational
+simulations using the SMILEI PIC code.</p>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
+<div role="list" class="citation-list">
+<div class="citation" id="siegman" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Siegman<span class="fn-bracket">]</span></span>
+<p><cite>Anthony E. Siegman, Lasers, University Science Books, 1986.</cite></p>
+</div>
+</div>
 </section>
 </section>
 
@@ -440,7 +998,7 @@ projects.</p>
       </div>
       
       <div>
-      <a href="_sources/introduction.rst.txt"
+      <a href="_sources/handout.rst.txt"
           rel="nofollow">Page source</a></li>
       </div>
     </div>
