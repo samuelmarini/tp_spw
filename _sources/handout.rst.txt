@@ -139,7 +139,7 @@ to twice the wavelength of the laser, :math:`d=2\lambda_0` what is the resonance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In this practical work, all input and output quantities are in normalized units (also called code units) since such a 
+In the PIC code Smilei (and also in most PIC codes) all input and output quantities are in normalized units (also called code units) since such a 
 system of units facilitates computational calculations. It is crucial to learn how to work 
 with this kind of unit since it is widely used in computer simulations.
 You can perform conversions from normalized units to SI quantities, following :ref:`Table. 1 <table1>`:
@@ -199,30 +199,28 @@ but this is not covered in this practical work. Instead, `see tutorials, basic u
 
 **- Exercise 3:** 
 Assuming :math:`\lambda_0=0.8\mu m` (a typical Ti:Sa laser system), 
-*i)* what is the value of the critical density? *ii)* What is the value of the normalizing 
+*i)* what is the value of the critical density :math:`n_c=`? *ii)* What is the value of the normalizing 
 electric field :math:`E_0=m_e \omega_r c /e`? 
 This choice of :math:`\lambda_0` shall be utilized throughout *all* subsequent exercises. 
 
 
-0.4- Simulation virtual workspace;
+0.4- Simulation virtual workspace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Before run the simulations, it is necessary to prepare the interface and the computing environment. 
-To do so, follow the guidelines provided in the :ref:`UsefulTools <UsefulTools>`. This includes install Smilei PIC code, 
+To do so, follow the guidelines provided in the `UsefulTools`. This includes install Smilei PIC code, 
 compiling the code, creating simulation folders. 
 It is advisable to create a folder for each simulation to avoid data loss. 
 Within each folder, copy the ``InputNamelist.py`` file you with write and create the symbolic links to Smilei executable files (``smilei`` and ``smilei_test``). 
 You can check for errors in your input file by using the command ``./smilei_test InputNamelist.py``. 
 If everything goes well, the word "END" should appear on your screen (it might be interesting to test after changes in the namelist). 
 Then, launch your simulation using the ``submission_script.sh``. It would take some minutes in your computer. After run your first simulation,
-compile the ``happi`` library for post-processing and data analysis.
+compile the ``happi`` library for post-processing and data analysis, if you have not done.
 
-
-0.5-Simulation general setup
+0.5- Simulation general setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 
 To put the simple model presented in previous sections to the test, we
 will performed a series of 2D3V PIC simulations with the open-source
@@ -237,28 +235,19 @@ reflected at the :math:`x_{\rm min}` border of the simulation domain
 thermalized at the :math:`x_{\rm max}` border.
 
 
-.. container:: float
-   :name: simulation_box
-
-   .. container:: center
-
-      |image1|
-
-
 
 The driven laser pulse will be represented by a P-polarized Gaussian pulse
 with angular frequency :math:`\omega_0`, correspondingly wavelength
 :math:`\lambda_0 = 2\pi c/\omega_0=0.8\mu`\ m, waist equal to
-:math:`5\lambda_0` (:math:`=4\mu`\ m) and pulse duration equal to
-:math:`\tau_L=10\lambda_0/c` (:math:`\simeq27f`\ s) FHWM. In the Fig.1,
-the laser pulse impinges over the plasma interface, through an angle
+:math:`6\lambda_0` (:math:`=4.8\mu`\ m) and pulse duration equal to
+:math:`\tau_L=10\lambda_0/c` (:math:`\simeq27f`\ s) FHWM. The laser pulse impinges over the plasma interface, through an angle
 :math:`\theta_ {inc}` in relation to the normal surface. As discussed,
 depending on the laser and plasma characteristics, as well as the
 grooves etched on the target interface, both the SPW may be excited, and
 electrons may be accelerated.
 
 This laser impinges onto a plasma target of constant density
-:math:`n_0` with with three different interfaces plasma-vacuum interfaces (the three cases that we are going to analyze in this TP) 
+:math:`n_0` with three different interfaces plasma-vacuum interfaces (the three cases that we are going to analyze in this TP) 
 (i) The first simply consists of a continuous interface located at :math:`x=0`. 
 This will be our reference case, to compare with the results observed when grattings are present. (ii)
 The second interface to be analyzed consists of a sinusoidal modulation present on the entire surface.
@@ -276,14 +265,12 @@ In all simulations, we will assume the box extends over :math:`15\lambda_0`
 (:math:`=12\mu`\ m) in the :math:`x`-direction (roughly
 :math:`9.6\lambda_0` (:math:`=12.8\mu`\ m) of vacuum and
 :math:`3\lambda_0` (:math:`=2.4\mu`\ m) of plasma), and
-:math:`64\lambda_0` (:math:`=51.2\mu`\ m) in the :math:`y`-direction.
+:math:`72\lambda_0` (:math:`=57.6\mu`\ m) in the :math:`y`-direction.
 The spatial resolution was set to
 :math:`\Delta x = \Delta y = \lambda_0/64` (:math:`=0.00625\mu`\ m).
 Analogously to previous case, the simulation timestep is chosen to be
 :math:`\Delta t = 0.95~\Delta x/\sqrt{2}` that corresponds to the Courant-Friedrich-Lewy (CFL) condition. Every cells contains
-initially :math:`16` randomly distributed particles of each species.
-
-
+initially :math:`8` randomly distributed particles of each species.
 
 0.6- Simulation input namelist
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -291,11 +278,11 @@ initially :math:`16` randomly distributed particles of each species.
 
 To reproduce the physical experiment just described, we need
 write a script (here called input namelist file) to be interpreted by the PIC code Smilei.
-The complet script with all the instructions can be found at ``InputNamelist.py``, 
-however, we are going to build it here, step by step.
+The complet ``InputNamelist.py`` script with all the instructions can be found at the end of this Handout, 
+however, we are going to build it, step-by-step.
 
-You can check the full ``InputNamelist.py`` file with a text editor, *e.g.,* ``nano``, ``gedit`` or ``vim`` or with another editor 
-of your choice (our recomendation is use ``nano``). 
+To write the ``InputNamelist.py`` file, you can use any text editor, *e.g.,* ``nano``, ``gedit`` or ``vim``, still, our recomendation is use ``nano``. 
+Ok, let us start it, but before...
 
 
 .. The file starts with the definition of physical constants and units,
@@ -327,7 +314,7 @@ of your choice (our recomendation is use ``nano``).
 
 .. _Exercise4:
 **- Exercise 4:** The script we want to build considering all proposals above, *i)* What are the trasnversal size ``Lx`` and the longitudinal size ``Ly`` (Longitudinal with reference to the SPW wave we want to excite) 
-of the simulation box? *ii)* How many cells are in the simulation box? 
+of the simulation box? *ii)* How many cells there are in the simulation box? 
 
 
 
@@ -399,6 +386,12 @@ of the simulation box? *ii)* How many cells are in the simulation box?
 .. ^^^^^^^^^^^^^^^^^^^^^^
 .. ^^^^^^^^^^^^^^^^^^^^^^
 
+
+
+Laser Pulse
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
 1.1- Laser pulse propagating in vacuum
 ^^^^^^^^^^^^^^^^^^^^^^
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -406,8 +399,9 @@ of the simulation box? *ii)* How many cells are in the simulation box?
 
 As antecipated, as a starting point in this practical work we will simulating a laser propagating through vacuum. 
 To accomplish this, we will begin by defining a simulation box and including the necessary requirements for a Smilei code.
-We will be using the program provided below as a starting point for our simulation. 
-It is important to carefully review the code and its implementation of box conditions, as it will serve as the foundation for next simulation.
+We will be using the script provided below as a starting point for our simulation. 
+It is important to carefully review the code and its implementation of box conditions, as it will serve as the foundation for next simulation 
+and your future works.
 
 This is the InputNamelist.py::
 
@@ -418,10 +412,8 @@ This is the InputNamelist.py::
   l0 = 2.0*np.pi      # laser wavelength [in code units]
 
   ### SIMULATION BOX
-  Lx   = 18.*l0       #simulation box size Lx
-  Ly   = 64.*l0       #simulation box size Ly
-
-  Tsim = 32.*t0       #number the cycles the simulation will run
+  Lx   = 15.*l0       #simulation box size Lx
+  Ly   = 72.*l0       #simulation box size Ly
 
   #### RESOLUTION
   res  = 64           #number of divisions each wavelenght
@@ -429,6 +421,8 @@ This is the InputNamelist.py::
   dx   = dy = l0/res  #dx,dy cell size
   dt   = 0.95 * dx/np.sqrt(2.) #time increment
 
+
+  Tsim = 30.*t0       #number the cycles the simulation will run
 
   ###############################################################################
   ####################### MAIN CODE #############################################
@@ -455,7 +449,7 @@ This is the InputNamelist.py::
 
   ### LASER PROPERTIES
   aL=0.1                          #normalized laser amplitude a0=0.86 sqrt(I/10^18)
-  theta_deg = 30.                 #angle of incidence in degrees ArcSin[Sqrt[(n/gammal - 1)/(n/gammal - 2)] - 1 l/d]*180/Pi- -25.87?
+  theta_deg = 30.                 #angle of incidence in degrees ArcSin[Sqrt[(n/gammal - 1)/(n/gammal - 2)] - 1 l/d]*180/Pi?
   theta  = theta_deg*np.pi/180.   #angle of incidence in rads
 
   waist  =  6.*l0     # laser waist
@@ -489,122 +483,130 @@ Now let us plot and analyse the result from our simulation.
 For this we can use the commands below. 
 Specifically, you can either create a python script and include all the commands simultaneously, 
 either you can open the python interface and type each of the lines (recommended for simple figures).
-The script bellow is to observe the `Bz` field ::
+Inside the result folder (`i.e.`` sim1), use the script bellow to observe the `Bz` field ::
 
   import happi
-  S=happi.Open('/Users/samuelmarini/Samuel/Smilei/Results/spw_laser_01',verbose=False)
-  S.Field(0,"Bz", timesteps=timesteps[tcycle]).slide(cmap='bwr', aspect=1)
+  S=happi.Open('.',verbose=False)
+  S.Field(0,"Bz").slide(cmap='bwr', aspect=1)
 
 
 
-Using comand `.plot()` you can plot the field in a given instan of time, for example, to check the instant
+Using comand `.plot()` you can plot the field in a given instant of time, for example, to check the instant
 of time :math:`t=10\tau_0`, we can use the following script ::
 
   import happi
   import matplotlib.pyplot as plt
 
-  S=happi.Open('/Users/samuelmarini/Samuel/Smilei/Results/spw_laser_01',verbose=False)
-  timesteps=S.Field(0,"Ey").getTimesteps()
+  S=happi.Open('.',verbose=False)
+  timesteps=S.Field(0,"Bz").getTimesteps()
   tcycle=10 #this corresponds to the time the laser oscilated 10 times.
-  S.Field(0,"Bz", timesteps=timesteps[tcycle]).plot(cmap='bwr', aspect=1)
+  S.Field(0,"Bz", timesteps=timesteps[tcycle]).plot(cmap='bwr', aspect=1, saveAs="Bz_t=10.png")
   plt.show()
 
 .. _Exercise5:
-**- Exercise 5:** Modify the script above to plot the electric field `Ey` at the instant `Tsim`, used in the Smile script.
-What is the amplitude of this electric field? In which units?
+**- Exercise 5:** What are the trasnversal size ``Lx`` and the longitudinal size ``Ly`` obsereved in the Figure? Is it consistent with our script? Explain.
+
+.. _Exercise6:
+**- Exercise 6:** Modify the script above to plot the electric field `Ey` at the instant `Tsim`, used in the Smile script.
+What is the maximum amplitude of the `Ey` electric field? In which units?
 
 
+Laser-plasma interaction
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 2.1- Laser pulse interacting with a flat target
 ^^^^^^^^^^^^^^^^^^^^^^
 ^^^^^^^^^^^^^^^^^^^^^^
 
+Now we have seen that our simulation is working correctly, it means the
+laser propagate correctly inside the simulation box, we are then ready to add the plasma target.
+As our first approach, we are going to assume that the plasma interface is flat.
+In the Smilei code, we can define the plasma function using a python function, as follows:
 
+.. code-block:: bash
 
-2.2- Laser pulse interacting with a sinusoidal target
-^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^^^^
+  def density_profile(x,y):
+      if(x>Xsurface):
+          return n0
+      else:
+          return 0.
 
+Equally, we have to define the species that compose the
+plasma. In this practical work, we will assume the plasma is an ionized gas composed of free electrons and ions,
+with temperature going to zero. We define the species that make up the plasma as follows:
 
+.. code-block:: bash
 
-2.3- Laser pulse interacting with a optimized target
-^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^^^^
+  Species(
+      name = "ion",
+      position_initialization = "random",
+      momentum_initialization = "cold",
+      particles_per_cell = nppc,
+      mass = 1836.,
+      charge = 1.,
+      number_density = density_profile,
+      boundary_conditions = [["remove","thermalize"],["periodic"]],
+      thermal_boundary_temperature = [T0],
+      time_frozen = 0.0
+    )
 
+  Species(
+      name = "eon",
+      position_initialization = "ion",
+      momentum_initialization = "mj",
+      particles_per_cell = nppc,
+      mass = 1.,
+      charge = -1.,
+      number_density = density_profile,
+      temperature = [T0],
+      boundary_conditions = [["remove","thermalize"],["periodic"]],
+      thermal_boundary_temperature = [T0],
+      time_frozen = 0.0
+    )
 
-We finally reached the last stage of this TP and now we are going to simulate the interaction of the laser pulse with 
-the plasma target whose interface is optimized. Find bellow the full InputNamelist.py::
+Before running this script, we are also going to change to over the plasma surface, the laser focal position, `xfoc` and add a diagnostic
+to measure the electrons phase space.
+
+.. code-block:: bash
+
+  DiagParticleBinning(
+      deposited_quantity = "weight",
+      every = [0, Period],
+      time_average = 1,
+      species = ["eon"],
+      axes = [
+          ["y", 0, Ly, 400],
+          ["py",-0.3,0.3, 120]
+      ]
+  )
+
+Following the steps described, we arrive at the following script to describe the interaction of the laser with a flat surface plasma:
+
+.. code-block:: bash
 
   import numpy as np
 
   ### NORMALIZATIONS
   t0 = 2.0*np.pi      # optical cycle [in code units]
   l0 = 2.0*np.pi      # laser wavelength [in code units]
-  one_eV = 1/511.e3   # eV definition
 
   ### SIMULATION BOX
-  Lx   = 18.*l0       #simulation box size Lx
-  Ly   = 72.*l0       #simulation box size 
-  Tsim = 1.*t0        #number the cycles the simulation will run
+  Lx   = 15.*l0       #simulation box size Lx
+  Ly   = 72.*l0       #simulation box size Ly
 
   #### RESOLUTION
-  res  = 16           #number of divisions each wavelenght
+  res  = 64           #number of divisions each wavelenght
 
-  dx   = dy = l0/res   
-  dt   = 0.95 * dx/np.sqrt(2.)
-
-
-  ### LASER PROPERTIES
-  aL=0.1                          #normalized laser amplitude a0=0.86 sqrt(I/10^18) 
-  theta_deg = -25.8                #angle of incidence in degrees ArcSin[Sqrt[(n/gamma - 1)/(n/gamma - 2)] - 1 l/d]*180/Pi- -25.87?
-  theta  = theta_deg*np.pi/180.   #angle of incidence in rads
+  dx   = dy = l0/res  #dx,dy cell size
+  dt   = 0.95 * dx/np.sqrt(2.) #time increment
 
 
-  waist  = 6.*l0     # laser waist
-  Tfwhm  = 8.*t0     # laser fwhm
-
-
-  x0 = 3.*l0             # plasma thickness
-  Xsurface = Lx-x0       # plasma surface
-
-  xfoc = Xsurface        # the laser is focalized over the surface
-  yfoc = Ly/2.           # the laser is focalized at the target's center     
-
-  ### PLASMA 
-  n0   = 20           # plasma density
-  T0 = 0.1*one_eV     # plasma temperature- cold
-  nppc=2              # number of particles per cell
-
-
-
-  ############### Grating properties ##########################################################
-  ############### Use this for the mixed (flat and sinusoidal) grating profile ################
-
-  d=0.69375
-  depth=0.12   #~112nm
-
-  lg=d*l0      # grating's period
-  dg=depth*l0  # grating's depth
-  kg= l0/lg    # normalized wavevector
-
-  lysize = round(Ly/(2*lg))
-  nri    = round(waist/(2*l0)*3)+1 #three times more ripples than the area illuminated by the laser waist
-  phase=0#to change the ripples phase-- check in the begining of the simulation if it is correct.
-
-  def density_profile(x,y):
-      for nl in range(0,int(Ly/lg)+1):
-          if( nl>=lysize-nri and nl<=lysize+nri and y>=lysize*lg-nri*l0 and y<=lysize*lg+nri*l0 and x>Xsurface+0.5*dg*np.sin(kg*y+phase) ):
-              return n0
-          elif(nl>lysize+nri and y>lysize*lg+nri*l0 and x>Xsurface):
-              return n0
-          elif(nl<lysize-nri and y<lysize*lg-nri*l0 and x>Xsurface):
-              return n0
-      else:
-          return 0.
+  Tsim = 72.*t0       #number the cycles the simulation will run
 
   ###############################################################################
   ####################### MAIN CODE #############################################
+
   Main(
       geometry = "2Dcartesian",
       interpolation_order = 2 ,
@@ -622,8 +624,434 @@ the plasma target whose interface is optimized. Find bellow the full InputNameli
       print_every = int(Tsim/dt/10.)
   )
 
+  ################## PLASMA ##########
+
+  one_eV = 1/511.e3   # eV definition
+  n0   = 20           # plasma density
+  T0 = 0.1*one_eV     # plasma temperature- cold
+  nppc=16             # number of particles per cell
+
+  Xsurface=Lx-3*l0   #position of the plasma surface, 3*l0 is the plasma size
+
+  def density_profile(x,y):
+      if(x>Xsurface):
+          return n0
+      else:
+          return 0.
+
+  Species(
+      name = "ion",
+      position_initialization = "random",
+      momentum_initialization = "cold",
+      particles_per_cell = nppc,
+      mass = 1836.,
+      charge = 1.,
+      number_density = density_profile,
+      boundary_conditions = [["remove","thermalize"],["periodic"]],
+      thermal_boundary_temperature = [T0],
+      time_frozen = 0.0
+    )
+
+  Species(
+      name = "eon",
+      position_initialization = "ion",
+      momentum_initialization = "mj",
+      particles_per_cell = nppc,
+      mass = 1.,
+      charge = -1.,
+      number_density = density_profile,
+      temperature = [T0],
+      boundary_conditions = [["remove","thermalize"],["periodic"]],
+      thermal_boundary_temperature = [T0],
+      time_frozen = 0.0
+    )
+
 
   ################## LASER PULSE ######################################
+
+  ### LASER PROPERTIES
+  aL=0.1                          #normalized laser amplitude a0=0.86 sqrt(I/10^18)
+  theta_deg = 30.                 #angle of incidence in degrees ArcSin[Sqrt[(n/gammal - 1)/(n/gammal - 2)] - 1 l/d]*180/Pi?
+  theta  = theta_deg*np.pi/180.   #angle of incidence in rads
+
+  waist  =  6.*l0     # laser waist
+  Tfwhm  = 10.*t0     # laser fwhm
+
+  xfoc = Xsurface    # the laser is focalized over the surface
+  yfoc = Ly/2.       # the laser is focalized at the target's center
+
+  ### LASER PULSE
+  LaserGaussian2D(
+      a0              = aL,
+      omega           = 1.,
+      focus           = [xfoc,yfoc],
+      waist           = waist,
+      incidence_angle = theta,
+      time_envelope   = tgaussian(start=0., duration=4.*Tfwhm, fwhm=Tfwhm, center=2.*Tfwhm, order=2)
+  )
+
+  #################### DIAGNOSTICS ####################################
+  sub_grid=2 #to reduce the number of points in the output file
+  Period = int(t0/dt)
+
+  DiagFields(
+      every = Period,
+      fields = ['Bz','Ey','Ex', 'Rho_eon' ],
+      subgrid = np.s_[::sub_grid, ::sub_grid]
+  )
+
+  DiagParticleBinning(
+      deposited_quantity = "weight",
+      every = [0, Period],
+      time_average = 1,
+      species = ["eon"],
+      axes = [
+             ["y", 0, Ly, 400],
+             ["py",-0.3,0.3, 120]]
+  )
+
+To check the plasma surface, we can analyze the quantity `Rho_eon`, which refers to the density of electrons-`eon` ::
+
+  import happi
+  import matplotlib.pyplot as plt
+  S=happi.Open('.',verbose=False)
+  timesteps=S.Field(0,"-Rho_eon").getTimesteps()
+  tcycle=1
+  S.Field(0,"-Rho_eon", timesteps=timesteps[tcycle]).plot(cmap='binary', aspect=1, vmin=0,vmax=20)
+  plt.show()
+
+Note that we use the minus sign in front of the quantity `Rho_eon`, since we are interested in the modulus of the density only.
+Likewise, we can multiply this quantity by any scalar and even by other quantities, for example, we can measure the excess charge,
+ploting the quantity `Rho_ion-Rho_eon`.
+Furthermore, we can also use the commands below to see the laser propagation in this new setup ::
+
+  import happi
+  S=happi.Open('.',verbose=False)
+  S.Field(0,"Bz").slide(cmap='bwr', aspect=1)
+
+Using a more elaborate script and working with the matplotlib package, we can simultaneously plot the electric field and the plasma
+For that we can use the following script 
+
+.. code-block:: bash
+
+  import numpy as np
+  from matplotlib import *
+  import matplotlib.pyplot as plt
+  from matplotlib.pyplot import *
+  #import sys
+  #sys.path.insert(0, ".")
+  import happi
+
+
+  ####### load simulation
+  S = happi.Open('.', verbose=False)
+
+  for tver in [20]: #checking the instant of time, tver=20
+      plt.clf() 
+      fs=11
+      sizex=4/2.5
+      sizey=15.2/2.5
+      plt.figure(1, figsize=(sizex,sizey))
+      plt.rc('text',usetex=True)
+      plt.rc('font', **{'family': 'serif'  })
+      plt.rc('xtick',labelsize=fs)
+      plt.rc('ytick',labelsize=fs)
+      plt.rc('axes',linewidth=0.4)
+      plt.subplots_adjust(bottom=0.13,left=0.12,right=0.8,top=0.98)
+      aspect0=0.5
+      ax=gca()
+
+      #-------------------------------------------------------------------------------
+      lambda0   = 1  #use 0.8 if you want the plot in micrometers.
+
+      diag  = S.Field(0,"Ey")
+      timesteps=S.Field(0,"Ey").getTimesteps()
+      #print(timesteps)
+
+      diag  = S.Field(0,"Ey", timesteps=timesteps[tver])
+      xx  = diag.getAxis('x')
+      yy  = diag.getAxis('y') 
+      Ey = np.array(diag.getData()[0] )
+
+      diagr  = S.Field(0,'-Rho_eon', timesteps=timesteps[tver])
+      xxr  = diagr.getAxis('x')
+      yyr  = diagr.getAxis('y')
+      Rho  = np.array(diagr.getData()[0] )
+
+
+      xx=lambda0*xx/(2*np.pi)
+      yy=lambda0*yy/(2*np.pi)
+
+      ymin = np.min(yy)
+      ymax = np.max(yy)
+      xmin = np.min(xx)
+      xmax = np.max(xx)
+
+      plt.xlabel('$x/\lambda_0$')
+      plt.ylabel('$y/\lambda_0$')
+
+      #to define the range and the ticks
+      extent = xmin, xmax,ymin,ymax
+
+      minorLocatorx   =  matplotlib.ticker.IndexLocator(base=3, offset=0)
+      ax.xaxis.set_minor_locator(minorLocatorx)
+      
+      minorLocatory   =  matplotlib.ticker.IndexLocator(base=9, offset=0)
+      ax.yaxis.set_minor_locator(minorLocatory)
+
+      ax.xaxis.set_ticks_position('both')
+
+      for line in ax.xaxis.get_ticklines():
+          line.set_color('k')
+          line.set_markersize(2.5)
+          line.set_markeredgewidth(0.3)
+
+      for line in ax.xaxis.get_ticklines():
+          line.set_color('k')
+          line.set_markersize(5)
+          line.set_markeredgewidth(0.6)
+
+      for line in ax.yaxis.get_ticklines():
+          line.set_color('k')
+          line.set_markersize(2.5)
+          line.set_markeredgewidth(0.3)
+
+      for line in ax.yaxis.get_ticklines():
+          line.set_color('k')
+          line.set_markersize(5)
+          line.set_markeredgewidth(0.6)
+
+      ay=gca()
+      ay.yaxis.labelpad=-10
+
+      ay=gca()
+      ay.xaxis.labelpad=-10
+
+
+      ax.set_ylim( ymin, ymax )
+      ax.set_xlim( xmin, xmax )
+      ax.set_yticks([ymin,18,54,ymax])
+      ax.set_xticks([xmin,12,xmax])
+
+
+      #-----------------------------------------------------------------------------
+      #mask to let transparent the vacuum region
+      rcut=0.1
+      Rho[abs(Rho) <  rcut] = np.nan
+      #-----------------------------------------------------------------------------
+      #parameter
+      vmax0=S.namelist.n0
+      v0=S.namelist.aL
+      #-----------------------------------------------------------------------------
+
+      #plot field
+      im1 = plt.imshow(np.real(Ey).T, cmap='seismic', aspect=aspect0, vmin=-v0, vmax=v0, alpha=1, origin='lower', interpolation='bilinear', extent=extent)
+      #cb1 = plt.colorbar(im1, shrink=0.5, label='$E_y/E_0$', pad=0.1)
+
+      #plot density
+      im2 = plt.imshow(np.real(Rho).T, cmap='binary', aspect=aspect0, vmin=0.00000, vmax=vmax0, alpha=1, origin='lower', interpolation='bilinear', extent=extent)
+      #cb2 = plt.colorbar(im2, shrink=0.5, label='$n_e/n_c$', pad=0.09)
+  
+
+      plt.savefig('field_%3i.png'%(tver), bbox_inches='tight', dpi=100)
+
+
+
+.. _Exercise7:
+**- Exercise 7:** Modify the script above to plot the Poynting vector `Sy` at the instant `Tsim`, used in the Smilei script.
+What is the maximum amplitude of the  Poynting vector? In which units is it presented? What are the values in the S.I units?
+
+.. _Exercise8:
+**- Exercise 8:**
+Modify the loop on `tver` to build a plot at each instant in time.
+Use the outcome figures to create a video. There are several ways to create the video from pictures. One way is to use the command ::
+  
+  convert -delay 1 -loop 0 *.png video.gif
+
+In an alternative approach, you could use the `happi` library to create the video ::
+
+  S.Field(0,'Bz').animate(movie="Bz.gif", dpi=120,fps=20,vmin=-0.1,vmax=0.1,ymax=300)
+
+
+2.2- Laser pulse interacting with a sinusoidal target
+^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+
+Now we are going to modify our script so that the surface of the plasma will be described by a sinusoidal function. One way to do this consists of modifying the density_profile(x,y) function such as ::
+
+  d=2*l0      # period
+  depth=0.1*l0  # depth
+  kg= l0/d    # normalized wavevector
+
+  def density_profile(x,y):
+      if(x>Xsurface+0.5*depth*np.sin(kg*y) ):
+          return n0
+      else:
+          return 0.
+
+You can check the plasma surface using the following command from `happi` library ::
+
+  import happi
+  import matplotlib.pyplot as plt
+
+  S=happi.Open('.',verbose=False)
+  timesteps=S.Field(0,"Ey").getTimesteps()
+  tcycle=1 
+  S.Field(0,"-Rho_eon", timesteps=timesteps[tcycle]).plot(cmap='Blues',xmin=60,xmax=90,ymin=20,ymax=60)
+  plt.show()
+
+Likewise, you can change the `x`and the `y` limits using the script used in the previous section, such as ::
+
+    ax.set_ylim( 30, 38 )
+    ax.set_xlim( 10, 14 )
+    ax.set_yticks([30,32,36,38])
+    ax.set_xticks([10,11,13,14])
+
+
+.. _Exercise 9:
+**- Exercise 9:** Create a figure to verify the period of the diffraction grating over the plasma. It is correct according to our demand?
+
+
+We can then analyze the phase space of the particles. For this, we will use the library `happi` as follows::
+
+  import sys
+  sys.path.insert(0, "/Users/samuelmarini/Samuel/Smilei/smilei")
+  import happi
+  import numpy as np
+  import matplotlib.pyplot as plt
+
+  S = happi.Open('/Users/samuelmarini/Samuel/Smilei/Results/spw1', verbose=False)
+  tver=70
+  timesteps=S.ParticleBinning(0).getTimesteps()
+  diag  =  S.ParticleBinning(0, data_log=True,timesteps=timesteps[tver])
+  diag.plot()
+
+.. _Exercise 10:
+**- Exercise 10:** 
+Analyze the longitudinal phase space at different instants of time. What can you interpret with it?
+To go further, suppose that ``aL=5``, change the script and describe what happens with the electrons now.
+Note that you have to change the diagnostics ranges, in order to make a correct analysis.
+
+
+2.3- Laser pulse interacting with a optimized target
+^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+
+We finally reached the last stage of this TP and now we are going to simulate the interaction of the laser pulse with 
+the plasma target whose interface is optimized. Find bellow the full InputNamelist.py ::
+
+  import numpy as np
+
+  ### NORMALIZATIONS
+  t0 = 2.0*np.pi      # optical cycle [in code units]
+  l0 = 2.0*np.pi      # laser wavelength [in code units]
+
+  ### SIMULATION BOX
+  Lx   = 15.*l0       #simulation box size Lx
+  Ly   = 72.*l0       #simulation box size Ly
+
+  #### RESOLUTION
+  res  = 64           #number of divisions each wavelenght
+
+  dx   = dy = l0/res  #dx,dy cell size
+  dt   = 0.95 * dx/np.sqrt(2.) #time increment
+
+
+  Tsim = 72.*t0       #number the cycles the simulation will run
+
+  ###############################################################################
+  ####################### MAIN CODE #############################################
+
+  Main(
+      geometry = "2Dcartesian",
+      interpolation_order = 2 ,
+
+      cell_length = [dx,dy],
+      grid_length = [Lx,Ly],
+      number_of_patches = [1,16],  #patches in x,y-directions. The product x*y must be larger than the number of processor you are using
+
+      timestep = dt,
+      simulation_time = Tsim,
+
+      EM_boundary_conditions = [['silver-muller'],['periodic']],
+
+      random_seed = smilei_mpi_rank,
+      print_every = int(Tsim/dt/10.)
+  )
+
+  ################## PLASMA ##########
+
+  one_eV = 1/511.e3   # eV definition
+  n0   = 20           # plasma density
+  T0 = 0.1*one_eV     # plasma temperature- cold
+  nppc=16              # number of particles per cell
+
+  Xsurface=Lx-3*l0   #position of the plasma surface, 3*l0 is the plasma size
+
+  waist0=6*l0
+  d=2*l0      # period
+  depth=1*l0  # depth
+  kg= l0/d    # normalized wavevector
+
+  lysize = round(Ly/(2*d))
+  nri    = round(waist0/(l0))+1 #three times more ripples than the area illuminated by the laser waist
+  phase  = 0 #to change the ripples phase-- check in the begining of the simulation if it is correct.
+
+  def density_profile(x,y):
+      for nl in range(0,int(Ly/d)+1):
+          if( nl>=lysize-nri and nl<=lysize+nri and y>=lysize*d-nri*l0 and y<=lysize*d+nri*l0 and x>Xsurface+0.5*depth*np.sin(kg*y)):
+              return n0
+          elif(nl>lysize+nri and y>lysize*d+nri*l0 and x>Xsurface):
+              return n0
+          elif(nl<lysize-nri and y<lysize*d-nri*l0 and x>Xsurface):
+              return n0
+      else:
+          return 0.
+
+
+  Species(
+      name = "ion",
+      position_initialization = "random",
+      momentum_initialization = "cold",
+      particles_per_cell = nppc,
+      mass = 1836.,
+      charge = 1.,
+      number_density = density_profile,
+      boundary_conditions = [["remove","thermalize"],["periodic"]],
+      thermal_boundary_temperature = [T0],
+      time_frozen = 0.0
+    )
+
+  Species(
+      name = "eon",
+      position_initialization = "ion",
+      momentum_initialization = "mj",
+      particles_per_cell = nppc,
+      mass = 1.,
+      charge = -1.,
+      number_density = density_profile,
+      temperature = [T0],
+      boundary_conditions = [["remove","thermalize"],["periodic"]],
+      thermal_boundary_temperature = [T0],
+      time_frozen = 0.0
+    )
+
+
+
+  ################## LASER PULSE ######################################
+
+  ### LASER PROPERTIES
+  aL=0.1                          #normalized laser amplitude a0=0.86 sqrt(I/10^18)
+  theta_deg = 30.                 #angle of incidence in degrees ArcSin[Sqrt[(n/gammal - 1)/(n/gammal - 2)] - 1 l/d]*180/Pi?
+  theta  = theta_deg*np.pi/180.   #angle of incidence in rads
+
+  waist  = waist0     # laser waist
+  Tfwhm  = 10.*t0     # laser fwhm
+
+  xfoc = Xsurface    # the laser is focalized over the surface
+  yfoc = Ly/2.       # the laser is focalized at the target's center
+
+  ### LASER PULSE
   LaserGaussian2D(
       a0              = aL,
       omega           = 1.,
@@ -634,45 +1062,14 @@ the plasma target whose interface is optimized. Find bellow the full InputNameli
   )
 
 
-  ################## PARTICLES  ######################################
-  Species(
-          name = "ion",
-          position_initialization = "random",
-          momentum_initialization = "cold",
-          particles_per_cell = nppc,
-          mass = 1836.,
-          charge = 1.,
-          number_density = density_profile,
-          boundary_conditions = [["thermalize"],["periodic"]],
-          thermal_boundary_temperature = [T0],
-          time_frozen = 0.0
-  )
-
-
-  Species(
-          name = "eon",
-          position_initialization = "ion",
-          momentum_initialization = "mj",
-          particles_per_cell = nppc,
-          mass = 1.,
-          charge = -1.,
-          number_density = density_profile,
-          temperature = [T0],
-          boundary_conditions = [["thermalize"],["periodic"]],
-          thermal_boundary_temperature = [T0],
-          time_frozen = 0.0
-  )
-
-
   #################### DIAGNOSTICS ####################################
-  sub_grid=2
+  sub_grid=2 #to reduce the number of points in the output file
   Period = int(t0/dt)
-  #DiagScalar(every=globalEvery)
 
   DiagFields(
       every = Period,
       fields = ['Bz','Ey','Ex', 'Rho_eon' ],
-      subgrid = np.s_[::sub_grid, ::sub_grid] #to reduce the number of points in the output file
+      subgrid = np.s_[::sub_grid, ::sub_grid]
   )
 
   DiagParticleBinning(
@@ -686,43 +1083,27 @@ the plasma target whose interface is optimized. Find bellow the full InputNameli
       ]
   )
 
-  def angle(particles):
-      return np.arctan2( particles.py, particles.px )
+.. _Exercise 11:
+**- Exercise 11:** Compare the longitudinal electric field at instant of time `TSim`,
+assuming the three different configurations studied in this TP. 
+Hint: To analyze the field on the surface, you can use the command ::
 
-  DiagParticleBinning(
-      deposited_quantity = "weight",
-      every = [0, Period],
-      time_average = 1,
-      species = ["eon"],
-      axes = [
-            ["gamma", 1., 1.1, 40],
-            [angle,  -math.pi, math.pi, 90]
-        ]
-  )
+  import happi
+  import numpy as np
+  import matplotlib.pyplot as plt
 
+  S = happi.Open('.', verbose=False)
+  tver=60
+  timesteps=S.Field(0,"Bz").getTimesteps()
+  Xsurface=S.namelist.Xsurface-3*S.namelist.dx
+  v0=S.namelist.aL
+  diag  =  S.Field(0,"Bz", timesteps=timesteps[tver], average = {"x":Xsurface}).plot(vmin=-v0,vmax=v0)
 
+And to put the three curves on the same panel, you can use the multiplot command from the happi library (see useful tools).
 
-.. In particular, we investigate the electron distribution as a function of
-.. their Lorentz factor :math:`\gamma = \sqrt{1+{\bf p}^2/(m_e c^2)}` and
-.. the emission angle :math:`\phi_e = \arctan(p_y/p_x)`, in the
-.. :math:`(x,y)`-plane, in between their (instantaneous) velocity and the
-.. :math:`x`-direction (normal to the target surface).
-.. Figure `[fig_angle] <#fig_angle>`__ reports the resulting electron
-.. distribution for the case :math:`n_0=200n_c` and :math:`a_0=30`,
-.. considering different angles of incidence:
-.. :math:`\theta_{\rm inc} = 28^{\circ}` for panel (a),
-.. :math:`\theta_{\rm inc} = 33^{\circ}` for panel (b),
-.. :math:`\theta_{\rm inc} = 34^{\circ}` for panel (c) and
-.. :math:`\theta_{\rm inc} = 38^{\circ}` for panel (d). In addition, panel
-.. (e) of Fig. `[fig_angle] <#fig_angle>`__ shows the energy distribution
-.. for electrons propagating along the surface (:math:`y`-direction), at an
-.. angle :math:`\phi` in between :math:`90^{\circ} \pm 3^{\circ}`. All
-.. values are reported at the end of the simulation, that is at time
-.. :math:`t=45\,\lambda_0/c` (:math:`=120f`\ s), but looking at the overall
-.. temporal evolution of the distribution function (not shown here)
-.. exhibits very little difference for times :math:`\sim 15\lambda_0/c`
-.. (:math:`\gtrsim 40f`\ s).
-
+.. _Exercise 12:
+**- Exercise 12:** Run three new simulations ( one for each target configuration ) assuming `aL=5`. Compare the transverse and longitudinal momentum of electrons at the instant of time `TSim`,
+assuming the three different configurations studied in this TP. Use the phase space of each case for comparison and explain the result you obtain. Before run the simulations, do not forget modify the observation range in the Diagnostics.
 
 
 Conclusion
@@ -731,10 +1112,17 @@ Conclusion
 In this pratical work, we have explored the laser-plasma coupling in the relativistic regime of interaction. 
 In particular, we have investigated conditions to improve laser-plasma energy transfer as well
 as to generate relativistic electrons through computational
-simulations using the SMILEI PIC code.
+simulations using the Smilei PIC code.
 
 
 
 References
 ^^^^^^^^^^
-.. [Siegman] `Anthony E. Siegman, Lasers, University Science Books, 1986.`
+
+.. [smilei] `J. Derouillat, A. Beck, F. Pérez, T. Vinci, M. Chiaramello, A. Grassi, M. Flé, G. Bouchard, I. Plotnikov, N. Aunai, J. Dargent, C. Riconda, and M. Grech, Smilei: A collaborative, open-source, multi-purpose particle-in-cell code for plasma simulation, Comput. Phys. Commun. 222, 351 (2018).`
+
+.. [Raynaud] `M. Raynaud, J. Kupersztych, C. Riconda, J. C. Adam, A.Heron,  Strongly enhanced laser absorption and electron acceleration via resonant excitation of surface plasma waves, Physics of Plasmas 14, 092702 (2007).``
+
+.. [Marini] `S. Marini, P. Kleij, F. Amiranoff, M. Grech, M. Raynaud, and C. Riconda, Key parameters for surface plasma wave excitation in the ultra-high intensity regime. Physics of Plasmas 28, 073104 (2021).`
+
+

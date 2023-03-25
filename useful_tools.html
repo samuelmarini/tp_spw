@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Useful Tools &#8212; TP-M2-GI_doc 1. documentation</title>
+    <title>Useful Tools &#8212; TP-SPW 1. documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/smilei_theme.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -106,13 +106,28 @@
                     <a href=""></a>
                 </li>
                 <li class="outer">
-                    <a href="handout.html#simulation-general-setup">0.5-Simulation general setup</a>
+                    <a href="handout.html#simulation-general-setup">0.5- Simulation general setup</a>
                 </li>
                 <li class="outer">
                     <a href="handout.html#simulation-input-namelist">0.6- Simulation input namelist</a>
                 </li>
                 <li class="outer">
+                    <a href="handout.html#laser-pulse">Laser Pulse</a>
+                </li>
+                <li class="outer">
                     <a href="handout.html#laser-pulse-propagating-in-vacuum">1.1- Laser pulse propagating in vacuum</a>
+                </li>
+                <li class="outer">
+                    <a href="handout.html#laser-plasma-interaction">Laser-plasma interaction</a>
+                </li>
+                <li class="outer">
+                    <a href="handout.html#laser-pulse-interacting-with-a-flat-target">2.1- Laser pulse interacting with a flat target</a>
+                </li>
+                <li class="outer">
+                    <a href="handout.html#laser-pulse-interacting-with-a-sinusoidal-target">2.2- Laser pulse interacting with a sinusoidal target</a>
+                </li>
+                <li class="outer">
+                    <a href="handout.html#laser-pulse-interacting-with-a-optimized-target">2.3- Laser pulse interacting with a optimized target</a>
                 </li>
                 <li class="outer">
                     <a href="handout.html#references">References</a>
@@ -282,13 +297,28 @@
                             <a href=""></a>
                         </li>
                         <li class="outer">
-                            <a href="handout.html#simulation-general-setup">0.5-Simulation general setup</a>
+                            <a href="handout.html#simulation-general-setup">0.5- Simulation general setup</a>
                         </li>
                         <li class="outer">
                             <a href="handout.html#simulation-input-namelist">0.6- Simulation input namelist</a>
                         </li>
                         <li class="outer">
+                            <a href="handout.html#laser-pulse">Laser Pulse</a>
+                        </li>
+                        <li class="outer">
                             <a href="handout.html#laser-pulse-propagating-in-vacuum">1.1- Laser pulse propagating in vacuum</a>
+                        </li>
+                        <li class="outer">
+                            <a href="handout.html#laser-plasma-interaction">Laser-plasma interaction</a>
+                        </li>
+                        <li class="outer">
+                            <a href="handout.html#laser-pulse-interacting-with-a-flat-target">2.1- Laser pulse interacting with a flat target</a>
+                        </li>
+                        <li class="outer">
+                            <a href="handout.html#laser-pulse-interacting-with-a-sinusoidal-target">2.2- Laser pulse interacting with a sinusoidal target</a>
+                        </li>
+                        <li class="outer">
+                            <a href="handout.html#laser-pulse-interacting-with-a-optimized-target">2.3- Laser pulse interacting with a optimized target</a>
                         </li>
                         <li class="outer">
                             <a href="handout.html#references">References</a>
@@ -393,11 +423,11 @@
 <section id="a-1-download-and-install-the-pic-code-smilei">
 <h2>A.1- Download and install the PIC code Smilei<a class="headerlink" href="#a-1-download-and-install-the-pic-code-smilei" title="Permalink to this heading">¶</a></h2>
 <p>Before you start your practical work,
-you must install the PIC code smile on your computer.
-To do this, go to the <cite>Smilei</cite> page <a class="reference external" href="https://smileipic.github.io/Smilei/Use/installation.html">https://smileipic.github.io/Smilei/Use/installation.html</a>, select your operating system
+you must install the PIC code Smile on your computer.
+To do this, go to the Smilei webpage <a class="reference external" href="https://smileipic.github.io/Smilei/Use/installation.html">https://smileipic.github.io/Smilei/Use/installation.html</a>, select your operating system
 and carefully follow all the instructions.
-If you have already installed the PIC code <cite>Smilei</cite>, skip this part.
-At the end of this step, you must have the files called <code class="docutils literal notranslate"><span class="pre">smilei</span></code> and <code class="docutils literal notranslate"><span class="pre">smilei_test</span></code> in the folder you intalled <cite>Smilei</cite>.</p>
+If you have already installed the PIC code Smilei, skip this part.
+At the end of this step, you must have the files called <code class="docutils literal notranslate"><span class="pre">smilei</span></code> and <code class="docutils literal notranslate"><span class="pre">smilei_test</span></code> in the folder you intalled Smilei.</p>
 <p>Besides install the PIC code <cite>Smilei</cite>, install postprocessing library <cite>happi</cite> and keep the location of your executable filles <cite>Smilei</cite> and <cite>happi</cite>
 in mind. (<cite>e.g.</cite>  <code class="docutils literal notranslate"><span class="pre">path/to/executable</span></code>)</p>
 </section>
@@ -419,7 +449,7 @@ in mind. (<cite>e.g.</cite>  <code class="docutils literal notranslate"><span cl
 remember which simulation it contains. In order to avoid overwriting data, it is recommended to create
 a new simulation folder for each simulation.</p>
 <ul class="simple">
-<li><p>Inside the simulation folder, create a link to the executables. The comand line to create a symbolic link to <cite>Smilei</cite> is</p></li>
+<li><p>Inside the simulation folder, create a symbolic link to the Smilei executables. The comand line to create a symbolic link to Smilei is</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln -s path/to/executable/smilei
 ln -s path/to/executable/smilei_test
@@ -428,8 +458,45 @@ ln -s path/to/executable/smilei_test
 <p>As antecipated <code class="docutils literal notranslate"><span class="pre">path/to/executable</span></code> is the path to your executable filles. So you need to insert the actual path where your files <code class="docutils literal notranslate"><span class="pre">smilei</span></code>
 and <code class="docutils literal notranslate"><span class="pre">smilei_test</span></code> are.</p>
 <ul class="simple">
-<li><p>Inside the simulation folder, you also need a file to submit your simulation job to the job scheduler, <cite>e.g.`</cite> <code class="docutils literal notranslate"><span class="pre">submission_script.sh</span></code>. Check this script and modify accoding.</p></li>
+<li><p>Inside the simulation folder, you also need a file to submit your simulation job to the job scheduler, <cite>e.g.`</cite> <code class="docutils literal notranslate"><span class="pre">submission_script.sh</span></code>.</p></li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">NP</span><span class="o">=</span><span class="nv">$1</span>  <span class="c1"># argument (nb of MPI processes)</span>
+<span class="nv">FTR</span><span class="o">=</span><span class="nv">$2</span> <span class="c1"># argument (file to read = .py file)</span>
+<span class="nv">DIAG</span><span class="o">=</span><span class="nv">$3</span> <span class="c1"># argument (put -d if you want the script to run python diags)</span>
+
+<span class="nv">PS</span><span class="o">=</span>/path/to/Smilei_Folder <span class="c1">#you must change this path according.</span>
+<span class="c1"># input/results/smilei(.exe) directories</span>
+<span class="nv">INPDIR</span><span class="o">=</span><span class="nv">$PS</span>/Input <span class="c1">#you must create the folders Input and Results before</span>
+<span class="nv">RESDIR</span><span class="o">=</span><span class="nv">$PS</span>/Results
+<span class="nv">SMIDIR</span><span class="o">=</span><span class="nv">$PS</span>/Smilei
+
+<span class="nv">DIAGDIR</span><span class="o">=</span><span class="nv">$PS</span>/Smilei/smilei-laser_from_file/scripts/TPUPMC <span class="c1"># script for the diagnostics</span>
+
+<span class="c1"># preparing the code</span>
+<span class="nv">START</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+rm -rf <span class="nv">$RESDIR</span>/<span class="nv">$FTR</span>
+mkdir -p <span class="nv">$RESDIR</span>/<span class="nv">$FTR</span>
+cp <span class="nv">$INPDIR</span>/<span class="nv">$FTR</span>.py <span class="nv">$RESDIR</span>/<span class="nv">$FTR</span>
+<span class="nb">cd</span> <span class="nv">$RESDIR</span>/<span class="nv">$FTR</span>
+<span class="nb">pwd</span>
+
+<span class="c1"># running the code</span>
+<span class="nv">DYLD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$HDF5_ROOT_DIR</span>/lib mpirun -np <span class="nv">$NP</span> <span class="nv">$SMIDIR</span>/smilei <span class="nv">$FTR</span>.py
+<span class="c1">#mpirun -np $NP $SMIDIR/Smilei $FTR.py</span>
+
+<span class="nb">cd</span> <span class="nv">$START</span>
+<span class="c1"># running the diagnostics</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$DIAG</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;-d&quot;</span> <span class="o">]</span>
+   <span class="k">then</span>
+      <span class="nv">$DIAGDIR</span>/SmileiQt.py <span class="nv">$RESDIR</span>/<span class="nv">$FTR</span>
+<span class="k">elif</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$DIAG</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;-davg&quot;</span> <span class="o">]</span>
+   <span class="k">then</span>
+      <span class="nv">$DIAGDIR</span>/SmileiQt_avg.py <span class="nv">$RESDIR</span>/<span class="nv">$FTR</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>Check the script <code class="docutils literal notranslate"><span class="pre">submission_script.sh</span></code> above and modify accoding.</p>
 <p>Finally, you need your input file with instructrions for <cite>Smilei</cite>. In this pratical work, we will call it <code class="docutils literal notranslate"><span class="pre">InputNamelist.py</span></code>. All instructions to run a simulation on SPW is in this fille.</p>
 </section>
 <section id="a-3-run-your-simulation">
@@ -445,7 +512,7 @@ and <code class="docutils literal notranslate"><span class="pre">smilei_test</sp
 <li><p>Now you check your namelist does not contain syntax errors, use the <code class="docutils literal notranslate"><span class="pre">smilei_test</span></code> executable on the namelist (you will need to load the same libraries used for the code compilation): <code class="docutils literal notranslate"><span class="pre">./smilei_test</span> <span class="pre">InputNamelist.py</span></code>. If you see the line <code class="docutils literal notranslate"><span class="pre">END</span> <span class="pre">TEST</span> <span class="pre">MODE</span></code>, the namelist does not contain syntax errors and can be run.</p></li>
 <li><p>Launch your simulation job:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch submission_script.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run_new.sh <span class="m">2</span> InputNamelist
 </pre></div>
 </div>
 </section>
@@ -641,7 +708,7 @@ another language, you can write this array on a text file using:</p>
       <a href="site.html">Site index</a>
       </div>
       <div>
-        Last updated on Mar 19, 2023
+        Last updated on Mar 25, 2023
       </div>
       
       <div>

@@ -10,11 +10,11 @@ A.1- Download and install the PIC code Smilei
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Before you start your practical work,
-you must install the PIC code smile on your computer. 
-To do this, go to the `Smilei` page https://smileipic.github.io/Smilei/Use/installation.html, select your operating system 
+you must install the PIC code Smile on your computer. 
+To do this, go to the Smilei webpage https://smileipic.github.io/Smilei/Use/installation.html, select your operating system 
 and carefully follow all the instructions. 
-If you have already installed the PIC code `Smilei`, skip this part.
-At the end of this step, you must have the files called ``smilei`` and ``smilei_test`` in the folder you intalled `Smilei`.
+If you have already installed the PIC code Smilei, skip this part.
+At the end of this step, you must have the files called ``smilei`` and ``smilei_test`` in the folder you intalled Smilei.
 
 Besides install the PIC code `Smilei`, install postprocessing library `happi` and keep the location of your executable filles `Smilei` and `happi`
 in mind. (`e.g.`  ``path/to/executable``)
@@ -41,7 +41,7 @@ Each time you do it, choose a convenient name of the folder to
 remember which simulation it contains. In order to avoid overwriting data, it is recommended to create 
 a new simulation folder for each simulation.
 
-- Inside the simulation folder, create a link to the executables. The comand line to create a symbolic link to `Smilei` is
+- Inside the simulation folder, create a symbolic link to the Smilei executables. The comand line to create a symbolic link to Smilei is
 .. code-block:: bash
 
     ln -s path/to/executable/smilei
@@ -51,7 +51,50 @@ As antecipated ``path/to/executable`` is the path to your executable filles. So 
 and ``smilei_test`` are.
 
 
-- Inside the simulation folder, you also need a file to submit your simulation job to the job scheduler, `e.g.`` ``submission_script.sh``. Check this script and modify accoding.
+- Inside the simulation folder, you also need a file to submit your simulation job to the job scheduler, `e.g.`` ``submission_script.sh``.
+.. code-block:: bash
+   
+   #!/bin/bash
+   NP=$1  # argument (nb of MPI processes)
+   FTR=$2 # argument (file to read = .py file)
+   DIAG=$3 # argument (put -d if you want the script to run python diags) 
+
+   PS=/path/to/Smilei_Folder #you must change this path according.
+   # input/results/smilei(.exe) directories
+   INPDIR=$PS/Input #you must create the folders Input and Results before
+   RESDIR=$PS/Results
+   SMIDIR=$PS/Smilei
+
+   DIAGDIR=$PS/Smilei/smilei-laser_from_file/scripts/TPUPMC # script for the diagnostics
+
+   # preparing the code
+   START=`pwd`
+   rm -rf $RESDIR/$FTR
+   mkdir -p $RESDIR/$FTR
+   cp $INPDIR/$FTR.py $RESDIR/$FTR
+   cd $RESDIR/$FTR
+   pwd
+
+   # running the code
+   DYLD_LIBRARY_PATH=$HDF5_ROOT_DIR/lib mpirun -np $NP $SMIDIR/smilei $FTR.py
+   #mpirun -np $NP $SMIDIR/Smilei $FTR.py
+
+   cd $START
+   # running the diagnostics
+   if [ "$DIAG" == "-d" ]
+      then
+         $DIAGDIR/SmileiQt.py $RESDIR/$FTR
+   elif [ "$DIAG" == "-davg" ]
+      then
+         $DIAGDIR/SmileiQt_avg.py $RESDIR/$FTR		
+   fi
+
+Check the script ``submission_script.sh`` above and modify accoding.
+
+
+
+
+
 Finally, you need your input file with instructrions for `Smilei`. In this pratical work, we will call it ``InputNamelist.py``. All instructions to run a simulation on SPW is in this fille.
 
 A.3- Run your simulation
@@ -70,7 +113,7 @@ in your prompt. In this present case, you must have the symbolic links ``smilei`
 
 .. code-block:: bash
    
-    sbatch submission_script.sh
+    ./run_new.sh 2 InputNamelist
 
 
 

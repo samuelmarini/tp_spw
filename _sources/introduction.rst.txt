@@ -15,12 +15,12 @@ The particle-in-cell (PIC) method is a powerful computational tool for
 studying plasma physics, allowing scientists to validate theoretical
 predictions and understand experimental results. Its importance has
 increased significantly in recent years, due to advancements in
-computational systems and algorithm optimization. Therefore,
-with the aim of understanding PIC computational algorithms, in this  practical work we will investigate the
-excitation of a surface plasma wave (SPW) using the PIC code SMILEI.
+computational systems and algorithm optimization. In this  practical work,
+with the aim of understanding PIC computational algorithms, we will investigate the
+excitation of a surface plasma wave (SPW) using the PIC code Smilei.
 
 Surface plasma waves are electromagnetic waves confined at the interface
-of two media with opposite permittivity, `e.g.`` the vacuum-plasma
+of two media with opposite permittivity, `e.g.` the vacuum-plasma
 interface. These waves are excited when an electromagnetic wave like a
 laser pulse is irradiated onto an overdense plasma target containing a corrugated
 surface, known as gratings. When the laser pulse is directed onto the
@@ -47,12 +47,12 @@ pulse, adding and understanding the plasma target, and generating
 diagnostics that allow for the identification of the physical phenomena
 we are interested in.
 
-On the outils tab, you will find everything you need to know to prepare
+On the Useful Tools tab, you will find everything you need to know to prepare
 your computer to run the computational simulations with the Smilei PIC
 code. There you will also find some useful commands and scripts for
-Diagnostics generation on SPW. On the exercise tab, you will find the
+Diagnostics generation on SPW. On the Handout tab, you will find the
 exercises developed for this TP so you can understand plasma waves as
 well as you can understand PIC algorithms to use in your future
 projects.
 
-Now, let us get to the practical work!
+Get ready!

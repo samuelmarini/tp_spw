@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Handout &#8212; TP-M2-GI_doc 1. documentation</title>
+    <title>Handout &#8212; TP-SPW 1. documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/smilei_theme.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -103,16 +103,19 @@
                     <a href="#simulation-virtual-workspace">0.4- Simulation virtual workspace</a>
                 </li>
                 <li class="outer">
-                    <a href=""></a>
-                </li>
-                <li class="outer">
-                    <a href="#simulation-general-setup">0.5-Simulation general setup</a>
+                    <a href="#simulation-general-setup">0.5- Simulation general setup</a>
                 </li>
                 <li class="outer">
                     <a href="#simulation-input-namelist">0.6- Simulation input namelist</a>
                 </li>
                 <li class="outer">
+                    <a href="#laser-pulse">Laser Pulse</a>
+                </li>
+                <li class="outer">
                     <a href="#laser-pulse-propagating-in-vacuum">1.1- Laser pulse propagating in vacuum</a>
+                </li>
+                <li class="outer">
+                    <a href="#laser-plasma-interaction">Laser-plasma interaction</a>
                 </li>
                 <li class="outer">
                     <a href="#laser-pulse-interacting-with-a-flat-target">2.1- Laser pulse interacting with a flat target</a>
@@ -145,10 +148,12 @@
 <li><a class="reference internal" href="#introduction-to-surface-plasma-waves">0.1- Introduction to Surface Plasma Waves</a></li>
 <li><a class="reference internal" href="#surface-plasma-waves-dispersion-relation">0.2- Surface Plasma Waves dispersion relation</a></li>
 <li><a class="reference internal" href="#physical-units-normalization">0.3- Physical units normalization</a></li>
-<li><a class="reference internal" href="#simulation-virtual-workspace">0.4- Simulation virtual workspace;</a></li>
-<li><a class="reference internal" href="#simulation-general-setup">0.5-Simulation general setup</a></li>
+<li><a class="reference internal" href="#simulation-virtual-workspace">0.4- Simulation virtual workspace</a></li>
+<li><a class="reference internal" href="#simulation-general-setup">0.5- Simulation general setup</a></li>
 <li><a class="reference internal" href="#simulation-input-namelist">0.6- Simulation input namelist</a></li>
+<li><a class="reference internal" href="#laser-pulse">Laser Pulse</a></li>
 <li><a class="reference internal" href="#laser-pulse-propagating-in-vacuum">1.1- Laser pulse propagating in vacuum</a></li>
+<li><a class="reference internal" href="#laser-plasma-interaction">Laser-plasma interaction</a></li>
 <li><a class="reference internal" href="#laser-pulse-interacting-with-a-flat-target">2.1- Laser pulse interacting with a flat target</a></li>
 <li><a class="reference internal" href="#laser-pulse-interacting-with-a-sinusoidal-target">2.2- Laser pulse interacting with a sinusoidal target</a></li>
 <li><a class="reference internal" href="#laser-pulse-interacting-with-a-optimized-target">2.3- Laser pulse interacting with a optimized target</a><ul>
@@ -289,16 +294,19 @@
                             <a href="#simulation-virtual-workspace">0.4- Simulation virtual workspace</a>
                         </li>
                         <li class="outer">
-                            <a href=""></a>
-                        </li>
-                        <li class="outer">
-                            <a href="#simulation-general-setup">0.5-Simulation general setup</a>
+                            <a href="#simulation-general-setup">0.5- Simulation general setup</a>
                         </li>
                         <li class="outer">
                             <a href="#simulation-input-namelist">0.6- Simulation input namelist</a>
                         </li>
                         <li class="outer">
+                            <a href="#laser-pulse">Laser Pulse</a>
+                        </li>
+                        <li class="outer">
                             <a href="#laser-pulse-propagating-in-vacuum">1.1- Laser pulse propagating in vacuum</a>
+                        </li>
+                        <li class="outer">
+                            <a href="#laser-plasma-interaction">Laser-plasma interaction</a>
                         </li>
                         <li class="outer">
                             <a href="#laser-pulse-interacting-with-a-flat-target">2.1- Laser pulse interacting with a flat target</a>
@@ -524,7 +532,7 @@ to twice the wavelength of the laser, <span class="math notranslate nohighlight"
 <section id="physical-units-normalization">
 <h2>0.3- Physical units normalization<a class="headerlink" href="#physical-units-normalization" title="Permalink to this heading">¶</a></h2>
 <hr class="docutils" />
-<p>In this practical work, all input and output quantities are in normalized units (also called code units) since such a
+<p>In the PIC code Smilei (and also in most PIC codes) all input and output quantities are in normalized units (also called code units) since such a
 system of units facilitates computational calculations. It is crucial to learn how to work
 with this kind of unit since it is widely used in computer simulations.
 You can perform conversions from normalized units to SI quantities, following <a class="reference internal" href="#table1"><span class="std std-ref">Table. 1</span></a>:</p>
@@ -591,25 +599,25 @@ This choice implies that a unit of length is <span class="math notranslate nohig
 but this is not covered in this practical work. Instead, <a class="reference external" href="https://smileipic.github.io/tutorials/basics_units.html">see tutorials, basic units</a> for more information.</p>
 <p><strong>- Exercise 3:</strong>
 Assuming <span class="math notranslate nohighlight">\(\lambda_0=0.8\mu m\)</span> (a typical Ti:Sa laser system),
-<em>i)</em> what is the value of the critical density? <em>ii)</em> What is the value of the normalizing
+<em>i)</em> what is the value of the critical density <span class="math notranslate nohighlight">\(n_c=\)</span>? <em>ii)</em> What is the value of the normalizing
 electric field <span class="math notranslate nohighlight">\(E_0=m_e \omega_r c /e\)</span>?
 This choice of <span class="math notranslate nohighlight">\(\lambda_0\)</span> shall be utilized throughout <em>all</em> subsequent exercises.</p>
 </section>
 <section id="simulation-virtual-workspace">
-<h2>0.4- Simulation virtual workspace;<a class="headerlink" href="#simulation-virtual-workspace" title="Permalink to this heading">¶</a></h2>
+<h2>0.4- Simulation virtual workspace<a class="headerlink" href="#simulation-virtual-workspace" title="Permalink to this heading">¶</a></h2>
 <hr class="docutils" />
 <p>Before run the simulations, it is necessary to prepare the interface and the computing environment.
-To do so, follow the guidelines provided in the <a class="reference internal" href="useful_tools.html#usefultools"><span class="std std-ref">UsefulTools</span></a>. This includes install Smilei PIC code,
+To do so, follow the guidelines provided in the <cite>UsefulTools</cite>. This includes install Smilei PIC code,
 compiling the code, creating simulation folders.
 It is advisable to create a folder for each simulation to avoid data loss.
 Within each folder, copy the <code class="docutils literal notranslate"><span class="pre">InputNamelist.py</span></code> file you with write and create the symbolic links to Smilei executable files (<code class="docutils literal notranslate"><span class="pre">smilei</span></code> and <code class="docutils literal notranslate"><span class="pre">smilei_test</span></code>).
 You can check for errors in your input file by using the command <code class="docutils literal notranslate"><span class="pre">./smilei_test</span> <span class="pre">InputNamelist.py</span></code>.
 If everything goes well, the word &quot;END&quot; should appear on your screen (it might be interesting to test after changes in the namelist).
 Then, launch your simulation using the <code class="docutils literal notranslate"><span class="pre">submission_script.sh</span></code>. It would take some minutes in your computer. After run your first simulation,
-compile the <code class="docutils literal notranslate"><span class="pre">happi</span></code> library for post-processing and data analysis.</p>
+compile the <code class="docutils literal notranslate"><span class="pre">happi</span></code> library for post-processing and data analysis, if you have not done.</p>
 </section>
 <section id="simulation-general-setup">
-<h2>0.5-Simulation general setup<a class="headerlink" href="#simulation-general-setup" title="Permalink to this heading">¶</a></h2>
+<h2>0.5- Simulation general setup<a class="headerlink" href="#simulation-general-setup" title="Permalink to this heading">¶</a></h2>
 <hr class="docutils" />
 <p>To put the simple model presented in previous sections to the test, we
 will performed a series of 2D3V PIC simulations with the open-source
@@ -622,23 +630,17 @@ used in the <span class="math notranslate nohighlight">\(x\)</span> direction fo
 reflected at the <span class="math notranslate nohighlight">\(x_{\rm min}\)</span> border of the simulation domain
 (even though we have ensured that no particle reaches this border) or
 thermalized at the <span class="math notranslate nohighlight">\(x_{\rm max}\)</span> border.</p>
-<div class="float docutils container" id="simulation-box">
-<div class="center docutils container">
-<p><a href="#id2"><span class="problematic" id="id3">|image1|</span></a></p>
-</div>
-</div>
 <p>The driven laser pulse will be represented by a P-polarized Gaussian pulse
 with angular frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>, correspondingly wavelength
 <span class="math notranslate nohighlight">\(\lambda_0 = 2\pi c/\omega_0=0.8\mu\)</span>m, waist equal to
-<span class="math notranslate nohighlight">\(5\lambda_0\)</span> (<span class="math notranslate nohighlight">\(=4\mu\)</span>m) and pulse duration equal to
-<span class="math notranslate nohighlight">\(\tau_L=10\lambda_0/c\)</span> (<span class="math notranslate nohighlight">\(\simeq27f\)</span>s) FHWM. In the Fig.1,
-the laser pulse impinges over the plasma interface, through an angle
+<span class="math notranslate nohighlight">\(6\lambda_0\)</span> (<span class="math notranslate nohighlight">\(=4.8\mu\)</span>m) and pulse duration equal to
+<span class="math notranslate nohighlight">\(\tau_L=10\lambda_0/c\)</span> (<span class="math notranslate nohighlight">\(\simeq27f\)</span>s) FHWM. The laser pulse impinges over the plasma interface, through an angle
 <span class="math notranslate nohighlight">\(\theta_ {inc}\)</span> in relation to the normal surface. As discussed,
 depending on the laser and plasma characteristics, as well as the
 grooves etched on the target interface, both the SPW may be excited, and
 electrons may be accelerated.</p>
 <p>This laser impinges onto a plasma target of constant density
-<span class="math notranslate nohighlight">\(n_0\)</span> with with three different interfaces plasma-vacuum interfaces (the three cases that we are going to analyze in this TP)
+<span class="math notranslate nohighlight">\(n_0\)</span> with three different interfaces plasma-vacuum interfaces (the three cases that we are going to analyze in this TP)
 (i) The first simply consists of a continuous interface located at <span class="math notranslate nohighlight">\(x=0\)</span>.
 This will be our reference case, to compare with the results observed when grattings are present. (ii)
 The second interface to be analyzed consists of a sinusoidal modulation present on the entire surface.
@@ -655,32 +657,36 @@ immobile ions.</p>
 (<span class="math notranslate nohighlight">\(=12\mu\)</span>m) in the <span class="math notranslate nohighlight">\(x\)</span>-direction (roughly
 <span class="math notranslate nohighlight">\(9.6\lambda_0\)</span> (<span class="math notranslate nohighlight">\(=12.8\mu\)</span>m) of vacuum and
 <span class="math notranslate nohighlight">\(3\lambda_0\)</span> (<span class="math notranslate nohighlight">\(=2.4\mu\)</span>m) of plasma), and
-<span class="math notranslate nohighlight">\(64\lambda_0\)</span> (<span class="math notranslate nohighlight">\(=51.2\mu\)</span>m) in the <span class="math notranslate nohighlight">\(y\)</span>-direction.
+<span class="math notranslate nohighlight">\(72\lambda_0\)</span> (<span class="math notranslate nohighlight">\(=57.6\mu\)</span>m) in the <span class="math notranslate nohighlight">\(y\)</span>-direction.
 The spatial resolution was set to
 <span class="math notranslate nohighlight">\(\Delta x = \Delta y = \lambda_0/64\)</span> (<span class="math notranslate nohighlight">\(=0.00625\mu\)</span>m).
 Analogously to previous case, the simulation timestep is chosen to be
 <span class="math notranslate nohighlight">\(\Delta t = 0.95~\Delta x/\sqrt{2}\)</span> that corresponds to the Courant-Friedrich-Lewy (CFL) condition. Every cells contains
-initially <span class="math notranslate nohighlight">\(16\)</span> randomly distributed particles of each species.</p>
+initially <span class="math notranslate nohighlight">\(8\)</span> randomly distributed particles of each species.</p>
 </section>
 <section id="simulation-input-namelist">
 <h2>0.6- Simulation input namelist<a class="headerlink" href="#simulation-input-namelist" title="Permalink to this heading">¶</a></h2>
 <hr class="docutils" />
 <p>To reproduce the physical experiment just described, we need
 write a script (here called input namelist file) to be interpreted by the PIC code Smilei.
-The complet script with all the instructions can be found at <code class="docutils literal notranslate"><span class="pre">InputNamelist.py</span></code>,
-however, we are going to build it here, step by step.</p>
-<p>You can check the full <code class="docutils literal notranslate"><span class="pre">InputNamelist.py</span></code> file with a text editor, <em>e.g.,</em> <code class="docutils literal notranslate"><span class="pre">nano</span></code>, <code class="docutils literal notranslate"><span class="pre">gedit</span></code> or <code class="docutils literal notranslate"><span class="pre">vim</span></code> or with another editor
-of your choice (our recomendation is use <code class="docutils literal notranslate"><span class="pre">nano</span></code>).</p>
+The complet <code class="docutils literal notranslate"><span class="pre">InputNamelist.py</span></code> script with all the instructions can be found at the end of this Handout,
+however, we are going to build it, step-by-step.</p>
+<p>To write the <code class="docutils literal notranslate"><span class="pre">InputNamelist.py</span></code> file, you can use any text editor, <em>e.g.,</em> <code class="docutils literal notranslate"><span class="pre">nano</span></code>, <code class="docutils literal notranslate"><span class="pre">gedit</span></code> or <code class="docutils literal notranslate"><span class="pre">vim</span></code>, still, our recomendation is use <code class="docutils literal notranslate"><span class="pre">nano</span></code>.
+Ok, let us start it, but before...</p>
 <p id="exercise4"><strong>- Exercise 4:</strong> The script we want to build considering all proposals above, <em>i)</em> What are the trasnversal size <code class="docutils literal notranslate"><span class="pre">Lx</span></code> and the longitudinal size <code class="docutils literal notranslate"><span class="pre">Ly</span></code> (Longitudinal with reference to the SPW wave we want to excite)
-of the simulation box? <em>ii)</em> How many cells are in the simulation box?</p>
+of the simulation box? <em>ii)</em> How many cells there are in the simulation box?</p>
+</section>
+<section id="laser-pulse">
+<h2>Laser Pulse<a class="headerlink" href="#laser-pulse" title="Permalink to this heading">¶</a></h2>
 </section>
 <section id="laser-pulse-propagating-in-vacuum">
 <h2>1.1- Laser pulse propagating in vacuum<a class="headerlink" href="#laser-pulse-propagating-in-vacuum" title="Permalink to this heading">¶</a></h2>
 <hr class="docutils" />
 <p>As antecipated, as a starting point in this practical work we will simulating a laser propagating through vacuum.
 To accomplish this, we will begin by defining a simulation box and including the necessary requirements for a Smilei code.
-We will be using the program provided below as a starting point for our simulation.
-It is important to carefully review the code and its implementation of box conditions, as it will serve as the foundation for next simulation.</p>
+We will be using the script provided below as a starting point for our simulation.
+It is important to carefully review the code and its implementation of box conditions, as it will serve as the foundation for next simulation
+and your future works.</p>
 <p>This is the InputNamelist.py:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -689,10 +695,8 @@ It is important to carefully review the code and its implementation of box condi
 <span class="n">l0</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>      <span class="c1"># laser wavelength [in code units]</span>
 
 <span class="c1">### SIMULATION BOX</span>
-<span class="n">Lx</span>   <span class="o">=</span> <span class="mf">18.</span><span class="o">*</span><span class="n">l0</span>       <span class="c1">#simulation box size Lx</span>
-<span class="n">Ly</span>   <span class="o">=</span> <span class="mf">64.</span><span class="o">*</span><span class="n">l0</span>       <span class="c1">#simulation box size Ly</span>
-
-<span class="n">Tsim</span> <span class="o">=</span> <span class="mf">32.</span><span class="o">*</span><span class="n">t0</span>       <span class="c1">#number the cycles the simulation will run</span>
+<span class="n">Lx</span>   <span class="o">=</span> <span class="mf">15.</span><span class="o">*</span><span class="n">l0</span>       <span class="c1">#simulation box size Lx</span>
+<span class="n">Ly</span>   <span class="o">=</span> <span class="mf">72.</span><span class="o">*</span><span class="n">l0</span>       <span class="c1">#simulation box size Ly</span>
 
 <span class="c1">#### RESOLUTION</span>
 <span class="n">res</span>  <span class="o">=</span> <span class="mi">64</span>           <span class="c1">#number of divisions each wavelenght</span>
@@ -700,6 +704,8 @@ It is important to carefully review the code and its implementation of box condi
 <span class="n">dx</span>   <span class="o">=</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">l0</span><span class="o">/</span><span class="n">res</span>  <span class="c1">#dx,dy cell size</span>
 <span class="n">dt</span>   <span class="o">=</span> <span class="mf">0.95</span> <span class="o">*</span> <span class="n">dx</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span> <span class="c1">#time increment</span>
 
+
+<span class="n">Tsim</span> <span class="o">=</span> <span class="mf">30.</span><span class="o">*</span><span class="n">t0</span>       <span class="c1">#number the cycles the simulation will run</span>
 
 <span class="c1">###############################################################################</span>
 <span class="c1">####################### MAIN CODE #############################################</span>
@@ -726,7 +732,7 @@ It is important to carefully review the code and its implementation of box condi
 
 <span class="c1">### LASER PROPERTIES</span>
 <span class="n">aL</span><span class="o">=</span><span class="mf">0.1</span>                          <span class="c1">#normalized laser amplitude a0=0.86 sqrt(I/10^18)</span>
-<span class="n">theta_deg</span> <span class="o">=</span> <span class="mf">30.</span>                 <span class="c1">#angle of incidence in degrees ArcSin[Sqrt[(n/gammal - 1)/(n/gammal - 2)] - 1 l/d]*180/Pi- -25.87?</span>
+<span class="n">theta_deg</span> <span class="o">=</span> <span class="mf">30.</span>                 <span class="c1">#angle of incidence in degrees ArcSin[Sqrt[(n/gammal - 1)/(n/gammal - 2)] - 1 l/d]*180/Pi?</span>
 <span class="n">theta</span>  <span class="o">=</span> <span class="n">theta_deg</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span>   <span class="c1">#angle of incidence in rads</span>
 
 <span class="n">waist</span>  <span class="o">=</span>  <span class="mf">6.</span><span class="o">*</span><span class="n">l0</span>     <span class="c1"># laser waist</span>
@@ -760,109 +766,453 @@ It is important to carefully review the code and its implementation of box condi
 For this we can use the commands below.
 Specifically, you can either create a python script and include all the commands simultaneously,
 either you can open the python interface and type each of the lines (recommended for simple figures).
-The script bellow is to observe the <cite>Bz</cite> field</p>
+Inside the result folder (<cite>i.e.`</cite> sim1), use the script bellow to observe the <cite>Bz</cite> field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">happi</span>
-<span class="n">S</span><span class="o">=</span><span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;/Users/samuelmarini/Samuel/Smilei/Results/spw_laser_01&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Bz&quot;</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">[</span><span class="n">tcycle</span><span class="p">])</span><span class="o">.</span><span class="n">slide</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">S</span><span class="o">=</span><span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Bz&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">slide</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Using comand <cite>.plot()</cite> you can plot the field in a given instan of time, for example, to check the instant
+<p>Using comand <cite>.plot()</cite> you can plot the field in a given instant of time, for example, to check the instant
 of time <span class="math notranslate nohighlight">\(t=10\tau_0\)</span>, we can use the following script</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">happi</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">S</span><span class="o">=</span><span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;/Users/samuelmarini/Samuel/Smilei/Results/spw_laser_01&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">timesteps</span><span class="o">=</span><span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Ey&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getTimesteps</span><span class="p">()</span>
+<span class="n">S</span><span class="o">=</span><span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">timesteps</span><span class="o">=</span><span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Bz&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getTimesteps</span><span class="p">()</span>
 <span class="n">tcycle</span><span class="o">=</span><span class="mi">10</span> <span class="c1">#this corresponds to the time the laser oscilated 10 times.</span>
-<span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Bz&quot;</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">[</span><span class="n">tcycle</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Bz&quot;</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">[</span><span class="n">tcycle</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">saveAs</span><span class="o">=</span><span class="s2">&quot;Bz_t=10.png&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p id="exercise5"><strong>- Exercise 5:</strong> Modify the script above to plot the electric field <cite>Ey</cite> at the instant <cite>Tsim</cite>, used in the Smile script.
-What is the amplitude of this electric field? In which units?</p>
+<p id="exercise5"><strong>- Exercise 5:</strong> What are the trasnversal size <code class="docutils literal notranslate"><span class="pre">Lx</span></code> and the longitudinal size <code class="docutils literal notranslate"><span class="pre">Ly</span></code> obsereved in the Figure? Is it consistent with our script? Explain.</p>
+<p id="exercise6"><strong>- Exercise 6:</strong> Modify the script above to plot the electric field <cite>Ey</cite> at the instant <cite>Tsim</cite>, used in the Smile script.
+What is the maximum amplitude of the <cite>Ey</cite> electric field? In which units?</p>
+</section>
+<section id="laser-plasma-interaction">
+<h2>Laser-plasma interaction<a class="headerlink" href="#laser-plasma-interaction" title="Permalink to this heading">¶</a></h2>
 </section>
 <section id="laser-pulse-interacting-with-a-flat-target">
 <h2>2.1- Laser pulse interacting with a flat target<a class="headerlink" href="#laser-pulse-interacting-with-a-flat-target" title="Permalink to this heading">¶</a></h2>
-</section>
 <hr class="docutils" />
+<p>Now we have seen that our simulation is working correctly, it means the
+laser propagate correctly inside the simulation box, we are then ready to add the plasma target.
+As our first approach, we are going to assume that the plasma interface is flat.
+In the Smilei code, we can define the plasma function using a python function, as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>def density_profile<span class="o">(</span>x,y<span class="o">)</span>:
+    <span class="k">if</span><span class="o">(</span>x&gt;Xsurface<span class="o">)</span>:
+        <span class="k">return</span> n0
+    <span class="k">else</span>:
+        <span class="k">return</span> <span class="m">0</span>.
+</pre></div>
+</div>
+<p>Equally, we have to define the species that compose the
+plasma. In this practical work, we will assume the plasma is an ionized gas composed of free electrons and ions,
+with temperature going to zero. We define the species that make up the plasma as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Species<span class="o">(</span>
+    <span class="nv">name</span> <span class="o">=</span> <span class="s2">&quot;ion&quot;</span>,
+    <span class="nv">position_initialization</span> <span class="o">=</span> <span class="s2">&quot;random&quot;</span>,
+    <span class="nv">momentum_initialization</span> <span class="o">=</span> <span class="s2">&quot;cold&quot;</span>,
+    <span class="nv">particles_per_cell</span> <span class="o">=</span> nppc,
+    <span class="nv">mass</span> <span class="o">=</span> <span class="m">1836</span>.,
+    <span class="nv">charge</span> <span class="o">=</span> <span class="m">1</span>.,
+    <span class="nv">number_density</span> <span class="o">=</span> density_profile,
+    <span class="nv">boundary_conditions</span> <span class="o">=</span> <span class="o">[[</span><span class="s2">&quot;remove&quot;</span>,<span class="s2">&quot;thermalize&quot;</span><span class="o">]</span>,<span class="o">[</span><span class="s2">&quot;periodic&quot;</span><span class="o">]]</span>,
+    <span class="nv">thermal_boundary_temperature</span> <span class="o">=</span> <span class="o">[</span>T0<span class="o">]</span>,
+    <span class="nv">time_frozen</span> <span class="o">=</span> <span class="m">0</span>.0
+  <span class="o">)</span>
+
+Species<span class="o">(</span>
+    <span class="nv">name</span> <span class="o">=</span> <span class="s2">&quot;eon&quot;</span>,
+    <span class="nv">position_initialization</span> <span class="o">=</span> <span class="s2">&quot;ion&quot;</span>,
+    <span class="nv">momentum_initialization</span> <span class="o">=</span> <span class="s2">&quot;mj&quot;</span>,
+    <span class="nv">particles_per_cell</span> <span class="o">=</span> nppc,
+    <span class="nv">mass</span> <span class="o">=</span> <span class="m">1</span>.,
+    <span class="nv">charge</span> <span class="o">=</span> -1.,
+    <span class="nv">number_density</span> <span class="o">=</span> density_profile,
+    <span class="nv">temperature</span> <span class="o">=</span> <span class="o">[</span>T0<span class="o">]</span>,
+    <span class="nv">boundary_conditions</span> <span class="o">=</span> <span class="o">[[</span><span class="s2">&quot;remove&quot;</span>,<span class="s2">&quot;thermalize&quot;</span><span class="o">]</span>,<span class="o">[</span><span class="s2">&quot;periodic&quot;</span><span class="o">]]</span>,
+    <span class="nv">thermal_boundary_temperature</span> <span class="o">=</span> <span class="o">[</span>T0<span class="o">]</span>,
+    <span class="nv">time_frozen</span> <span class="o">=</span> <span class="m">0</span>.0
+  <span class="o">)</span>
+</pre></div>
+</div>
+<p>Before running this script, we are also going to change to over the plasma surface, the laser focal position, <cite>xfoc</cite> and add a diagnostic
+to measure the electrons phase space.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>DiagParticleBinning<span class="o">(</span>
+    <span class="nv">deposited_quantity</span> <span class="o">=</span> <span class="s2">&quot;weight&quot;</span>,
+    <span class="nv">every</span> <span class="o">=</span> <span class="o">[</span><span class="m">0</span>, Period<span class="o">]</span>,
+    <span class="nv">time_average</span> <span class="o">=</span> <span class="m">1</span>,
+    <span class="nv">species</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;eon&quot;</span><span class="o">]</span>,
+    <span class="nv">axes</span> <span class="o">=</span> <span class="o">[</span>
+        <span class="o">[</span><span class="s2">&quot;y&quot;</span>, <span class="m">0</span>, Ly, <span class="m">400</span><span class="o">]</span>,
+        <span class="o">[</span><span class="s2">&quot;py&quot;</span>,-0.3,0.3, <span class="m">120</span><span class="o">]</span>
+    <span class="o">]</span>
+<span class="o">)</span>
+</pre></div>
+</div>
+<p>Following the steps described, we arrive at the following script to describe the interaction of the laser with a flat surface plasma:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import numpy as np
+
+<span class="c1">### NORMALIZATIONS</span>
+<span class="nv">t0</span> <span class="o">=</span> <span class="m">2</span>.0*np.pi      <span class="c1"># optical cycle [in code units]</span>
+<span class="nv">l0</span> <span class="o">=</span> <span class="m">2</span>.0*np.pi      <span class="c1"># laser wavelength [in code units]</span>
+
+<span class="c1">### SIMULATION BOX</span>
+<span class="nv">Lx</span>   <span class="o">=</span> <span class="m">15</span>.*l0       <span class="c1">#simulation box size Lx</span>
+<span class="nv">Ly</span>   <span class="o">=</span> <span class="m">72</span>.*l0       <span class="c1">#simulation box size Ly</span>
+
+<span class="c1">#### RESOLUTION</span>
+<span class="nv">res</span>  <span class="o">=</span> <span class="m">64</span>           <span class="c1">#number of divisions each wavelenght</span>
+
+<span class="nv">dx</span>   <span class="o">=</span> <span class="nv">dy</span> <span class="o">=</span> l0/res  <span class="c1">#dx,dy cell size</span>
+<span class="nv">dt</span>   <span class="o">=</span> <span class="m">0</span>.95 * dx/np.sqrt<span class="o">(</span><span class="m">2</span>.<span class="o">)</span> <span class="c1">#time increment</span>
+
+
+<span class="nv">Tsim</span> <span class="o">=</span> <span class="m">72</span>.*t0       <span class="c1">#number the cycles the simulation will run</span>
+
+<span class="c1">###############################################################################</span>
+<span class="c1">####################### MAIN CODE #############################################</span>
+
+Main<span class="o">(</span>
+    <span class="nv">geometry</span> <span class="o">=</span> <span class="s2">&quot;2Dcartesian&quot;</span>,
+    <span class="nv">interpolation_order</span> <span class="o">=</span> <span class="m">2</span> ,
+
+    <span class="nv">cell_length</span> <span class="o">=</span> <span class="o">[</span>dx,dy<span class="o">]</span>,
+    <span class="nv">grid_length</span> <span class="o">=</span> <span class="o">[</span>Lx,Ly<span class="o">]</span>,
+    <span class="nv">number_of_patches</span> <span class="o">=</span> <span class="o">[</span><span class="m">1</span>,16<span class="o">]</span>,  <span class="c1">#patches in x,y-directions. The product x*y must be larger than the number of processor you are using</span>
+
+    <span class="nv">timestep</span> <span class="o">=</span> dt,
+    <span class="nv">simulation_time</span> <span class="o">=</span> Tsim,
+
+    <span class="nv">EM_boundary_conditions</span> <span class="o">=</span> <span class="o">[[</span><span class="s1">&#39;silver-muller&#39;</span><span class="o">]</span>,<span class="o">[</span><span class="s1">&#39;periodic&#39;</span><span class="o">]]</span>,
+
+    <span class="nv">random_seed</span> <span class="o">=</span> smilei_mpi_rank,
+    <span class="nv">print_every</span> <span class="o">=</span> int<span class="o">(</span>Tsim/dt/10.<span class="o">)</span>
+<span class="o">)</span>
+
+<span class="c1">################## PLASMA ##########</span>
+
+<span class="nv">one_eV</span> <span class="o">=</span> <span class="m">1</span>/511.e3   <span class="c1"># eV definition</span>
+<span class="nv">n0</span>   <span class="o">=</span> <span class="m">20</span>           <span class="c1"># plasma density</span>
+<span class="nv">T0</span> <span class="o">=</span> <span class="m">0</span>.1*one_eV     <span class="c1"># plasma temperature- cold</span>
+<span class="nv">nppc</span><span class="o">=</span><span class="m">16</span>             <span class="c1"># number of particles per cell</span>
+
+<span class="nv">Xsurface</span><span class="o">=</span>Lx-3*l0   <span class="c1">#position of the plasma surface, 3*l0 is the plasma size</span>
+
+def density_profile<span class="o">(</span>x,y<span class="o">)</span>:
+    <span class="k">if</span><span class="o">(</span>x&gt;Xsurface<span class="o">)</span>:
+        <span class="k">return</span> n0
+    <span class="k">else</span>:
+        <span class="k">return</span> <span class="m">0</span>.
+
+Species<span class="o">(</span>
+    <span class="nv">name</span> <span class="o">=</span> <span class="s2">&quot;ion&quot;</span>,
+    <span class="nv">position_initialization</span> <span class="o">=</span> <span class="s2">&quot;random&quot;</span>,
+    <span class="nv">momentum_initialization</span> <span class="o">=</span> <span class="s2">&quot;cold&quot;</span>,
+    <span class="nv">particles_per_cell</span> <span class="o">=</span> nppc,
+    <span class="nv">mass</span> <span class="o">=</span> <span class="m">1836</span>.,
+    <span class="nv">charge</span> <span class="o">=</span> <span class="m">1</span>.,
+    <span class="nv">number_density</span> <span class="o">=</span> density_profile,
+    <span class="nv">boundary_conditions</span> <span class="o">=</span> <span class="o">[[</span><span class="s2">&quot;remove&quot;</span>,<span class="s2">&quot;thermalize&quot;</span><span class="o">]</span>,<span class="o">[</span><span class="s2">&quot;periodic&quot;</span><span class="o">]]</span>,
+    <span class="nv">thermal_boundary_temperature</span> <span class="o">=</span> <span class="o">[</span>T0<span class="o">]</span>,
+    <span class="nv">time_frozen</span> <span class="o">=</span> <span class="m">0</span>.0
+  <span class="o">)</span>
+
+Species<span class="o">(</span>
+    <span class="nv">name</span> <span class="o">=</span> <span class="s2">&quot;eon&quot;</span>,
+    <span class="nv">position_initialization</span> <span class="o">=</span> <span class="s2">&quot;ion&quot;</span>,
+    <span class="nv">momentum_initialization</span> <span class="o">=</span> <span class="s2">&quot;mj&quot;</span>,
+    <span class="nv">particles_per_cell</span> <span class="o">=</span> nppc,
+    <span class="nv">mass</span> <span class="o">=</span> <span class="m">1</span>.,
+    <span class="nv">charge</span> <span class="o">=</span> -1.,
+    <span class="nv">number_density</span> <span class="o">=</span> density_profile,
+    <span class="nv">temperature</span> <span class="o">=</span> <span class="o">[</span>T0<span class="o">]</span>,
+    <span class="nv">boundary_conditions</span> <span class="o">=</span> <span class="o">[[</span><span class="s2">&quot;remove&quot;</span>,<span class="s2">&quot;thermalize&quot;</span><span class="o">]</span>,<span class="o">[</span><span class="s2">&quot;periodic&quot;</span><span class="o">]]</span>,
+    <span class="nv">thermal_boundary_temperature</span> <span class="o">=</span> <span class="o">[</span>T0<span class="o">]</span>,
+    <span class="nv">time_frozen</span> <span class="o">=</span> <span class="m">0</span>.0
+  <span class="o">)</span>
+
+
+<span class="c1">################## LASER PULSE ######################################</span>
+
+<span class="c1">### LASER PROPERTIES</span>
+<span class="nv">aL</span><span class="o">=</span><span class="m">0</span>.1                          <span class="c1">#normalized laser amplitude a0=0.86 sqrt(I/10^18)</span>
+<span class="nv">theta_deg</span> <span class="o">=</span> <span class="m">30</span>.                 <span class="c1">#angle of incidence in degrees ArcSin[Sqrt[(n/gammal - 1)/(n/gammal - 2)] - 1 l/d]*180/Pi?</span>
+<span class="nv">theta</span>  <span class="o">=</span> theta_deg*np.pi/180.   <span class="c1">#angle of incidence in rads</span>
+
+<span class="nv">waist</span>  <span class="o">=</span>  <span class="m">6</span>.*l0     <span class="c1"># laser waist</span>
+<span class="nv">Tfwhm</span>  <span class="o">=</span> <span class="m">10</span>.*t0     <span class="c1"># laser fwhm</span>
+
+<span class="nv">xfoc</span> <span class="o">=</span> Xsurface    <span class="c1"># the laser is focalized over the surface</span>
+<span class="nv">yfoc</span> <span class="o">=</span> Ly/2.       <span class="c1"># the laser is focalized at the target&#39;s center</span>
+
+<span class="c1">### LASER PULSE</span>
+LaserGaussian2D<span class="o">(</span>
+    <span class="nv">a0</span>              <span class="o">=</span> aL,
+    <span class="nv">omega</span>           <span class="o">=</span> <span class="m">1</span>.,
+    <span class="nv">focus</span>           <span class="o">=</span> <span class="o">[</span>xfoc,yfoc<span class="o">]</span>,
+    <span class="nv">waist</span>           <span class="o">=</span> waist,
+    <span class="nv">incidence_angle</span> <span class="o">=</span> theta,
+    <span class="nv">time_envelope</span>   <span class="o">=</span> tgaussian<span class="o">(</span><span class="nv">start</span><span class="o">=</span><span class="m">0</span>., <span class="nv">duration</span><span class="o">=</span><span class="m">4</span>.*Tfwhm, <span class="nv">fwhm</span><span class="o">=</span>Tfwhm, <span class="nv">center</span><span class="o">=</span><span class="m">2</span>.*Tfwhm, <span class="nv">order</span><span class="o">=</span><span class="m">2</span><span class="o">)</span>
+<span class="o">)</span>
+
+<span class="c1">#################### DIAGNOSTICS ####################################</span>
+<span class="nv">sub_grid</span><span class="o">=</span><span class="m">2</span> <span class="c1">#to reduce the number of points in the output file</span>
+<span class="nv">Period</span> <span class="o">=</span> int<span class="o">(</span>t0/dt<span class="o">)</span>
+
+DiagFields<span class="o">(</span>
+    <span class="nv">every</span> <span class="o">=</span> Period,
+    <span class="nv">fields</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;Bz&#39;</span>,<span class="s1">&#39;Ey&#39;</span>,<span class="s1">&#39;Ex&#39;</span>, <span class="s1">&#39;Rho_eon&#39;</span> <span class="o">]</span>,
+    <span class="nv">subgrid</span> <span class="o">=</span> np.s_<span class="o">[</span>::sub_grid, ::sub_grid<span class="o">]</span>
+<span class="o">)</span>
+
+DiagParticleBinning<span class="o">(</span>
+    <span class="nv">deposited_quantity</span> <span class="o">=</span> <span class="s2">&quot;weight&quot;</span>,
+    <span class="nv">every</span> <span class="o">=</span> <span class="o">[</span><span class="m">0</span>, Period<span class="o">]</span>,
+    <span class="nv">time_average</span> <span class="o">=</span> <span class="m">1</span>,
+    <span class="nv">species</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;eon&quot;</span><span class="o">]</span>,
+    <span class="nv">axes</span> <span class="o">=</span> <span class="o">[</span>
+           <span class="o">[</span><span class="s2">&quot;y&quot;</span>, <span class="m">0</span>, Ly, <span class="m">400</span><span class="o">]</span>,
+           <span class="o">[</span><span class="s2">&quot;py&quot;</span>,-0.3,0.3, <span class="m">120</span><span class="o">]]</span>
+<span class="o">)</span>
+</pre></div>
+</div>
+<p>To check the plasma surface, we can analyze the quantity <cite>Rho_eon</cite>, which refers to the density of electrons-<cite>eon</cite></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">happi</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">S</span><span class="o">=</span><span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">timesteps</span><span class="o">=</span><span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;-Rho_eon&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getTimesteps</span><span class="p">()</span>
+<span class="n">tcycle</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;-Rho_eon&quot;</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">[</span><span class="n">tcycle</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Note that we use the minus sign in front of the quantity <cite>Rho_eon</cite>, since we are interested in the modulus of the density only.
+Likewise, we can multiply this quantity by any scalar and even by other quantities, for example, we can measure the excess charge,
+ploting the quantity <cite>Rho_ion-Rho_eon</cite>.
+Furthermore, we can also use the commands below to see the laser propagation in this new setup</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">happi</span>
+<span class="n">S</span><span class="o">=</span><span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Bz&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">slide</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using a more elaborate script and working with the matplotlib package, we can simultaneously plot the electric field and the plasma
+For that we can use the following script</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import numpy as np
+from matplotlib import *
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import *
+<span class="c1">#import sys</span>
+<span class="c1">#sys.path.insert(0, &quot;.&quot;)</span>
+import happi
+
+
+<span class="c1">####### load simulation</span>
+<span class="nv">S</span> <span class="o">=</span> happi.Open<span class="o">(</span><span class="s1">&#39;.&#39;</span>, <span class="nv">verbose</span><span class="o">=</span>False<span class="o">)</span>
+
+<span class="k">for</span> tver <span class="k">in</span> <span class="o">[</span><span class="m">20</span><span class="o">]</span>: <span class="c1">#checking the instant of time, tver=20</span>
+    plt.clf<span class="o">()</span>
+    <span class="nv">fs</span><span class="o">=</span><span class="m">11</span>
+    <span class="nv">sizex</span><span class="o">=</span><span class="m">4</span>/2.5
+    <span class="nv">sizey</span><span class="o">=</span><span class="m">15</span>.2/2.5
+    plt.figure<span class="o">(</span><span class="m">1</span>, <span class="nv">figsize</span><span class="o">=(</span>sizex,sizey<span class="o">))</span>
+    plt.rc<span class="o">(</span><span class="s1">&#39;text&#39;</span>,usetex<span class="o">=</span>True<span class="o">)</span>
+    plt.rc<span class="o">(</span><span class="s1">&#39;font&#39;</span>, **<span class="o">{</span><span class="s1">&#39;family&#39;</span>: <span class="s1">&#39;serif&#39;</span>  <span class="o">})</span>
+    plt.rc<span class="o">(</span><span class="s1">&#39;xtick&#39;</span>,labelsize<span class="o">=</span>fs<span class="o">)</span>
+    plt.rc<span class="o">(</span><span class="s1">&#39;ytick&#39;</span>,labelsize<span class="o">=</span>fs<span class="o">)</span>
+    plt.rc<span class="o">(</span><span class="s1">&#39;axes&#39;</span>,linewidth<span class="o">=</span><span class="m">0</span>.4<span class="o">)</span>
+    plt.subplots_adjust<span class="o">(</span><span class="nv">bottom</span><span class="o">=</span><span class="m">0</span>.13,left<span class="o">=</span><span class="m">0</span>.12,right<span class="o">=</span><span class="m">0</span>.8,top<span class="o">=</span><span class="m">0</span>.98<span class="o">)</span>
+    <span class="nv">aspect0</span><span class="o">=</span><span class="m">0</span>.5
+    <span class="nv">ax</span><span class="o">=</span>gca<span class="o">()</span>
+
+    <span class="c1">#-------------------------------------------------------------------------------</span>
+    <span class="nv">lambda0</span>   <span class="o">=</span> <span class="m">1</span>  <span class="c1">#use 0.8 if you want the plot in micrometers.</span>
+
+    <span class="nv">diag</span>  <span class="o">=</span> S.Field<span class="o">(</span><span class="m">0</span>,<span class="s2">&quot;Ey&quot;</span><span class="o">)</span>
+    <span class="nv">timesteps</span><span class="o">=</span>S.Field<span class="o">(</span><span class="m">0</span>,<span class="s2">&quot;Ey&quot;</span><span class="o">)</span>.getTimesteps<span class="o">()</span>
+    <span class="c1">#print(timesteps)</span>
+
+    <span class="nv">diag</span>  <span class="o">=</span> S.Field<span class="o">(</span><span class="m">0</span>,<span class="s2">&quot;Ey&quot;</span>, <span class="nv">timesteps</span><span class="o">=</span>timesteps<span class="o">[</span>tver<span class="o">])</span>
+    <span class="nv">xx</span>  <span class="o">=</span> diag.getAxis<span class="o">(</span><span class="s1">&#39;x&#39;</span><span class="o">)</span>
+    <span class="nv">yy</span>  <span class="o">=</span> diag.getAxis<span class="o">(</span><span class="s1">&#39;y&#39;</span><span class="o">)</span>
+    <span class="nv">Ey</span> <span class="o">=</span> np.array<span class="o">(</span>diag.getData<span class="o">()[</span><span class="m">0</span><span class="o">]</span> <span class="o">)</span>
+
+    <span class="nv">diagr</span>  <span class="o">=</span> S.Field<span class="o">(</span><span class="m">0</span>,<span class="s1">&#39;-Rho_eon&#39;</span>, <span class="nv">timesteps</span><span class="o">=</span>timesteps<span class="o">[</span>tver<span class="o">])</span>
+    <span class="nv">xxr</span>  <span class="o">=</span> diagr.getAxis<span class="o">(</span><span class="s1">&#39;x&#39;</span><span class="o">)</span>
+    <span class="nv">yyr</span>  <span class="o">=</span> diagr.getAxis<span class="o">(</span><span class="s1">&#39;y&#39;</span><span class="o">)</span>
+    <span class="nv">Rho</span>  <span class="o">=</span> np.array<span class="o">(</span>diagr.getData<span class="o">()[</span><span class="m">0</span><span class="o">]</span> <span class="o">)</span>
+
+
+    <span class="nv">xx</span><span class="o">=</span>lambda0*xx/<span class="o">(</span><span class="m">2</span>*np.pi<span class="o">)</span>
+    <span class="nv">yy</span><span class="o">=</span>lambda0*yy/<span class="o">(</span><span class="m">2</span>*np.pi<span class="o">)</span>
+
+    <span class="nv">ymin</span> <span class="o">=</span> np.min<span class="o">(</span>yy<span class="o">)</span>
+    <span class="nv">ymax</span> <span class="o">=</span> np.max<span class="o">(</span>yy<span class="o">)</span>
+    <span class="nv">xmin</span> <span class="o">=</span> np.min<span class="o">(</span>xx<span class="o">)</span>
+    <span class="nv">xmax</span> <span class="o">=</span> np.max<span class="o">(</span>xx<span class="o">)</span>
+
+    plt.xlabel<span class="o">(</span><span class="s1">&#39;$x/\lambda_0$&#39;</span><span class="o">)</span>
+    plt.ylabel<span class="o">(</span><span class="s1">&#39;$y/\lambda_0$&#39;</span><span class="o">)</span>
+
+    <span class="c1">#to define the range and the ticks</span>
+    <span class="nv">extent</span> <span class="o">=</span> xmin, xmax,ymin,ymax
+
+    <span class="nv">minorLocatorx</span>   <span class="o">=</span>  matplotlib.ticker.IndexLocator<span class="o">(</span><span class="nv">base</span><span class="o">=</span><span class="m">3</span>, <span class="nv">offset</span><span class="o">=</span><span class="m">0</span><span class="o">)</span>
+    ax.xaxis.set_minor_locator<span class="o">(</span>minorLocatorx<span class="o">)</span>
+
+    <span class="nv">minorLocatory</span>   <span class="o">=</span>  matplotlib.ticker.IndexLocator<span class="o">(</span><span class="nv">base</span><span class="o">=</span><span class="m">9</span>, <span class="nv">offset</span><span class="o">=</span><span class="m">0</span><span class="o">)</span>
+    ax.yaxis.set_minor_locator<span class="o">(</span>minorLocatory<span class="o">)</span>
+
+    ax.xaxis.set_ticks_position<span class="o">(</span><span class="s1">&#39;both&#39;</span><span class="o">)</span>
+
+    <span class="k">for</span> line <span class="k">in</span> ax.xaxis.get_ticklines<span class="o">()</span>:
+        line.set_color<span class="o">(</span><span class="s1">&#39;k&#39;</span><span class="o">)</span>
+        line.set_markersize<span class="o">(</span><span class="m">2</span>.5<span class="o">)</span>
+        line.set_markeredgewidth<span class="o">(</span><span class="m">0</span>.3<span class="o">)</span>
+
+    <span class="k">for</span> line <span class="k">in</span> ax.xaxis.get_ticklines<span class="o">()</span>:
+        line.set_color<span class="o">(</span><span class="s1">&#39;k&#39;</span><span class="o">)</span>
+        line.set_markersize<span class="o">(</span><span class="m">5</span><span class="o">)</span>
+        line.set_markeredgewidth<span class="o">(</span><span class="m">0</span>.6<span class="o">)</span>
+
+    <span class="k">for</span> line <span class="k">in</span> ax.yaxis.get_ticklines<span class="o">()</span>:
+        line.set_color<span class="o">(</span><span class="s1">&#39;k&#39;</span><span class="o">)</span>
+        line.set_markersize<span class="o">(</span><span class="m">2</span>.5<span class="o">)</span>
+        line.set_markeredgewidth<span class="o">(</span><span class="m">0</span>.3<span class="o">)</span>
+
+    <span class="k">for</span> line <span class="k">in</span> ax.yaxis.get_ticklines<span class="o">()</span>:
+        line.set_color<span class="o">(</span><span class="s1">&#39;k&#39;</span><span class="o">)</span>
+        line.set_markersize<span class="o">(</span><span class="m">5</span><span class="o">)</span>
+        line.set_markeredgewidth<span class="o">(</span><span class="m">0</span>.6<span class="o">)</span>
+
+    <span class="nv">ay</span><span class="o">=</span>gca<span class="o">()</span>
+    ay.yaxis.labelpad<span class="o">=</span>-10
+
+    <span class="nv">ay</span><span class="o">=</span>gca<span class="o">()</span>
+    ay.xaxis.labelpad<span class="o">=</span>-10
+
+
+    ax.set_ylim<span class="o">(</span> ymin, ymax <span class="o">)</span>
+    ax.set_xlim<span class="o">(</span> xmin, xmax <span class="o">)</span>
+    ax.set_yticks<span class="o">([</span>ymin,18,54,ymax<span class="o">])</span>
+    ax.set_xticks<span class="o">([</span>xmin,12,xmax<span class="o">])</span>
+
+
+    <span class="c1">#-----------------------------------------------------------------------------</span>
+    <span class="c1">#mask to let transparent the vacuum region</span>
+    <span class="nv">rcut</span><span class="o">=</span><span class="m">0</span>.1
+    Rho<span class="o">[</span>abs<span class="o">(</span>Rho<span class="o">)</span> &lt;  rcut<span class="o">]</span> <span class="o">=</span> np.nan
+    <span class="c1">#-----------------------------------------------------------------------------</span>
+    <span class="c1">#parameter</span>
+    <span class="nv">vmax0</span><span class="o">=</span>S.namelist.n0
+    <span class="nv">v0</span><span class="o">=</span>S.namelist.aL
+    <span class="c1">#-----------------------------------------------------------------------------</span>
+
+    <span class="c1">#plot field</span>
+    <span class="nv">im1</span> <span class="o">=</span> plt.imshow<span class="o">(</span>np.real<span class="o">(</span>Ey<span class="o">)</span>.T, <span class="nv">cmap</span><span class="o">=</span><span class="s1">&#39;seismic&#39;</span>, <span class="nv">aspect</span><span class="o">=</span>aspect0, <span class="nv">vmin</span><span class="o">=</span>-v0, <span class="nv">vmax</span><span class="o">=</span>v0, <span class="nv">alpha</span><span class="o">=</span><span class="m">1</span>, <span class="nv">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span>, <span class="nv">interpolation</span><span class="o">=</span><span class="s1">&#39;bilinear&#39;</span>, <span class="nv">extent</span><span class="o">=</span>extent<span class="o">)</span>
+    <span class="c1">#cb1 = plt.colorbar(im1, shrink=0.5, label=&#39;$E_y/E_0$&#39;, pad=0.1)</span>
+
+    <span class="c1">#plot density</span>
+    <span class="nv">im2</span> <span class="o">=</span> plt.imshow<span class="o">(</span>np.real<span class="o">(</span>Rho<span class="o">)</span>.T, <span class="nv">cmap</span><span class="o">=</span><span class="s1">&#39;binary&#39;</span>, <span class="nv">aspect</span><span class="o">=</span>aspect0, <span class="nv">vmin</span><span class="o">=</span><span class="m">0</span>.00000, <span class="nv">vmax</span><span class="o">=</span>vmax0, <span class="nv">alpha</span><span class="o">=</span><span class="m">1</span>, <span class="nv">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span>, <span class="nv">interpolation</span><span class="o">=</span><span class="s1">&#39;bilinear&#39;</span>, <span class="nv">extent</span><span class="o">=</span>extent<span class="o">)</span>
+    <span class="c1">#cb2 = plt.colorbar(im2, shrink=0.5, label=&#39;$n_e/n_c$&#39;, pad=0.09)</span>
+
+
+    plt.savefig<span class="o">(</span><span class="s1">&#39;field_%3i.png&#39;</span>%<span class="o">(</span>tver<span class="o">)</span>, <span class="nv">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span>, <span class="nv">dpi</span><span class="o">=</span><span class="m">100</span><span class="o">)</span>
+</pre></div>
+</div>
+<p id="exercise7"><strong>- Exercise 7:</strong> Modify the script above to plot the Poynting vector <cite>Sy</cite> at the instant <cite>Tsim</cite>, used in the Smilei script.
+What is the maximum amplitude of the  Poynting vector? In which units is it presented? What are the values in the S.I units?</p>
+<p id="exercise8"><strong>- Exercise 8:</strong>
+Modify the loop on <cite>tver</cite> to build a plot at each instant in time.
+Use the outcome figures to create a video. There are several ways to create the video from pictures. One way is to use the command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">convert</span> <span class="o">-</span><span class="n">delay</span> <span class="mi">1</span> <span class="o">-</span><span class="n">loop</span> <span class="mi">0</span> <span class="o">*.</span><span class="n">png</span> <span class="n">video</span><span class="o">.</span><span class="n">gif</span>
+</pre></div>
+</div>
+<p>In an alternative approach, you could use the <cite>happi</cite> library to create the video</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Bz&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">movie</span><span class="o">=</span><span class="s2">&quot;Bz.gif&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span><span class="n">fps</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">vmin</span><span class="o">=-</span><span class="mf">0.1</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">ymax</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 <section id="laser-pulse-interacting-with-a-sinusoidal-target">
 <h2>2.2- Laser pulse interacting with a sinusoidal target<a class="headerlink" href="#laser-pulse-interacting-with-a-sinusoidal-target" title="Permalink to this heading">¶</a></h2>
-</section>
 <hr class="docutils" />
+<p>Now we are going to modify our script so that the surface of the plasma will be described by a sinusoidal function. One way to do this consists of modifying the density_profile(x,y) function such as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l0</span>      <span class="c1"># period</span>
+<span class="n">depth</span><span class="o">=</span><span class="mf">0.1</span><span class="o">*</span><span class="n">l0</span>  <span class="c1"># depth</span>
+<span class="n">kg</span><span class="o">=</span> <span class="n">l0</span><span class="o">/</span><span class="n">d</span>    <span class="c1"># normalized wavevector</span>
+
+<span class="k">def</span> <span class="nf">density_profile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="n">Xsurface</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">depth</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">kg</span><span class="o">*</span><span class="n">y</span><span class="p">)</span> <span class="p">):</span>
+        <span class="k">return</span> <span class="n">n0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.</span>
+</pre></div>
+</div>
+<p>You can check the plasma surface using the following command from <cite>happi</cite> library</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">happi</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">S</span><span class="o">=</span><span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">timesteps</span><span class="o">=</span><span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Ey&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getTimesteps</span><span class="p">()</span>
+<span class="n">tcycle</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;-Rho_eon&quot;</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">[</span><span class="n">tcycle</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span><span class="n">xmin</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span><span class="n">xmax</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span><span class="n">ymin</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">ymax</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Likewise, you can change the <cite>x`and the `y</cite> limits using the script used in the previous section, such as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">38</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">14</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="mi">30</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">38</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">])</span>
+</pre></div>
+</div>
+<p id="exercise-9"><strong>- Exercise 9:</strong> Create a figure to verify the period of the diffraction grating over the plasma. It is correct according to our demand?</p>
+<p>We can then analyze the phase space of the particles. For this, we will use the library <cite>happi</cite> as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;/Users/samuelmarini/Samuel/Smilei/smilei&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">happi</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;/Users/samuelmarini/Samuel/Smilei/Results/spw1&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">tver</span><span class="o">=</span><span class="mi">70</span>
+<span class="n">timesteps</span><span class="o">=</span><span class="n">S</span><span class="o">.</span><span class="n">ParticleBinning</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">getTimesteps</span><span class="p">()</span>
+<span class="n">diag</span>  <span class="o">=</span>  <span class="n">S</span><span class="o">.</span><span class="n">ParticleBinning</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">data_log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">[</span><span class="n">tver</span><span class="p">])</span>
+<span class="n">diag</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p id="exercise-10"><strong>- Exercise 10:</strong>
+Analyze the longitudinal phase space at different instants of time. What can you interpret with it?
+To go further, suppose that <code class="docutils literal notranslate"><span class="pre">aL=5</span></code>, change the script and describe what happens with the electrons now.
+Note that you have to change the diagnostics ranges, in order to make a correct analysis.</p>
+</section>
 <section id="laser-pulse-interacting-with-a-optimized-target">
 <h2>2.3- Laser pulse interacting with a optimized target<a class="headerlink" href="#laser-pulse-interacting-with-a-optimized-target" title="Permalink to this heading">¶</a></h2>
 <hr class="docutils" />
 <p>We finally reached the last stage of this TP and now we are going to simulate the interaction of the laser pulse with
-the plasma target whose interface is optimized. Find bellow the full InputNamelist.py:</p>
+the plasma target whose interface is optimized. Find bellow the full InputNamelist.py</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1">### NORMALIZATIONS</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>      <span class="c1"># optical cycle [in code units]</span>
 <span class="n">l0</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>      <span class="c1"># laser wavelength [in code units]</span>
-<span class="n">one_eV</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">511.e3</span>   <span class="c1"># eV definition</span>
 
 <span class="c1">### SIMULATION BOX</span>
-<span class="n">Lx</span>   <span class="o">=</span> <span class="mf">18.</span><span class="o">*</span><span class="n">l0</span>       <span class="c1">#simulation box size Lx</span>
-<span class="n">Ly</span>   <span class="o">=</span> <span class="mf">72.</span><span class="o">*</span><span class="n">l0</span>       <span class="c1">#simulation box size</span>
-<span class="n">Tsim</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">*</span><span class="n">t0</span>        <span class="c1">#number the cycles the simulation will run</span>
+<span class="n">Lx</span>   <span class="o">=</span> <span class="mf">15.</span><span class="o">*</span><span class="n">l0</span>       <span class="c1">#simulation box size Lx</span>
+<span class="n">Ly</span>   <span class="o">=</span> <span class="mf">72.</span><span class="o">*</span><span class="n">l0</span>       <span class="c1">#simulation box size Ly</span>
 
 <span class="c1">#### RESOLUTION</span>
-<span class="n">res</span>  <span class="o">=</span> <span class="mi">16</span>           <span class="c1">#number of divisions each wavelenght</span>
+<span class="n">res</span>  <span class="o">=</span> <span class="mi">64</span>           <span class="c1">#number of divisions each wavelenght</span>
 
-<span class="n">dx</span>   <span class="o">=</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">l0</span><span class="o">/</span><span class="n">res</span>
-<span class="n">dt</span>   <span class="o">=</span> <span class="mf">0.95</span> <span class="o">*</span> <span class="n">dx</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span>
-
-
-<span class="c1">### LASER PROPERTIES</span>
-<span class="n">aL</span><span class="o">=</span><span class="mf">0.1</span>                          <span class="c1">#normalized laser amplitude a0=0.86 sqrt(I/10^18)</span>
-<span class="n">theta_deg</span> <span class="o">=</span> <span class="o">-</span><span class="mf">25.8</span>                <span class="c1">#angle of incidence in degrees ArcSin[Sqrt[(n/gamma - 1)/(n/gamma - 2)] - 1 l/d]*180/Pi- -25.87?</span>
-<span class="n">theta</span>  <span class="o">=</span> <span class="n">theta_deg</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span>   <span class="c1">#angle of incidence in rads</span>
+<span class="n">dx</span>   <span class="o">=</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">l0</span><span class="o">/</span><span class="n">res</span>  <span class="c1">#dx,dy cell size</span>
+<span class="n">dt</span>   <span class="o">=</span> <span class="mf">0.95</span> <span class="o">*</span> <span class="n">dx</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span> <span class="c1">#time increment</span>
 
 
-<span class="n">waist</span>  <span class="o">=</span> <span class="mf">6.</span><span class="o">*</span><span class="n">l0</span>     <span class="c1"># laser waist</span>
-<span class="n">Tfwhm</span>  <span class="o">=</span> <span class="mf">8.</span><span class="o">*</span><span class="n">t0</span>     <span class="c1"># laser fwhm</span>
-
-
-<span class="n">x0</span> <span class="o">=</span> <span class="mf">3.</span><span class="o">*</span><span class="n">l0</span>             <span class="c1"># plasma thickness</span>
-<span class="n">Xsurface</span> <span class="o">=</span> <span class="n">Lx</span><span class="o">-</span><span class="n">x0</span>       <span class="c1"># plasma surface</span>
-
-<span class="n">xfoc</span> <span class="o">=</span> <span class="n">Xsurface</span>        <span class="c1"># the laser is focalized over the surface</span>
-<span class="n">yfoc</span> <span class="o">=</span> <span class="n">Ly</span><span class="o">/</span><span class="mf">2.</span>           <span class="c1"># the laser is focalized at the target&#39;s center</span>
-
-<span class="c1">### PLASMA</span>
-<span class="n">n0</span>   <span class="o">=</span> <span class="mi">20</span>           <span class="c1"># plasma density</span>
-<span class="n">T0</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">one_eV</span>     <span class="c1"># plasma temperature- cold</span>
-<span class="n">nppc</span><span class="o">=</span><span class="mi">2</span>              <span class="c1"># number of particles per cell</span>
-
-
-
-<span class="c1">############### Grating properties ##########################################################</span>
-<span class="c1">############### Use this for the mixed (flat and sinusoidal) grating profile ################</span>
-
-<span class="n">d</span><span class="o">=</span><span class="mf">0.69375</span>
-<span class="n">depth</span><span class="o">=</span><span class="mf">0.12</span>   <span class="c1">#~112nm</span>
-
-<span class="n">lg</span><span class="o">=</span><span class="n">d</span><span class="o">*</span><span class="n">l0</span>      <span class="c1"># grating&#39;s period</span>
-<span class="n">dg</span><span class="o">=</span><span class="n">depth</span><span class="o">*</span><span class="n">l0</span>  <span class="c1"># grating&#39;s depth</span>
-<span class="n">kg</span><span class="o">=</span> <span class="n">l0</span><span class="o">/</span><span class="n">lg</span>    <span class="c1"># normalized wavevector</span>
-
-<span class="n">lysize</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">Ly</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">lg</span><span class="p">))</span>
-<span class="n">nri</span>    <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">waist</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">l0</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="c1">#three times more ripples than the area illuminated by the laser waist</span>
-<span class="n">phase</span><span class="o">=</span><span class="mi">0</span><span class="c1">#to change the ripples phase-- check in the begining of the simulation if it is correct.</span>
-
-<span class="k">def</span> <span class="nf">density_profile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">Ly</span><span class="o">/</span><span class="n">lg</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">if</span><span class="p">(</span> <span class="n">nl</span><span class="o">&gt;=</span><span class="n">lysize</span><span class="o">-</span><span class="n">nri</span> <span class="ow">and</span> <span class="n">nl</span><span class="o">&lt;=</span><span class="n">lysize</span><span class="o">+</span><span class="n">nri</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&gt;=</span><span class="n">lysize</span><span class="o">*</span><span class="n">lg</span><span class="o">-</span><span class="n">nri</span><span class="o">*</span><span class="n">l0</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&lt;=</span><span class="n">lysize</span><span class="o">*</span><span class="n">lg</span><span class="o">+</span><span class="n">nri</span><span class="o">*</span><span class="n">l0</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">Xsurface</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">dg</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">kg</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="n">phase</span><span class="p">)</span> <span class="p">):</span>
-            <span class="k">return</span> <span class="n">n0</span>
-        <span class="k">elif</span><span class="p">(</span><span class="n">nl</span><span class="o">&gt;</span><span class="n">lysize</span><span class="o">+</span><span class="n">nri</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&gt;</span><span class="n">lysize</span><span class="o">*</span><span class="n">lg</span><span class="o">+</span><span class="n">nri</span><span class="o">*</span><span class="n">l0</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">Xsurface</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">n0</span>
-        <span class="k">elif</span><span class="p">(</span><span class="n">nl</span><span class="o">&lt;</span><span class="n">lysize</span><span class="o">-</span><span class="n">nri</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&lt;</span><span class="n">lysize</span><span class="o">*</span><span class="n">lg</span><span class="o">-</span><span class="n">nri</span><span class="o">*</span><span class="n">l0</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">Xsurface</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">n0</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mf">0.</span>
+<span class="n">Tsim</span> <span class="o">=</span> <span class="mf">72.</span><span class="o">*</span><span class="n">t0</span>       <span class="c1">#number the cycles the simulation will run</span>
 
 <span class="c1">###############################################################################</span>
 <span class="c1">####################### MAIN CODE #############################################</span>
+
 <span class="n">Main</span><span class="p">(</span>
     <span class="n">geometry</span> <span class="o">=</span> <span class="s2">&quot;2Dcartesian&quot;</span><span class="p">,</span>
     <span class="n">interpolation_order</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">,</span>
@@ -880,8 +1230,79 @@ the plasma target whose interface is optimized. Find bellow the full InputNameli
     <span class="n">print_every</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">Tsim</span><span class="o">/</span><span class="n">dt</span><span class="o">/</span><span class="mf">10.</span><span class="p">)</span>
 <span class="p">)</span>
 
+<span class="c1">################## PLASMA ##########</span>
+
+<span class="n">one_eV</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">511.e3</span>   <span class="c1"># eV definition</span>
+<span class="n">n0</span>   <span class="o">=</span> <span class="mi">20</span>           <span class="c1"># plasma density</span>
+<span class="n">T0</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">one_eV</span>     <span class="c1"># plasma temperature- cold</span>
+<span class="n">nppc</span><span class="o">=</span><span class="mi">16</span>              <span class="c1"># number of particles per cell</span>
+
+<span class="n">Xsurface</span><span class="o">=</span><span class="n">Lx</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">l0</span>   <span class="c1">#position of the plasma surface, 3*l0 is the plasma size</span>
+
+<span class="n">waist0</span><span class="o">=</span><span class="mi">6</span><span class="o">*</span><span class="n">l0</span>
+<span class="n">d</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l0</span>      <span class="c1"># period</span>
+<span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="n">l0</span>  <span class="c1"># depth</span>
+<span class="n">kg</span><span class="o">=</span> <span class="n">l0</span><span class="o">/</span><span class="n">d</span>    <span class="c1"># normalized wavevector</span>
+
+<span class="n">lysize</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">Ly</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="p">))</span>
+<span class="n">nri</span>    <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">waist0</span><span class="o">/</span><span class="p">(</span><span class="n">l0</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span> <span class="c1">#three times more ripples than the area illuminated by the laser waist</span>
+<span class="n">phase</span>  <span class="o">=</span> <span class="mi">0</span> <span class="c1">#to change the ripples phase-- check in the begining of the simulation if it is correct.</span>
+
+<span class="k">def</span> <span class="nf">density_profile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">Ly</span><span class="o">/</span><span class="n">d</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span> <span class="n">nl</span><span class="o">&gt;=</span><span class="n">lysize</span><span class="o">-</span><span class="n">nri</span> <span class="ow">and</span> <span class="n">nl</span><span class="o">&lt;=</span><span class="n">lysize</span><span class="o">+</span><span class="n">nri</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&gt;=</span><span class="n">lysize</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="n">nri</span><span class="o">*</span><span class="n">l0</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&lt;=</span><span class="n">lysize</span><span class="o">*</span><span class="n">d</span><span class="o">+</span><span class="n">nri</span><span class="o">*</span><span class="n">l0</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">Xsurface</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">depth</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">kg</span><span class="o">*</span><span class="n">y</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">n0</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">nl</span><span class="o">&gt;</span><span class="n">lysize</span><span class="o">+</span><span class="n">nri</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&gt;</span><span class="n">lysize</span><span class="o">*</span><span class="n">d</span><span class="o">+</span><span class="n">nri</span><span class="o">*</span><span class="n">l0</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">Xsurface</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">n0</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">nl</span><span class="o">&lt;</span><span class="n">lysize</span><span class="o">-</span><span class="n">nri</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&lt;</span><span class="n">lysize</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="n">nri</span><span class="o">*</span><span class="n">l0</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">Xsurface</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">n0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.</span>
+
+
+<span class="n">Species</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ion&quot;</span><span class="p">,</span>
+    <span class="n">position_initialization</span> <span class="o">=</span> <span class="s2">&quot;random&quot;</span><span class="p">,</span>
+    <span class="n">momentum_initialization</span> <span class="o">=</span> <span class="s2">&quot;cold&quot;</span><span class="p">,</span>
+    <span class="n">particles_per_cell</span> <span class="o">=</span> <span class="n">nppc</span><span class="p">,</span>
+    <span class="n">mass</span> <span class="o">=</span> <span class="mf">1836.</span><span class="p">,</span>
+    <span class="n">charge</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span>
+    <span class="n">number_density</span> <span class="o">=</span> <span class="n">density_profile</span><span class="p">,</span>
+    <span class="n">boundary_conditions</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;remove&quot;</span><span class="p">,</span><span class="s2">&quot;thermalize&quot;</span><span class="p">],[</span><span class="s2">&quot;periodic&quot;</span><span class="p">]],</span>
+    <span class="n">thermal_boundary_temperature</span> <span class="o">=</span> <span class="p">[</span><span class="n">T0</span><span class="p">],</span>
+    <span class="n">time_frozen</span> <span class="o">=</span> <span class="mf">0.0</span>
+  <span class="p">)</span>
+
+<span class="n">Species</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;eon&quot;</span><span class="p">,</span>
+    <span class="n">position_initialization</span> <span class="o">=</span> <span class="s2">&quot;ion&quot;</span><span class="p">,</span>
+    <span class="n">momentum_initialization</span> <span class="o">=</span> <span class="s2">&quot;mj&quot;</span><span class="p">,</span>
+    <span class="n">particles_per_cell</span> <span class="o">=</span> <span class="n">nppc</span><span class="p">,</span>
+    <span class="n">mass</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span>
+    <span class="n">charge</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span>
+    <span class="n">number_density</span> <span class="o">=</span> <span class="n">density_profile</span><span class="p">,</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="p">[</span><span class="n">T0</span><span class="p">],</span>
+    <span class="n">boundary_conditions</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;remove&quot;</span><span class="p">,</span><span class="s2">&quot;thermalize&quot;</span><span class="p">],[</span><span class="s2">&quot;periodic&quot;</span><span class="p">]],</span>
+    <span class="n">thermal_boundary_temperature</span> <span class="o">=</span> <span class="p">[</span><span class="n">T0</span><span class="p">],</span>
+    <span class="n">time_frozen</span> <span class="o">=</span> <span class="mf">0.0</span>
+  <span class="p">)</span>
+
+
 
 <span class="c1">################## LASER PULSE ######################################</span>
+
+<span class="c1">### LASER PROPERTIES</span>
+<span class="n">aL</span><span class="o">=</span><span class="mf">0.1</span>                          <span class="c1">#normalized laser amplitude a0=0.86 sqrt(I/10^18)</span>
+<span class="n">theta_deg</span> <span class="o">=</span> <span class="mf">30.</span>                 <span class="c1">#angle of incidence in degrees ArcSin[Sqrt[(n/gammal - 1)/(n/gammal - 2)] - 1 l/d]*180/Pi?</span>
+<span class="n">theta</span>  <span class="o">=</span> <span class="n">theta_deg</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span>   <span class="c1">#angle of incidence in rads</span>
+
+<span class="n">waist</span>  <span class="o">=</span> <span class="n">waist0</span>     <span class="c1"># laser waist</span>
+<span class="n">Tfwhm</span>  <span class="o">=</span> <span class="mf">10.</span><span class="o">*</span><span class="n">t0</span>     <span class="c1"># laser fwhm</span>
+
+<span class="n">xfoc</span> <span class="o">=</span> <span class="n">Xsurface</span>    <span class="c1"># the laser is focalized over the surface</span>
+<span class="n">yfoc</span> <span class="o">=</span> <span class="n">Ly</span><span class="o">/</span><span class="mf">2.</span>       <span class="c1"># the laser is focalized at the target&#39;s center</span>
+
+<span class="c1">### LASER PULSE</span>
 <span class="n">LaserGaussian2D</span><span class="p">(</span>
     <span class="n">a0</span>              <span class="o">=</span> <span class="n">aL</span><span class="p">,</span>
     <span class="n">omega</span>           <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span>
@@ -892,45 +1313,14 @@ the plasma target whose interface is optimized. Find bellow the full InputNameli
 <span class="p">)</span>
 
 
-<span class="c1">################## PARTICLES  ######################################</span>
-<span class="n">Species</span><span class="p">(</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ion&quot;</span><span class="p">,</span>
-        <span class="n">position_initialization</span> <span class="o">=</span> <span class="s2">&quot;random&quot;</span><span class="p">,</span>
-        <span class="n">momentum_initialization</span> <span class="o">=</span> <span class="s2">&quot;cold&quot;</span><span class="p">,</span>
-        <span class="n">particles_per_cell</span> <span class="o">=</span> <span class="n">nppc</span><span class="p">,</span>
-        <span class="n">mass</span> <span class="o">=</span> <span class="mf">1836.</span><span class="p">,</span>
-        <span class="n">charge</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span>
-        <span class="n">number_density</span> <span class="o">=</span> <span class="n">density_profile</span><span class="p">,</span>
-        <span class="n">boundary_conditions</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;thermalize&quot;</span><span class="p">],[</span><span class="s2">&quot;periodic&quot;</span><span class="p">]],</span>
-        <span class="n">thermal_boundary_temperature</span> <span class="o">=</span> <span class="p">[</span><span class="n">T0</span><span class="p">],</span>
-        <span class="n">time_frozen</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="p">)</span>
-
-
-<span class="n">Species</span><span class="p">(</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;eon&quot;</span><span class="p">,</span>
-        <span class="n">position_initialization</span> <span class="o">=</span> <span class="s2">&quot;ion&quot;</span><span class="p">,</span>
-        <span class="n">momentum_initialization</span> <span class="o">=</span> <span class="s2">&quot;mj&quot;</span><span class="p">,</span>
-        <span class="n">particles_per_cell</span> <span class="o">=</span> <span class="n">nppc</span><span class="p">,</span>
-        <span class="n">mass</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span>
-        <span class="n">charge</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span>
-        <span class="n">number_density</span> <span class="o">=</span> <span class="n">density_profile</span><span class="p">,</span>
-        <span class="n">temperature</span> <span class="o">=</span> <span class="p">[</span><span class="n">T0</span><span class="p">],</span>
-        <span class="n">boundary_conditions</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;thermalize&quot;</span><span class="p">],[</span><span class="s2">&quot;periodic&quot;</span><span class="p">]],</span>
-        <span class="n">thermal_boundary_temperature</span> <span class="o">=</span> <span class="p">[</span><span class="n">T0</span><span class="p">],</span>
-        <span class="n">time_frozen</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="p">)</span>
-
-
 <span class="c1">#################### DIAGNOSTICS ####################################</span>
-<span class="n">sub_grid</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">sub_grid</span><span class="o">=</span><span class="mi">2</span> <span class="c1">#to reduce the number of points in the output file</span>
 <span class="n">Period</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t0</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span>
-<span class="c1">#DiagScalar(every=globalEvery)</span>
 
 <span class="n">DiagFields</span><span class="p">(</span>
     <span class="n">every</span> <span class="o">=</span> <span class="n">Period</span><span class="p">,</span>
     <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bz&#39;</span><span class="p">,</span><span class="s1">&#39;Ey&#39;</span><span class="p">,</span><span class="s1">&#39;Ex&#39;</span><span class="p">,</span> <span class="s1">&#39;Rho_eon&#39;</span> <span class="p">],</span>
-    <span class="n">subgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">s_</span><span class="p">[::</span><span class="n">sub_grid</span><span class="p">,</span> <span class="p">::</span><span class="n">sub_grid</span><span class="p">]</span> <span class="c1">#to reduce the number of points in the output file</span>
+    <span class="n">subgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">s_</span><span class="p">[::</span><span class="n">sub_grid</span><span class="p">,</span> <span class="p">::</span><span class="n">sub_grid</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="n">DiagParticleBinning</span><span class="p">(</span>
@@ -943,36 +1333,48 @@ the plasma target whose interface is optimized. Find bellow the full InputNameli
         <span class="p">[</span><span class="s2">&quot;py&quot;</span><span class="p">,</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">120</span><span class="p">]</span>
     <span class="p">]</span>
 <span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="n">particles</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span> <span class="n">particles</span><span class="o">.</span><span class="n">py</span><span class="p">,</span> <span class="n">particles</span><span class="o">.</span><span class="n">px</span> <span class="p">)</span>
-
-<span class="n">DiagParticleBinning</span><span class="p">(</span>
-    <span class="n">deposited_quantity</span> <span class="o">=</span> <span class="s2">&quot;weight&quot;</span><span class="p">,</span>
-    <span class="n">every</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">Period</span><span class="p">],</span>
-    <span class="n">time_average</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">species</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;eon&quot;</span><span class="p">],</span>
-    <span class="n">axes</span> <span class="o">=</span> <span class="p">[</span>
-          <span class="p">[</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
-          <span class="p">[</span><span class="n">angle</span><span class="p">,</span>  <span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
-      <span class="p">]</span>
-<span class="p">)</span>
 </pre></div>
 </div>
+<p id="exercise-11"><strong>- Exercise 11:</strong> Compare the longitudinal electric field at instant of time <cite>TSim</cite>,
+assuming the three different configurations studied in this TP.
+Hint: To analyze the field on the surface, you can use the command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">happi</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">tver</span><span class="o">=</span><span class="mi">60</span>
+<span class="n">timesteps</span><span class="o">=</span><span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Bz&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getTimesteps</span><span class="p">()</span>
+<span class="n">Xsurface</span><span class="o">=</span><span class="n">S</span><span class="o">.</span><span class="n">namelist</span><span class="o">.</span><span class="n">Xsurface</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">S</span><span class="o">.</span><span class="n">namelist</span><span class="o">.</span><span class="n">dx</span>
+<span class="n">v0</span><span class="o">=</span><span class="n">S</span><span class="o">.</span><span class="n">namelist</span><span class="o">.</span><span class="n">aL</span>
+<span class="n">diag</span>  <span class="o">=</span>  <span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Bz&quot;</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">[</span><span class="n">tver</span><span class="p">],</span> <span class="n">average</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span><span class="n">Xsurface</span><span class="p">})</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=-</span><span class="n">v0</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">v0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And to put the three curves on the same panel, you can use the multiplot command from the happi library (see useful tools).</p>
+<p id="exercise-12"><strong>- Exercise 12:</strong> Run three new simulations ( one for each target configuration ) assuming <cite>aL=5</cite>. Compare the transverse and longitudinal momentum of electrons at the instant of time <cite>TSim</cite>,
+assuming the three different configurations studied in this TP. Use the phase space of each case for comparison and explain the result you obtain. Before run the simulations, do not forget modify the observation range in the Diagnostics.</p>
 <section id="conclusion">
 <h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">¶</a></h3>
 <p>In this pratical work, we have explored the laser-plasma coupling in the relativistic regime of interaction.
 In particular, we have investigated conditions to improve laser-plasma energy transfer as well
 as to generate relativistic electrons through computational
-simulations using the SMILEI PIC code.</p>
+simulations using the Smilei PIC code.</p>
 </section>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
 <div role="list" class="citation-list">
-<div class="citation" id="siegman" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>Siegman<span class="fn-bracket">]</span></span>
-<p><cite>Anthony E. Siegman, Lasers, University Science Books, 1986.</cite></p>
+<div class="citation" id="smilei" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>smilei<span class="fn-bracket">]</span></span>
+<p><cite>J. Derouillat, A. Beck, F. Pérez, T. Vinci, M. Chiaramello, A. Grassi, M. Flé, G. Bouchard, I. Plotnikov, N. Aunai, J. Dargent, C. Riconda, and M. Grech, Smilei: A collaborative, open-source, multi-purpose particle-in-cell code for plasma simulation, Comput. Phys. Commun. 222, 351 (2018).</cite></p>
+</div>
+<div class="citation" id="raynaud" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Raynaud<span class="fn-bracket">]</span></span>
+<p><cite>M. Raynaud, J. Kupersztych, C. Riconda, J. C. Adam, A.Heron,  Strongly enhanced laser absorption and electron acceleration via resonant excitation of surface plasma waves, Physics of Plasmas 14, 092702 (2007).`</cite></p>
+</div>
+<div class="citation" id="marini" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Marini<span class="fn-bracket">]</span></span>
+<p><cite>S. Marini, P. Kleij, F. Amiranoff, M. Grech, M. Raynaud, and C. Riconda, Key parameters for surface plasma wave excitation in the ultra-high intensity regime. Physics of Plasmas 28, 073104 (2021).</cite></p>
 </div>
 </div>
 </section>
@@ -990,7 +1392,7 @@ simulations using the SMILEI PIC code.</p>
       <a href="site.html">Site index</a>
       </div>
       <div>
-        Last updated on Mar 19, 2023
+        Last updated on Mar 25, 2023
       </div>
       
       <div>
