@@ -270,7 +270,7 @@ The spatial resolution was set to
 :math:`\Delta x = \Delta y = \lambda_0/64` (:math:`=0.00625\mu`\ m).
 Analogously to previous case, the simulation timestep is chosen to be
 :math:`\Delta t = 0.95~\Delta x/\sqrt{2}` that corresponds to the Courant-Friedrich-Lewy (CFL) condition. Every cells contains
-initially :math:`8` randomly distributed particles of each species.
+initially :math:`16` randomly distributed particles of each species.
 
 0.6- Simulation input namelist
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
