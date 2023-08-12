@@ -16,42 +16,43 @@ and carefully follow all the instructions.
 If you have already installed the PIC code Smilei, skip this part.
 At the end of this step, you must have the files called ``smilei`` and ``smilei_test`` in the folder you intalled Smilei.
 
-Besides install the PIC code `Smilei`, install postprocessing library `happi` and keep the location of your executable filles `Smilei` and `happi`
-in mind. (`e.g.`  ``path/to/executable``)
+Besides installing the PIC code `Smilei`, you have to install the postprocessing library `happi` and keep the location of your executable files `Smilei` and `happi`
+in mind. (`e.g.,`  ``path/to/executable``)
 
 
 A.2- Prepare your simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Enter your working space (folder where you will place your simulations)
+- Enter your working space (the folder where you want to place your simulations)
 
 .. code-block:: bash
 
     cd path/to/workdir
 
 where ``path/to/workdir`` is the path to your workdir.
-- In your workdir, create a new simulation folder, for example a folder called ``sim1``, where you will run your simulation 1:
+- In your workdir, create a new simulation folder, for example, a folder called ``sim1``, where you will run your simulation 1:
 
 .. code-block:: bash
 
     mkdir sim1
     cd sim1
 
-Each time you do it, choose a convenient name of the folder to
+Each time you do it, choose a convenient name for the folder to
 remember which simulation it contains. In order to avoid overwriting data, it is recommended to create 
 a new simulation folder for each simulation.
 
-- Inside the simulation folder, create a symbolic link to the Smilei executables. The comand line to create a symbolic link to Smilei is
+- Inside the simulation folder, create a symbolic link to the Smilei executables. The command line to create a symbolic link to Smilei is
 .. code-block:: bash
 
     ln -s path/to/executable/smilei
     ln -s path/to/executable/smilei_test
 
-As antecipated ``path/to/executable`` is the path to your executable filles. So you need to insert the actual path where your files ``smilei``
+As anticipated, ``path/to/executable`` is the path to your executable files. So you need to insert the actual path where your files ``smilei``
 and ``smilei_test`` are.
 
 
-- Inside the simulation folder, you also need a file to submit your simulation job to the job scheduler, `e.g.`` ``submission_script.sh``.
+- Inside the simulation folder, you also need a file to submit your simulation job to the job scheduler, `e.g.,` ``submission_script.sh``. The content that this file should contain is shown below.
+
 .. code-block:: bash
    
    #!/bin/bash
