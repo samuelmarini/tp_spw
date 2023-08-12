@@ -204,7 +204,7 @@ electric field :math:`E_0=m_e \omega_r c /e`?
 This choice of :math:`\lambda_0` shall be utilized throughout *all* subsequent exercises. 
 
 
-0.4- Simulation virtual workspace
+0.4- Simulation virtual workspace 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -900,7 +900,7 @@ You can check the plasma surface using the following command from `happi` librar
   S.Field(0,"-Rho_eon", timesteps=timesteps[tcycle]).plot(cmap='Blues',xmin=60,xmax=90,ymin=20,ymax=60)
   plt.show()
 
-Likewise, you can change the `x`and the `y` limits using the script used in the previous section, such as ::
+Likewise, you can change the `x` and the `y` limits using the script used in the previous section, such as ::
 
     ax.set_ylim( 30, 38 )
     ax.set_xlim( 10, 14 )
