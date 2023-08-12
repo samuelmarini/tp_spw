@@ -16,43 +16,42 @@ and carefully follow all the instructions.
 If you have already installed the PIC code Smilei, skip this part.
 At the end of this step, you must have the files called ``smilei`` and ``smilei_test`` in the folder you intalled Smilei.
 
-Besides installing the PIC code `Smilei`, you have to install the postprocessing library `happi` and keep the location of your executable files `Smilei` and `happi`
-in mind. (`e.g.,`  ``path/to/executable``)
+Besides install the PIC code `Smilei`, install postprocessing library `happi` and keep the location of your executable filles `Smilei` and `happi`
+in mind. (`e.g.`  ``path/to/executable``)
 
 
 A.2- Prepare your simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Enter your working space (the folder where you want to place your simulations)
+- Enter your working space (folder where you will place your simulations)
 
 .. code-block:: bash
 
     cd path/to/workdir
 
 where ``path/to/workdir`` is the path to your workdir.
-- In your workdir, create a new simulation folder, for example, a folder called ``sim1``, where you will run your simulation 1:
+- In your workdir, create a new simulation folder, for example a folder called ``sim1``, where you will run your simulation 1:
 
 .. code-block:: bash
 
     mkdir sim1
     cd sim1
 
-Each time you do it, choose a convenient name for the folder to
+Each time you do it, choose a convenient name of the folder to
 remember which simulation it contains. In order to avoid overwriting data, it is recommended to create 
 a new simulation folder for each simulation.
 
-- Inside the simulation folder, create a symbolic link to the Smilei executables. The command line to create a symbolic link to Smilei is
+- Inside the simulation folder, create a symbolic link to the Smilei executables. The comand line to create a symbolic link to Smilei is
 .. code-block:: bash
 
     ln -s path/to/executable/smilei
     ln -s path/to/executable/smilei_test
 
-As anticipated, ``path/to/executable`` is the path to your executable files. So you need to insert the actual path where your files ``smilei``
+As antecipated ``path/to/executable`` is the path to your executable filles. So you need to insert the actual path where your files ``smilei``
 and ``smilei_test`` are.
 
 
-- Inside the simulation folder, you also need a file to submit your simulation job to the job scheduler, `e.g.,` ``submission_script.sh``. The content that this file should contain is shown below.
-
+- Inside the simulation folder, you also need a file to submit your simulation job to the job scheduler, `e.g.`` ``submission_script.sh``.
 .. code-block:: bash
    
    #!/bin/bash
@@ -96,7 +95,7 @@ Check the script ``submission_script.sh`` above and modify accoding.
 
 
 
-Finally, you need your input file with instructions for `Smilei`. In this practical work, we will call it ``InputNamelist.py``. All instructions to run a simulation on SPW is in this file.
+Finally, you need your input file with instructrions for `Smilei`. In this pratical work, we will call it ``InputNamelist.py``. All instructions to run a simulation on SPW is in this fille.
 
 A.3- Run your simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -114,7 +113,7 @@ in your prompt. In this present case, you must have the symbolic links ``smilei`
 
 .. code-block:: bash
    
-    ./submission_script.sh 2 InputNamelist
+    ./run_new.sh 2 InputNamelist
 
 
 
@@ -122,21 +121,7 @@ in your prompt. In this present case, you must have the symbolic links ``smilei`
 A.4- Postprocess your simulation results
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-A fundamental part of working with simulation codes is the 
-postprocessing of the results. Smilei includes an entire ``Python`` library 
-for postprocessing. 
-However, to plot your first results and make quantitative evaluations 
-you do not need to be an expert of ``Python``.
-
-For your convenience and quick reference, here we include only the commands 
-you will need for this practical. Do not hesitate to copy and paste 
-the following commands in ``IPython`` and adapt them to the problem you are solving.
-
-Remember that the results are in normalized units. 
-The library ``happi`` also allows to convert to SI units, but this will not be taught in this practical 
-(details in the `documentation <https://smileipic.github.io/Smilei/Use/post-processing.html>`_).
-
-- Open ``IPython`` (before, you will need to load the Python modules and define variables like how you did to compile the code and be sure you have compiled ``happi``):
+- Open ``IPython`` (before, you will need to load the Python modules and define variables like how you did to compile the code, and be sure you have compiled ``happi``):
 
 .. code-block:: bash
    
@@ -159,17 +144,17 @@ file ``smilei.py``, generated at the start of your simulation.
    
     S = happi.Open("path/to/my/results")
 
-again, ``"path/to/my/results"`` is an example; you need to put the path of your simulation. 
+again, ``"path/to/my/results"`` is an example, you need to put the path of your simulation. 
 If you use simply ``S = happi.Open()``, the library ``happi`` open the results inside the current working directory.
 
--  Now, you can use the commands in the section postprocessing.
+-  Now you can use the commands in the section postprocessing.
 
-A.5- Command line cheat sheet
+A.5- Command line cheatsheet
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``pwd``: shows the path of the current working directory.
 
-- ``cd path``: go to the folder ``path``
+- ``cd path``: go to ``path``
 
 - ``ls``: shows the content of the current directory.
 
@@ -186,6 +171,24 @@ A.5- Command line cheat sheet
 
 - ``ipython``: opens ``Ipython``, where also the previous commands can be used. To run a Python script inside this interface, use ``%run script_name.py``.
 
+.. _Postprocessing:
+Postprocessing
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+A fundamental part of working with simulation codes is the 
+postprocessing of the results. Smilei includes an entire ``Python`` library 
+for postprocessing. 
+However, to plot your first results and make quantitative evaluations 
+you do not need to be an expert of ``Python``.
+
+For your convenience and quick reference, here we include only the commands 
+you will need for this practical. Do not hesitate to copy and paste 
+the following commands in ``IPython`` and adapt them to the problem you are solving.
+
+Remember that the results are in normalized units. 
+The library ``happi`` also allows to convert to SI units, but this will not be taught in this practical 
+(details in the `documentation <https://smileipic.github.io/Smilei/Use/post-processing.html>`_).
+
 
 B.1- Compilation of happi library
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -201,11 +204,11 @@ To import the library ``happi`` in ``IPython`` and open a simulation in the fold
 
    import happi; S = happi.Open("path/to/simulation")
 
-In this specific example, the folder’s path is called, for example ``"path/to/simulation"`` 
+In this specific example the folder’s path is called for example ``"path/to/simulation"`` 
 (use the path of your simulation instead!). 
 
 The last command will create an object called ``S``, our simulation, 
-which contains all the necessary data taken from the input namelist and from the 
+which contains all the necessary data, taken from the input namelist and from the 
 output files. 
 
 You can easily access parameters from the input namelist, for example::
@@ -280,7 +283,7 @@ scaling them through multiplying factors::
 
 The previous example draws two curves, but you can use multiPlot to plot more curves.
 
-Note that you can also plot different timesteps from the same simulation with the same procedure. 
+Note that you can plot also different timesteps from the same simulation with the same procedure. 
 Similarly, you can plot two quantities from two or more simulations::
 
    import happi
