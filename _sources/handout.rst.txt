@@ -4,14 +4,13 @@ Handout
 
 Before starting the practical work, we will present the general theory behind surface plasma waves. 
 Then, we will discuss the normalized system of units commonly used in PIC codes. 
-After this brief introduction, we will begin building the PIC code namelist and so, the practical work.
+After this brief introduction, we will begin building the PIC code namelist and, so, the practical work.
 
 Specifically, we will start the practical work by creating a namelist that defines the simulation
 box and simulates a laser pulse propagating in the vacuum. Once we confirm the simulation is running well,
-we will add a plasma target to the system consisting of ions and free electrons, which emulate a metallic target. 
+we will add a plasma target to the system consisting of ions and free electrons, which emulate a fully ionized metallic target. 
 We will initially assume the plasma target has a flat target surface. 
-Next, we will assuming periodic structure across the target surface and
-finally, optimize the target surface to improve the laser-plasma interaction. 
+Next, we will assume a periodic structure across the target surface and, finally, optimize the target surface to improve the laser-plasma interaction. 
 After each of these steps, we will study and analyze relevant diagnostic tools 
 to understand the relevant physical phenomena of surface plasma waves.
 
@@ -29,7 +28,7 @@ Prelude
 
 The interaction of an intense laser with an overdense plasma with a
 sharp density gradient provides ways to accelerate charged particles up
-to the relativistic limit. A specific optimal set up that might improve
+to the relativistic limit. A specific optimal setup that might improve
 the effectiveness of the laser-plasma interaction is provided by the use
 of periodic grooves (called gratings) at the metal surface. Whenever
 appropriately chosen, it can induce the laser to excite the called
@@ -44,8 +43,7 @@ transferred to the plasma. Moreover, a significant percentage of the
 electrons can be accelerated along the surface at relativistic speed.
 
 Exploiting these properties at ultra-high intensity could drive surface
-plasma waves with large amplitude, leading to generation of
-unprecedented current of energetic electrons as well as bright coherent
+plasma waves with large amplitude, leading to the generation of highly energetic electrons as well as bright coherent
 radiation. Resonant excitation of SPW implies the knowledge of
 the dispersion relation.
 
@@ -115,7 +113,7 @@ dynamics becomes relativistic. It tells us that,
 if we want to generate super energetic electrons (MeV), we have to consider 
 :math:`a_0 \gt 1`.
 
-The phase-matching condition introduced above leads to define the
+The phase-matching condition introduced above leads to defining the
 optimal angle of incidence for the laser to excite the surface plasma
 wave:
 
@@ -132,14 +130,14 @@ frequency :math:`\omega_p = \sqrt{e^2 n_0/(\epsilon_0 m_e)}` and assume that :ma
 the equation above.
 
 **Exercise 2:** Assuming that the diffraction grating has a period equal
-to twice the wavelength of the laser, :math:`d=2\lambda_0` what is the resonance angle (in degrees)?
+to twice the wavelength of the laser, :math:`d=2\lambda_0` what is the resonance angle (in degrees)? Consider :math:`n_0/n_c>>1`
 
 
 0.3- Physical units normalization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the PIC code Smilei (and also in most PIC codes) all input and output quantities are in normalized units (also called code units) since such a 
+In the PIC code Smilei (and also in most PIC codes), all input and output quantities are in normalized units (also called code units) since such a 
 system of units facilitates computational calculations. It is crucial to learn how to work 
 with this kind of unit since it is widely used in computer simulations.
 You can perform conversions from normalized units to SI quantities, following :ref:`Table. 1 <table1>`:
@@ -397,10 +395,10 @@ Laser Pulse
 ^^^^^^^^^^^^^^^^^^^^^^
 
 
-As antecipated, as a starting point in this practical work we will simulating a laser propagating through vacuum. 
+As anticipated, as a starting point in this practical work we will be simulating a laser propagating through the vacuum. 
 To accomplish this, we will begin by defining a simulation box and including the necessary requirements for a Smilei code.
 We will be using the script provided below as a starting point for our simulation. 
-It is important to carefully review the code and its implementation of box conditions, as it will serve as the foundation for next simulation 
+It is important to carefully review the code and its implementation of box conditions, as it will serve as the foundation for the next simulation 
 and your future works.
 
 This is the InputNamelist.py::
@@ -433,7 +431,7 @@ This is the InputNamelist.py::
 
       cell_length = [dx,dy],
       grid_length = [Lx,Ly],
-      number_of_patches = [1,16],  #patches in x,y-directions. The product x*y must be larger than the number of processor you are using
+      number_of_patches = [1,16],  #patches in x,y-directions. The product x*y must be larger than the number of processors you are using
 
       timestep = dt,
       simulation_time = Tsim,
@@ -499,7 +497,7 @@ of time :math:`t=10\tau_0`, we can use the following script ::
 
   S=happi.Open('.',verbose=False)
   timesteps=S.Field(0,"Bz").getTimesteps()
-  tcycle=10 #this corresponds to the time the laser oscilated 10 times.
+  tcycle=10 #this corresponds to the time the laser oscillated 10 times.
   S.Field(0,"Bz", timesteps=timesteps[tcycle]).plot(cmap='bwr', aspect=1, saveAs="Bz_t=10.png")
   plt.show()
 
@@ -565,7 +563,7 @@ with temperature going to zero. We define the species that make up the plasma as
       time_frozen = 0.0
     )
 
-Before running this script, we are also going to change to over the plasma surface, the laser focal position, `xfoc` and add a diagnostic
+Before running this script, we are also going to change to over the plasma surface, the laser focal position, `xfoc`, and add a diagnostic
 to measure the electrons phase space.
 
 .. code-block:: bash
@@ -864,7 +862,7 @@ What is the maximum amplitude of the  Poynting vector? In which units is it pres
 .. _Exercise8:
 **- Exercise 8:**
 Modify the loop on `tver` to build a plot at each instant in time.
-Use the outcome figures to create a video. There are several ways to create the video from pictures. One way is to use the command ::
+Use the outcome figures to create a video. There are several ways to create a video from pictures. One way is to use the command ::
   
   convert -delay 1 -loop 0 *.png video.gif
 
@@ -933,12 +931,12 @@ To go further, suppose that ``aL=5``, change the script and describe what happen
 Note that you have to change the diagnostics ranges, in order to make a correct analysis.
 
 
-2.3- Laser pulse interacting with a optimized target
+2.3- Laser pulse interacting with an optimized target
 ^^^^^^^^^^^^^^^^^^^^^^
 ^^^^^^^^^^^^^^^^^^^^^^
 
 We finally reached the last stage of this TP and now we are going to simulate the interaction of the laser pulse with 
-the plasma target whose interface is optimized. Find bellow the full InputNamelist.py ::
+the plasma target whose interface is optimized. Find below the full InputNamelist.py ::
 
   import numpy as np
 
@@ -1084,7 +1082,7 @@ the plasma target whose interface is optimized. Find bellow the full InputNameli
   )
 
 .. _Exercise 11:
-**- Exercise 11:** Compare the longitudinal electric field at instant of time `TSim`,
+**- Exercise 11:** Compare the longitudinal electric field at the instant of time `TSim`,
 assuming the three different configurations studied in this TP. 
 Hint: To analyze the field on the surface, you can use the command ::
 
@@ -1103,13 +1101,13 @@ And to put the three curves on the same panel, you can use the multiplot command
 
 .. _Exercise 12:
 **- Exercise 12:** Run three new simulations ( one for each target configuration ) assuming `aL=5`. Compare the transverse and longitudinal momentum of electrons at the instant of time `TSim`,
-assuming the three different configurations studied in this TP. Use the phase space of each case for comparison and explain the result you obtain. Before run the simulations, do not forget modify the observation range in the Diagnostics.
+assuming the three different configurations studied in this TP. Use the phase space of each case for comparison and explain the result you obtain. Before running the simulations, do not forget to modify the observation range in the Diagnostics.
 
 
 Conclusion
 ==========
 
-In this pratical work, we have explored the laser-plasma coupling in the relativistic regime of interaction. 
+In this practical work, we have explored the laser-plasma coupling in the relativistic regime of interaction. 
 In particular, we have investigated conditions to improve laser-plasma energy transfer as well
 as to generate relativistic electrons through computational
 simulations using the Smilei PIC code.
