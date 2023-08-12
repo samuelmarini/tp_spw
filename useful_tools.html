@@ -58,10 +58,7 @@
                     <a href="#a-4-postprocess-your-simulation-results">A.4- Postprocess your simulation results</a>
                 </li>
                 <li class="outer">
-                    <a href="#a-5-command-line-cheatsheet">A.5- Command line cheatsheet</a>
-                </li>
-                <li class="outer">
-                    <a href="#postprocessing">Postprocessing</a>
+                    <a href="#a-5-command-line-cheat-sheet">A.5- Command line cheat sheet</a>
                 </li>
                 <li class="outer">
                     <a href="#b-1-compilation-of-happi-library">B.1- Compilation of happi library</a>
@@ -103,9 +100,6 @@
                     <a href="handout.html#simulation-virtual-workspace">0.4- Simulation virtual workspace</a>
                 </li>
                 <li class="outer">
-                    <a href=""></a>
-                </li>
-                <li class="outer">
                     <a href="handout.html#simulation-general-setup">0.5- Simulation general setup</a>
                 </li>
                 <li class="outer">
@@ -127,7 +121,7 @@
                     <a href="handout.html#laser-pulse-interacting-with-a-sinusoidal-target">2.2- Laser pulse interacting with a sinusoidal target</a>
                 </li>
                 <li class="outer">
-                    <a href="handout.html#laser-pulse-interacting-with-a-optimized-target">2.3- Laser pulse interacting with a optimized target</a>
+                    <a href="handout.html#laser-pulse-interacting-with-an-optimized-target">2.3- Laser pulse interacting with an optimized target</a>
                 </li>
                 <li class="outer">
                     <a href="handout.html#references">References</a>
@@ -152,8 +146,7 @@
 <li><a class="reference internal" href="#a-2-prepare-your-simulation">A.2- Prepare your simulation</a></li>
 <li><a class="reference internal" href="#a-3-run-your-simulation">A.3- Run your simulation</a></li>
 <li><a class="reference internal" href="#a-4-postprocess-your-simulation-results">A.4- Postprocess your simulation results</a></li>
-<li><a class="reference internal" href="#a-5-command-line-cheatsheet">A.5- Command line cheatsheet</a></li>
-<li><a class="reference internal" href="#postprocessing">Postprocessing</a></li>
+<li><a class="reference internal" href="#a-5-command-line-cheat-sheet">A.5- Command line cheat sheet</a></li>
 <li><a class="reference internal" href="#b-1-compilation-of-happi-library">B.1- Compilation of happi library</a></li>
 <li><a class="reference internal" href="#b-2-open-a-simulation">B.2- Open a simulation</a></li>
 <li><a class="reference internal" href="#b-3-plot-diagnostics">B.3- Plot diagnostics</a></li>
@@ -232,10 +225,7 @@
                             <a href="#a-4-postprocess-your-simulation-results">A.4- Postprocess your simulation results</a>
                         </li>
                         <li class="outer">
-                            <a href="#a-5-command-line-cheatsheet">A.5- Command line cheatsheet</a>
-                        </li>
-                        <li class="outer">
-                            <a href="#postprocessing">Postprocessing</a>
+                            <a href="#a-5-command-line-cheat-sheet">A.5- Command line cheat sheet</a>
                         </li>
                         <li class="outer">
                             <a href="#b-1-compilation-of-happi-library">B.1- Compilation of happi library</a>
@@ -294,9 +284,6 @@
                             <a href="handout.html#simulation-virtual-workspace">0.4- Simulation virtual workspace</a>
                         </li>
                         <li class="outer">
-                            <a href=""></a>
-                        </li>
-                        <li class="outer">
                             <a href="handout.html#simulation-general-setup">0.5- Simulation general setup</a>
                         </li>
                         <li class="outer">
@@ -318,7 +305,7 @@
                             <a href="handout.html#laser-pulse-interacting-with-a-sinusoidal-target">2.2- Laser pulse interacting with a sinusoidal target</a>
                         </li>
                         <li class="outer">
-                            <a href="handout.html#laser-pulse-interacting-with-a-optimized-target">2.3- Laser pulse interacting with a optimized target</a>
+                            <a href="handout.html#laser-pulse-interacting-with-an-optimized-target">2.3- Laser pulse interacting with an optimized target</a>
                         </li>
                         <li class="outer">
                             <a href="handout.html#references">References</a>
@@ -428,37 +415,37 @@ To do this, go to the Smilei webpage <a class="reference external" href="https:/
 and carefully follow all the instructions.
 If you have already installed the PIC code Smilei, skip this part.
 At the end of this step, you must have the files called <code class="docutils literal notranslate"><span class="pre">smilei</span></code> and <code class="docutils literal notranslate"><span class="pre">smilei_test</span></code> in the folder you intalled Smilei.</p>
-<p>Besides install the PIC code <cite>Smilei</cite>, install postprocessing library <cite>happi</cite> and keep the location of your executable filles <cite>Smilei</cite> and <cite>happi</cite>
-in mind. (<cite>e.g.</cite>  <code class="docutils literal notranslate"><span class="pre">path/to/executable</span></code>)</p>
+<p>Besides installing the PIC code <cite>Smilei</cite>, you have to install the postprocessing library <cite>happi</cite> and keep the location of your executable files <cite>Smilei</cite> and <cite>happi</cite>
+in mind. (<cite>e.g.,</cite>  <code class="docutils literal notranslate"><span class="pre">path/to/executable</span></code>)</p>
 </section>
 <section id="a-2-prepare-your-simulation">
 <h2>A.2- Prepare your simulation<a class="headerlink" href="#a-2-prepare-your-simulation" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>Enter your working space (folder where you will place your simulations)</p></li>
+<li><p>Enter your working space (the folder where you want to place your simulations)</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> path/to/workdir
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">path/to/workdir</span></code> is the path to your workdir.
-- In your workdir, create a new simulation folder, for example a folder called <code class="docutils literal notranslate"><span class="pre">sim1</span></code>, where you will run your simulation 1:</p>
+- In your workdir, create a new simulation folder, for example, a folder called <code class="docutils literal notranslate"><span class="pre">sim1</span></code>, where you will run your simulation 1:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir sim1
 <span class="nb">cd</span> sim1
 </pre></div>
 </div>
-<p>Each time you do it, choose a convenient name of the folder to
+<p>Each time you do it, choose a convenient name for the folder to
 remember which simulation it contains. In order to avoid overwriting data, it is recommended to create
 a new simulation folder for each simulation.</p>
 <ul class="simple">
-<li><p>Inside the simulation folder, create a symbolic link to the Smilei executables. The comand line to create a symbolic link to Smilei is</p></li>
+<li><p>Inside the simulation folder, create a symbolic link to the Smilei executables. The command line to create a symbolic link to Smilei is</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln -s path/to/executable/smilei
 ln -s path/to/executable/smilei_test
 </pre></div>
 </div>
-<p>As antecipated <code class="docutils literal notranslate"><span class="pre">path/to/executable</span></code> is the path to your executable filles. So you need to insert the actual path where your files <code class="docutils literal notranslate"><span class="pre">smilei</span></code>
+<p>As anticipated, <code class="docutils literal notranslate"><span class="pre">path/to/executable</span></code> is the path to your executable files. So you need to insert the actual path where your files <code class="docutils literal notranslate"><span class="pre">smilei</span></code>
 and <code class="docutils literal notranslate"><span class="pre">smilei_test</span></code> are.</p>
 <ul class="simple">
-<li><p>Inside the simulation folder, you also need a file to submit your simulation job to the job scheduler, <cite>e.g.`</cite> <code class="docutils literal notranslate"><span class="pre">submission_script.sh</span></code>.</p></li>
+<li><p>Inside the simulation folder, you also need a file to submit your simulation job to the job scheduler, <cite>e.g.,</cite> <code class="docutils literal notranslate"><span class="pre">submission_script.sh</span></code>. The content that this file should contain is shown below.</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="nv">NP</span><span class="o">=</span><span class="nv">$1</span>  <span class="c1"># argument (nb of MPI processes)</span>
@@ -497,7 +484,7 @@ cp <span class="nv">$INPDIR</span>/<span class="nv">$FTR</span>.py <span class="
 </pre></div>
 </div>
 <p>Check the script <code class="docutils literal notranslate"><span class="pre">submission_script.sh</span></code> above and modify accoding.</p>
-<p>Finally, you need your input file with instructrions for <cite>Smilei</cite>. In this pratical work, we will call it <code class="docutils literal notranslate"><span class="pre">InputNamelist.py</span></code>. All instructions to run a simulation on SPW is in this fille.</p>
+<p>Finally, you need your input file with instructions for <cite>Smilei</cite>. In this practical work, we will call it <code class="docutils literal notranslate"><span class="pre">InputNamelist.py</span></code>. All instructions to run a simulation on SPW is in this file.</p>
 </section>
 <section id="a-3-run-your-simulation">
 <h2>A.3- Run your simulation<a class="headerlink" href="#a-3-run-your-simulation" title="Permalink to this heading">¶</a></h2>
@@ -512,14 +499,25 @@ cp <span class="nv">$INPDIR</span>/<span class="nv">$FTR</span>.py <span class="
 <li><p>Now you check your namelist does not contain syntax errors, use the <code class="docutils literal notranslate"><span class="pre">smilei_test</span></code> executable on the namelist (you will need to load the same libraries used for the code compilation): <code class="docutils literal notranslate"><span class="pre">./smilei_test</span> <span class="pre">InputNamelist.py</span></code>. If you see the line <code class="docutils literal notranslate"><span class="pre">END</span> <span class="pre">TEST</span> <span class="pre">MODE</span></code>, the namelist does not contain syntax errors and can be run.</p></li>
 <li><p>Launch your simulation job:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run_new.sh <span class="m">2</span> InputNamelist
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./submission_script.sh <span class="m">2</span> InputNamelist
 </pre></div>
 </div>
 </section>
 <section id="a-4-postprocess-your-simulation-results">
 <h2>A.4- Postprocess your simulation results<a class="headerlink" href="#a-4-postprocess-your-simulation-results" title="Permalink to this heading">¶</a></h2>
+<p>A fundamental part of working with simulation codes is the
+postprocessing of the results. Smilei includes an entire <code class="docutils literal notranslate"><span class="pre">Python</span></code> library
+for postprocessing.
+However, to plot your first results and make quantitative evaluations
+you do not need to be an expert of <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
+<p>For your convenience and quick reference, here we include only the commands
+you will need for this practical. Do not hesitate to copy and paste
+the following commands in <code class="docutils literal notranslate"><span class="pre">IPython</span></code> and adapt them to the problem you are solving.</p>
+<p>Remember that the results are in normalized units.
+The library <code class="docutils literal notranslate"><span class="pre">happi</span></code> also allows to convert to SI units, but this will not be taught in this practical
+(details in the <a class="reference external" href="https://smileipic.github.io/Smilei/Use/post-processing.html">documentation</a>).</p>
 <ul class="simple">
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">IPython</span></code> (before, you will need to load the Python modules and define variables like how you did to compile the code, and be sure you have compiled <code class="docutils literal notranslate"><span class="pre">happi</span></code>):</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">IPython</span></code> (before, you will need to load the Python modules and define variables like how you did to compile the code and be sure you have compiled <code class="docutils literal notranslate"><span class="pre">happi</span></code>):</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ipython
 </pre></div>
@@ -540,17 +538,17 @@ file <code class="docutils literal notranslate"><span class="pre">smilei.py</spa
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">S</span> <span class="o">=</span> happi.Open<span class="o">(</span><span class="s2">&quot;path/to/my/results&quot;</span><span class="o">)</span>
 </pre></div>
 </div>
-<p>again, <code class="docutils literal notranslate"><span class="pre">&quot;path/to/my/results&quot;</span></code> is an example, you need to put the path of your simulation.
+<p>again, <code class="docutils literal notranslate"><span class="pre">&quot;path/to/my/results&quot;</span></code> is an example; you need to put the path of your simulation.
 If you use simply <code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">=</span> <span class="pre">happi.Open()</span></code>, the library <code class="docutils literal notranslate"><span class="pre">happi</span></code> open the results inside the current working directory.</p>
 <ul class="simple">
-<li><p>Now you can use the commands in the section postprocessing.</p></li>
+<li><p>Now, you can use the commands in the section postprocessing.</p></li>
 </ul>
 </section>
-<section id="a-5-command-line-cheatsheet">
-<h2>A.5- Command line cheatsheet<a class="headerlink" href="#a-5-command-line-cheatsheet" title="Permalink to this heading">¶</a></h2>
+<section id="a-5-command-line-cheat-sheet">
+<h2>A.5- Command line cheat sheet<a class="headerlink" href="#a-5-command-line-cheat-sheet" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code>: shows the path of the current working directory.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">path</span></code>: go to <code class="docutils literal notranslate"><span class="pre">path</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">path</span></code>: go to the folder <code class="docutils literal notranslate"><span class="pre">path</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code>: shows the content of the current directory.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">path</span></code>: shows the content in <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">file</span></code>: removes <code class="docutils literal notranslate"><span class="pre">file</span></code>. To remove a folder, you will need an additional flag: <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">folder</span></code> (be careful).</p></li>
@@ -562,20 +560,6 @@ If you use simply <code class="docutils literal notranslate"><span class="pre">S
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ipython</span></code>: opens <code class="docutils literal notranslate"><span class="pre">Ipython</span></code>, where also the previous commands can be used. To run a Python script inside this interface, use <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">script_name.py</span></code>.</p></li>
 </ul>
-</section>
-<section id="postprocessing">
-<span id="id1"></span><h2>Postprocessing<a class="headerlink" href="#postprocessing" title="Permalink to this heading">¶</a></h2>
-<p>A fundamental part of working with simulation codes is the
-postprocessing of the results. Smilei includes an entire <code class="docutils literal notranslate"><span class="pre">Python</span></code> library
-for postprocessing.
-However, to plot your first results and make quantitative evaluations
-you do not need to be an expert of <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
-<p>For your convenience and quick reference, here we include only the commands
-you will need for this practical. Do not hesitate to copy and paste
-the following commands in <code class="docutils literal notranslate"><span class="pre">IPython</span></code> and adapt them to the problem you are solving.</p>
-<p>Remember that the results are in normalized units.
-The library <code class="docutils literal notranslate"><span class="pre">happi</span></code> also allows to convert to SI units, but this will not be taught in this practical
-(details in the <a class="reference external" href="https://smileipic.github.io/Smilei/Use/post-processing.html">documentation</a>).</p>
 </section>
 <section id="b-1-compilation-of-happi-library">
 <h2>B.1- Compilation of happi library<a class="headerlink" href="#b-1-compilation-of-happi-library" title="Permalink to this heading">¶</a></h2>
@@ -590,10 +574,10 @@ Then, to analyze the results of your simulation, open the <code class="docutils 
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">happi</span><span class="p">;</span> <span class="n">S</span> <span class="o">=</span> <span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;path/to/simulation&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In this specific example the folder’s path is called for example <code class="docutils literal notranslate"><span class="pre">&quot;path/to/simulation&quot;</span></code>
+<p>In this specific example, the folder’s path is called, for example <code class="docutils literal notranslate"><span class="pre">&quot;path/to/simulation&quot;</span></code>
 (use the path of your simulation instead!).</p>
 <p>The last command will create an object called <code class="docutils literal notranslate"><span class="pre">S</span></code>, our simulation,
-which contains all the necessary data, taken from the input namelist and from the
+which contains all the necessary data taken from the input namelist and from the
 output files.</p>
 <p>You can easily access parameters from the input namelist, for example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S</span><span class="o">.</span><span class="n">namelist</span><span class="o">.</span><span class="n">Lx</span>
@@ -664,7 +648,7 @@ scaling them through multiplying factors:</p>
 </pre></div>
 </div>
 <p>The previous example draws two curves, but you can use multiPlot to plot more curves.</p>
-<p>Note that you can plot also different timesteps from the same simulation with the same procedure.
+<p>Note that you can also plot different timesteps from the same simulation with the same procedure.
 Similarly, you can plot two quantities from two or more simulations:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">happi</span>
 <span class="n">S1</span> <span class="o">=</span> <span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;path/to/simulation1&quot;</span><span class="p">)</span>
@@ -708,7 +692,7 @@ another language, you can write this array on a text file using:</p>
       <a href="site.html">Site index</a>
       </div>
       <div>
-        Last updated on Mar 25, 2023
+        Last updated on Aug 12, 2023
       </div>
       
       <div>

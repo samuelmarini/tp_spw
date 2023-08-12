@@ -58,10 +58,7 @@
                     <a href="useful_tools.html#a-4-postprocess-your-simulation-results">A.4- Postprocess your simulation results</a>
                 </li>
                 <li class="outer">
-                    <a href="useful_tools.html#a-5-command-line-cheatsheet">A.5- Command line cheatsheet</a>
-                </li>
-                <li class="outer">
-                    <a href="useful_tools.html#postprocessing">Postprocessing</a>
+                    <a href="useful_tools.html#a-5-command-line-cheat-sheet">A.5- Command line cheat sheet</a>
                 </li>
                 <li class="outer">
                     <a href="useful_tools.html#b-1-compilation-of-happi-library">B.1- Compilation of happi library</a>
@@ -124,7 +121,7 @@
                     <a href="#laser-pulse-interacting-with-a-sinusoidal-target">2.2- Laser pulse interacting with a sinusoidal target</a>
                 </li>
                 <li class="outer">
-                    <a href="#laser-pulse-interacting-with-a-optimized-target">2.3- Laser pulse interacting with a optimized target</a>
+                    <a href="#laser-pulse-interacting-with-an-optimized-target">2.3- Laser pulse interacting with an optimized target</a>
                 </li>
                 <li class="outer">
                     <a href="#references">References</a>
@@ -156,7 +153,7 @@
 <li><a class="reference internal" href="#laser-plasma-interaction">Laser-plasma interaction</a></li>
 <li><a class="reference internal" href="#laser-pulse-interacting-with-a-flat-target">2.1- Laser pulse interacting with a flat target</a></li>
 <li><a class="reference internal" href="#laser-pulse-interacting-with-a-sinusoidal-target">2.2- Laser pulse interacting with a sinusoidal target</a></li>
-<li><a class="reference internal" href="#laser-pulse-interacting-with-a-optimized-target">2.3- Laser pulse interacting with a optimized target</a><ul>
+<li><a class="reference internal" href="#laser-pulse-interacting-with-an-optimized-target">2.3- Laser pulse interacting with an optimized target</a><ul>
 <li><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
@@ -232,10 +229,7 @@
                             <a href="useful_tools.html#a-4-postprocess-your-simulation-results">A.4- Postprocess your simulation results</a>
                         </li>
                         <li class="outer">
-                            <a href="useful_tools.html#a-5-command-line-cheatsheet">A.5- Command line cheatsheet</a>
-                        </li>
-                        <li class="outer">
-                            <a href="useful_tools.html#postprocessing">Postprocessing</a>
+                            <a href="useful_tools.html#a-5-command-line-cheat-sheet">A.5- Command line cheat sheet</a>
                         </li>
                         <li class="outer">
                             <a href="useful_tools.html#b-1-compilation-of-happi-library">B.1- Compilation of happi library</a>
@@ -315,7 +309,7 @@
                             <a href="#laser-pulse-interacting-with-a-sinusoidal-target">2.2- Laser pulse interacting with a sinusoidal target</a>
                         </li>
                         <li class="outer">
-                            <a href="#laser-pulse-interacting-with-a-optimized-target">2.3- Laser pulse interacting with a optimized target</a>
+                            <a href="#laser-pulse-interacting-with-an-optimized-target">2.3- Laser pulse interacting with an optimized target</a>
                         </li>
                         <li class="outer">
                             <a href="#references">References</a>
@@ -416,13 +410,12 @@
 <h1>Handout<a class="headerlink" href="#handout" title="Permalink to this heading">¶</a></h1>
 <p>Before starting the practical work, we will present the general theory behind surface plasma waves.
 Then, we will discuss the normalized system of units commonly used in PIC codes.
-After this brief introduction, we will begin building the PIC code namelist and so, the practical work.</p>
+After this brief introduction, we will begin building the PIC code namelist and, so, the practical work.</p>
 <p>Specifically, we will start the practical work by creating a namelist that defines the simulation
 box and simulates a laser pulse propagating in the vacuum. Once we confirm the simulation is running well,
-we will add a plasma target to the system consisting of ions and free electrons, which emulate a metallic target.
+we will add a plasma target to the system consisting of ions and free electrons, which emulate a fully ionized metallic target.
 We will initially assume the plasma target has a flat target surface.
-Next, we will assuming periodic structure across the target surface and
-finally, optimize the target surface to improve the laser-plasma interaction.
+Next, we will assume a periodic structure across the target surface and, finally, optimize the target surface to improve the laser-plasma interaction.
 After each of these steps, we will study and analyze relevant diagnostic tools
 to understand the relevant physical phenomena of surface plasma waves.</p>
 <p>To complete the practical work, read the instructions in the following sections,
@@ -435,7 +428,7 @@ complete the related simulation exercises and ask the instructor if you have any
 <hr class="docutils" />
 <p>The interaction of an intense laser with an overdense plasma with a
 sharp density gradient provides ways to accelerate charged particles up
-to the relativistic limit. A specific optimal set up that might improve
+to the relativistic limit. A specific optimal setup that might improve
 the effectiveness of the laser-plasma interaction is provided by the use
 of periodic grooves (called gratings) at the metal surface. Whenever
 appropriately chosen, it can induce the laser to excite the called
@@ -449,8 +442,7 @@ plasma waves, up to <span class="math notranslate nohighlight">\(70\%\)</span> o
 transferred to the plasma. Moreover, a significant percentage of the
 electrons can be accelerated along the surface at relativistic speed.</p>
 <p>Exploiting these properties at ultra-high intensity could drive surface
-plasma waves with large amplitude, leading to generation of
-unprecedented current of energetic electrons as well as bright coherent
+plasma waves with large amplitude, leading to the generation of highly energetic electrons as well as bright coherent
 radiation. Resonant excitation of SPW implies the knowledge of
 the dispersion relation.</p>
 </section>
@@ -513,7 +505,7 @@ when the laser electric field <span class="math notranslate nohighlight">\(E_0\)
 dynamics becomes relativistic. It tells us that,
 if we want to generate super energetic electrons (MeV), we have to consider
 <span class="math notranslate nohighlight">\(a_0 \gt 1\)</span>.</p>
-<p>The phase-matching condition introduced above leads to define the
+<p>The phase-matching condition introduced above leads to defining the
 optimal angle of incidence for the laser to excite the surface plasma
 wave:</p>
 <div class="math notranslate nohighlight">
@@ -527,12 +519,12 @@ plasma density <span class="math notranslate nohighlight">\(n_c=\varepsilon_0 m_
 frequency <span class="math notranslate nohighlight">\(\omega_p = \sqrt{e^2 n_0/(\epsilon_0 m_e)}\)</span> and assume that <span class="math notranslate nohighlight">\(\omega=\omega_0\)</span> to show the relation <span class="math notranslate nohighlight">\(\omega_p^2/\omega_0^2=n_0/n_c\)</span> used in
 the equation above.</p>
 <p><strong>Exercise 2:</strong> Assuming that the diffraction grating has a period equal
-to twice the wavelength of the laser, <span class="math notranslate nohighlight">\(d=2\lambda_0\)</span> what is the resonance angle (in degrees)?</p>
+to twice the wavelength of the laser, <span class="math notranslate nohighlight">\(d=2\lambda_0\)</span> what is the resonance angle (in degrees)? Consider <span class="math notranslate nohighlight">\(n_0/n_c&gt;&gt;1\)</span></p>
 </section>
 <section id="physical-units-normalization">
 <h2>0.3- Physical units normalization<a class="headerlink" href="#physical-units-normalization" title="Permalink to this heading">¶</a></h2>
 <hr class="docutils" />
-<p>In the PIC code Smilei (and also in most PIC codes) all input and output quantities are in normalized units (also called code units) since such a
+<p>In the PIC code Smilei (and also in most PIC codes), all input and output quantities are in normalized units (also called code units) since such a
 system of units facilitates computational calculations. It is crucial to learn how to work
 with this kind of unit since it is widely used in computer simulations.
 You can perform conversions from normalized units to SI quantities, following <a class="reference internal" href="#table1"><span class="std std-ref">Table. 1</span></a>:</p>
@@ -662,7 +654,7 @@ The spatial resolution was set to
 <span class="math notranslate nohighlight">\(\Delta x = \Delta y = \lambda_0/64\)</span> (<span class="math notranslate nohighlight">\(=0.00625\mu\)</span>m).
 Analogously to previous case, the simulation timestep is chosen to be
 <span class="math notranslate nohighlight">\(\Delta t = 0.95~\Delta x/\sqrt{2}\)</span> that corresponds to the Courant-Friedrich-Lewy (CFL) condition. Every cells contains
-initially <span class="math notranslate nohighlight">\(8\)</span> randomly distributed particles of each species.</p>
+initially <span class="math notranslate nohighlight">\(16\)</span> randomly distributed particles of each species.</p>
 </section>
 <section id="simulation-input-namelist">
 <h2>0.6- Simulation input namelist<a class="headerlink" href="#simulation-input-namelist" title="Permalink to this heading">¶</a></h2>
@@ -682,10 +674,10 @@ of the simulation box? <em>ii)</em> How many cells there are in the simulation b
 <section id="laser-pulse-propagating-in-vacuum">
 <h2>1.1- Laser pulse propagating in vacuum<a class="headerlink" href="#laser-pulse-propagating-in-vacuum" title="Permalink to this heading">¶</a></h2>
 <hr class="docutils" />
-<p>As antecipated, as a starting point in this practical work we will simulating a laser propagating through vacuum.
+<p>As anticipated, as a starting point in this practical work we will be simulating a laser propagating through the vacuum.
 To accomplish this, we will begin by defining a simulation box and including the necessary requirements for a Smilei code.
 We will be using the script provided below as a starting point for our simulation.
-It is important to carefully review the code and its implementation of box conditions, as it will serve as the foundation for next simulation
+It is important to carefully review the code and its implementation of box conditions, as it will serve as the foundation for the next simulation
 and your future works.</p>
 <p>This is the InputNamelist.py:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -716,7 +708,7 @@ and your future works.</p>
 
     <span class="n">cell_length</span> <span class="o">=</span> <span class="p">[</span><span class="n">dx</span><span class="p">,</span><span class="n">dy</span><span class="p">],</span>
     <span class="n">grid_length</span> <span class="o">=</span> <span class="p">[</span><span class="n">Lx</span><span class="p">,</span><span class="n">Ly</span><span class="p">],</span>
-    <span class="n">number_of_patches</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span>  <span class="c1">#patches in x,y-directions. The product x*y must be larger than the number of processor you are using</span>
+    <span class="n">number_of_patches</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span>  <span class="c1">#patches in x,y-directions. The product x*y must be larger than the number of processors you are using</span>
 
     <span class="n">timestep</span> <span class="o">=</span> <span class="n">dt</span><span class="p">,</span>
     <span class="n">simulation_time</span> <span class="o">=</span> <span class="n">Tsim</span><span class="p">,</span>
@@ -779,7 +771,7 @@ of time <span class="math notranslate nohighlight">\(t=10\tau_0\)</span>, we can
 
 <span class="n">S</span><span class="o">=</span><span class="n">happi</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">timesteps</span><span class="o">=</span><span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Bz&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getTimesteps</span><span class="p">()</span>
-<span class="n">tcycle</span><span class="o">=</span><span class="mi">10</span> <span class="c1">#this corresponds to the time the laser oscilated 10 times.</span>
+<span class="n">tcycle</span><span class="o">=</span><span class="mi">10</span> <span class="c1">#this corresponds to the time the laser oscillated 10 times.</span>
 <span class="n">S</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Bz&quot;</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">[</span><span class="n">tcycle</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">saveAs</span><span class="o">=</span><span class="s2">&quot;Bz_t=10.png&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -836,7 +828,7 @@ Species<span class="o">(</span>
   <span class="o">)</span>
 </pre></div>
 </div>
-<p>Before running this script, we are also going to change to over the plasma surface, the laser focal position, <cite>xfoc</cite> and add a diagnostic
+<p>Before running this script, we are also going to change to over the plasma surface, the laser focal position, <cite>xfoc</cite>, and add a diagnostic
 to measure the electrons phase space.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>DiagParticleBinning<span class="o">(</span>
     <span class="nv">deposited_quantity</span> <span class="o">=</span> <span class="s2">&quot;weight&quot;</span>,
@@ -1124,7 +1116,7 @@ import happi
 What is the maximum amplitude of the  Poynting vector? In which units is it presented? What are the values in the S.I units?</p>
 <p id="exercise8"><strong>- Exercise 8:</strong>
 Modify the loop on <cite>tver</cite> to build a plot at each instant in time.
-Use the outcome figures to create a video. There are several ways to create the video from pictures. One way is to use the command</p>
+Use the outcome figures to create a video. There are several ways to create a video from pictures. One way is to use the command</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">convert</span> <span class="o">-</span><span class="n">delay</span> <span class="mi">1</span> <span class="o">-</span><span class="n">loop</span> <span class="mi">0</span> <span class="o">*.</span><span class="n">png</span> <span class="n">video</span><span class="o">.</span><span class="n">gif</span>
 </pre></div>
 </div>
@@ -1159,7 +1151,7 @@ Use the outcome figures to create a video. There are several ways to create the 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Likewise, you can change the <cite>x`and the `y</cite> limits using the script used in the previous section, such as</p>
+<p>Likewise, you can change the <cite>x</cite> and the <cite>y</cite> limits using the script used in the previous section, such as</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">38</span> <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">14</span> <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="mi">30</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">38</span><span class="p">])</span>
@@ -1186,11 +1178,11 @@ Analyze the longitudinal phase space at different instants of time. What can you
 To go further, suppose that <code class="docutils literal notranslate"><span class="pre">aL=5</span></code>, change the script and describe what happens with the electrons now.
 Note that you have to change the diagnostics ranges, in order to make a correct analysis.</p>
 </section>
-<section id="laser-pulse-interacting-with-a-optimized-target">
-<h2>2.3- Laser pulse interacting with a optimized target<a class="headerlink" href="#laser-pulse-interacting-with-a-optimized-target" title="Permalink to this heading">¶</a></h2>
+<section id="laser-pulse-interacting-with-an-optimized-target">
+<h2>2.3- Laser pulse interacting with an optimized target<a class="headerlink" href="#laser-pulse-interacting-with-an-optimized-target" title="Permalink to this heading">¶</a></h2>
 <hr class="docutils" />
 <p>We finally reached the last stage of this TP and now we are going to simulate the interaction of the laser pulse with
-the plasma target whose interface is optimized. Find bellow the full InputNamelist.py</p>
+the plasma target whose interface is optimized. Find below the full InputNamelist.py</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1">### NORMALIZATIONS</span>
@@ -1335,7 +1327,7 @@ the plasma target whose interface is optimized. Find bellow the full InputNameli
 <span class="p">)</span>
 </pre></div>
 </div>
-<p id="exercise-11"><strong>- Exercise 11:</strong> Compare the longitudinal electric field at instant of time <cite>TSim</cite>,
+<p id="exercise-11"><strong>- Exercise 11:</strong> Compare the longitudinal electric field at the instant of time <cite>TSim</cite>,
 assuming the three different configurations studied in this TP.
 Hint: To analyze the field on the surface, you can use the command</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">happi</span>
@@ -1352,10 +1344,10 @@ Hint: To analyze the field on the surface, you can use the command</p>
 </div>
 <p>And to put the three curves on the same panel, you can use the multiplot command from the happi library (see useful tools).</p>
 <p id="exercise-12"><strong>- Exercise 12:</strong> Run three new simulations ( one for each target configuration ) assuming <cite>aL=5</cite>. Compare the transverse and longitudinal momentum of electrons at the instant of time <cite>TSim</cite>,
-assuming the three different configurations studied in this TP. Use the phase space of each case for comparison and explain the result you obtain. Before run the simulations, do not forget modify the observation range in the Diagnostics.</p>
+assuming the three different configurations studied in this TP. Use the phase space of each case for comparison and explain the result you obtain. Before running the simulations, do not forget to modify the observation range in the Diagnostics.</p>
 <section id="conclusion">
 <h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">¶</a></h3>
-<p>In this pratical work, we have explored the laser-plasma coupling in the relativistic regime of interaction.
+<p>In this practical work, we have explored the laser-plasma coupling in the relativistic regime of interaction.
 In particular, we have investigated conditions to improve laser-plasma energy transfer as well
 as to generate relativistic electrons through computational
 simulations using the Smilei PIC code.</p>
@@ -1392,7 +1384,7 @@ simulations using the Smilei PIC code.</p>
       <a href="site.html">Site index</a>
       </div>
       <div>
-        Last updated on Mar 25, 2023
+        Last updated on Aug 12, 2023
       </div>
       
       <div>
